@@ -1,33 +1,31 @@
 import {
   Link as ChakraLink,
 	Box, Heading, Text,
-	Center,
+	
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 
 const Index = () => (
-	<Center minH="100vh">
   <Box>
-		<Heading textAlign="center" fontSize="8xl">
-			Studymono
+		<Heading fontSize="6xl">
+			Studymono Blog
 		</Heading>
-		<Text textAlign="center" fontSize="6xl">
-			Make it count
+		<Text fontSize="4xl" fontWeight="bold">
+			Posts
 		</Text>
-		<Link href="/pastquestions">
-			Get Started
+		<Link href="/blog/why-we-built-this">
+			<a>Why we built this</a>
 		</Link>
 		<br />
-		<Link href="/blog">
-			Go to Blog
+		<Link href="/blog/why-many-apps-dont-work">
+			<a>Why many apps dont work</a>
 		</Link>
 		<br />
-		<Link href="/privacy">
-			Privacy Policy
+		<Link href="/">
+			<a>Home</a>
 		</Link>
 	</Box>
-	</Center>
 )
 
 export default Index
