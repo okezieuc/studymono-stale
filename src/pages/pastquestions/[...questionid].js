@@ -108,7 +108,7 @@ export async function getStaticPaths() {
 		current++
 	}
 	
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps({ params }) {
