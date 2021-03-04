@@ -61,7 +61,7 @@ const Index = ({ dataschema }) => (
 		*/}
 		<br />
 		
-		<Link href="/blog/why-we-built-this">
+		<Link href="/blog/dynamic-routing">
 			<a>Why we built this</a>
 		</Link>
 		

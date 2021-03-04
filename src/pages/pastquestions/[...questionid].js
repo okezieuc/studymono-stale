@@ -76,7 +76,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 	}
 	<br />
 	
-		<Link href="/why-we-built-this">
+		<Link href="/dynamic-routing">
 			<a>Why we built this</a>
 		</Link>
 	

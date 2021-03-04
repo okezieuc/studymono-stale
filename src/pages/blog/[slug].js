@@ -5,8 +5,11 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { getPostBySlug, getAllPosts } from '../../lib/api'
+import markdownToHtml from '../../lib/markdownToHtml'
 
-const Index = () => {
+
+const Index = ({ post }) => {
 	const router = useRouter()
 	const { slug } = router.query
 
@@ -14,30 +17,54 @@ const Index = () => {
 		<Heading fontSize="6xl">
 			Studymono Blog
 		</Heading>
-		<Flex><Avatar size="sm" /> Okezie Chiedozie</Flex>
+		<Flex><Avatar size="sm" /> {post.author} </Flex>
 		<Text mb="8">
 			Published 20 Feb 2021 at {slug}
 		</Text>
-		<Text mb="12">
-			Sed sed ullamcorper lacus, eu interdum mi. Nulla facilisi. In at blandit dolor. Maecenas elementum, lorem nec blandit interdum, risus felis maximus neque, a aliquam velit magna eu nisl. Vivamus volutpat enim at libero vestibulum elementum. Aenean odio libero, lacinia in facilisis eu, tincidunt vehicula ipsum. Donec vitae arcu at odio scelerisque commodo a et orci. Nam ac lacinia lorem. Nunc feugiat ligula sed eros malesuada efficitur.
-			<br />
-			<br />
-			Integer tellus ligula, maximus vitae lorem et, luctus placerat neque. Suspendisse molestie lobortis erat ac placerat. Sed placerat lacus in ante pulvinar, at ultrices odio congue. Fusce id elit nec ex porta maximus. Vivamus mollis lobortis ex vel hendrerit. Ut non iaculis turpis. Morbi eu pharetra dolor, finibus facilisis massa. Duis quis justo hendrerit purus tristique imperdiet eu nec tortor. Nam faucibus iaculis turpis non placerat. Maecenas aliquam nisi nec scelerisque dignissim.
+		<Text mb="8" >
+		<div dangerouslySetInnerHTML={{ __html: post.content }} />
 		</Text>
 		
-		<Link href="/blog">
-			<a>Return to blog</a>
-		</Link>
-		<br />
-		<Link href="/">
-			<a>Return to home</a>
-		</Link>
-		<br />
-		<Link href="/pastquestions">
-			<a>Start studying</a>
-		</Link>
+		<Link href="/blog"><a>Return to blog</a></Link><br />
+		<Link href="/"><a>Return to home</a></Link>
+		<br /><Link href="/pastquestions"><a>Start studying</a></Link>
 	</Box>
-)
+	)
+}
+
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug, [
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+  ])
+  const content = await markdownToHtml(post.content || '')
+
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug'])
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      }
+    }),
+    fallback: false,
+  }
 }
 
 export default Index
