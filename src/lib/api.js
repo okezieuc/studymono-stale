@@ -29,10 +29,26 @@ export function getPostBySlug(slug, fields = []) {
       items[field] = data[field]
     }
   })
-
+	
   return items
 }
 
+export function getNextPosts(slugNeeded) {
+	const fields = [ 'title', 'date', 'slug', 'author', 'coverImage', 'excerpt',]
+  const slugs = getPostSlugs()
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+	const postLoc = posts.findIndex((post)=>{return post.slug==slugNeeded})
+	if ( postLoc == -1) {
+		return []
+	}
+	if ( postLoc == 0) {
+		return [posts[posts.length-1], posts[1 % posts.length]]
+	}
+  return [posts[postLoc-1], posts[(postLoc + 1) % posts.length]]
+}
 export function getAllPosts(fields = []) {
   const slugs = getPostSlugs()
   const posts = slugs
