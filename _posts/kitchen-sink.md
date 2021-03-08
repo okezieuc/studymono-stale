@@ -2,16 +2,7 @@
 title: Harry Potter and the Half-Blood Prince
 author: 'Chief Chef'
 date: '2020-03-16T05:35:07.322Z'
-tags:
-  - Novel
-  - Highlight
 ---
-
-| Number | Title                                    | Year |
-| ------ | ---------------------------------------- | ---: |
-| 1      | Harry Potter and the Philosopher’s Stone | 2001 |
-| 2      | Harry Potter and the Chamber of Secrets  | 2002 |
-| 3      | Harry Potter and the Prisoner of Azkaban | 2004 |
 
 [View raw (TEST.md)](https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md)
 
