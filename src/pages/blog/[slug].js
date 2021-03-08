@@ -12,7 +12,8 @@ import markdownToHtml from '../../lib/markdownToHtml'
 const Index = ({ post, nextPosts }) => {
 	const router = useRouter()
 	const { slug } = router.query
-
+	const content = markdownToHtml(post.content || '')
+	
 	return( <Box>
 		<Heading fontSize="6xl">
 			Studymono Blog
@@ -22,7 +23,10 @@ const Index = ({ post, nextPosts }) => {
 			Published 20 Feb 2021 at {slug}
 		</Text>
 		<Text mb="8" >
-		<div dangerouslySetInnerHTML={{ __html: post.content }} />
+		
+		<div>
+			{content}
+		</div>
 		</Text>
 		
 		{	
@@ -51,13 +55,12 @@ export async function getStaticProps({ params }) {
     'author',
     'content',
   ])
-  const content = await markdownToHtml(post.content || '')
+  //const content = await markdownToHtml(post.content || '')
 	const nextPosts = getNextPosts(params.slug)
   return {
     props: {
       post: {
         ...post,
-        content,
       },
 			nextPosts
     },
