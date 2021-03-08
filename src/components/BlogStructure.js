@@ -28,6 +28,18 @@ export const H4 = ({ children }) => (
     </Heading>
   );
 	
+export const H5 = ({ children }) => (
+    <Heading fontSize="xl" as="h5">
+			{children}
+    </Heading>
+  );
+	
+export const H6 = ({ children }) => (
+    <Heading fontSize="lg" as="h6">
+			{children}
+    </Heading>
+  );
+	
 export const BlockQuote = ({ children }) => (
     <Text ml="4" fontSize="5xl" as="blockquote">
 			{children}
