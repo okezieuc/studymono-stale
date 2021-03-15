@@ -5,14 +5,15 @@ import {
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import { NavBar, } from '../components/NavBar'
 
 const Index = () => (
-	<Center minH="100vh">
-  <Box>
-		<Heading textAlign="center" fontSize="8xl">
+	<Box>
+		<NavBar />
+		<Heading textAlign="center" fontSize="xl">
 			Studymono
 		</Heading>
-		<Text textAlign="center" fontSize="6xl">
+		<Text textAlign="center" fontSize="xl">
 			Make it count
 		</Text>
 		<Link href="/pastquestions">
@@ -27,7 +28,6 @@ const Index = () => (
 			Privacy Policy
 		</Link>
 	</Box>
-	</Center>
 )
 
 export default Index
