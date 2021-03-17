@@ -7,6 +7,7 @@ import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import { NavBar, } from '../components/NavBar'
 import { Footer, } from '../components/Footer'
+import { CallToAction, } from '../components/CallToAction'
 
 const Index = () => (
 	<Box>
@@ -28,6 +29,7 @@ const Index = () => (
 		<Link href="/privacy">
 			Privacy Policy
 		</Link>
+		<CallToAction />
 		<Footer />
 	</Box>
 )

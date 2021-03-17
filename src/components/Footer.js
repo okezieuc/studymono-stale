@@ -3,7 +3,7 @@ import { Box, Flex, Spacer, HStack,
 import Link from 'next/link'
 
 
-export const Footer = () => <Box mt={8}>
+export const Footer = () => <Box>
 	
 	<SimpleGrid columns={[2, null, 4]} spacing={[4, null,10]} px={[4, null, 12]} py={[8, null, 20]} borderTop="1px solid" borderBottom="1px solid">
 		<Box gridColumn={["span 2", null, "span 1"]}>
