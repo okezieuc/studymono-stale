@@ -23,7 +23,7 @@ const Index = () => (
 			<a>Return to homepage</a>
 		</Link>
 		<CallToAction />
-		<Footer />
+		<Footer hideTop={true} />
 	</Box>
 )
 

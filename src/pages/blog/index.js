@@ -39,7 +39,7 @@ export default function Index( {allPosts} ) {
 			<a>Home</a>
 		</Link>
 		<CallToAction />
-		<Footer />
+		<Footer hideTop={true} />
 	</Box>
 )
 }

@@ -3,9 +3,10 @@ import { Box, Flex, Spacer, HStack,
 import Link from 'next/link'
 
 
-export const Footer = () => <Box>
+export const Footer = ({hideTop = false}) => <Box>
 	
-	<SimpleGrid columns={[2, null, 4]} spacing={[4, null,10]} px={[4, null, 12]} py={[8, null, 20]} borderTop="1px solid" borderBottom="1px solid">
+	<SimpleGrid columns={[2, null, 4]} spacing={[4, null,10]} px={[4, null, 12]} py={[8, null, 20]} borderBottom="1px solid"
+		borderTop={hideTop ? "none" : "1px solid"}>
 		<Box gridColumn={["span 2", null, "span 1"]}>
 			<Text fontSize={["xl", null, "3xl"]} fontWeight="bold" mb="4">studymono.</Text>
 			<Text fontSize="md">Our simple but exquisite tag  line will be displayed below our  name</Text>

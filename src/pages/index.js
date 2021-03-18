@@ -30,7 +30,7 @@ const Index = () => (
 			Privacy Policy
 		</Link>
 		<CallToAction />
-		<Footer />
+		<Footer hideTop={true} />
 	</Box>
 )
 
