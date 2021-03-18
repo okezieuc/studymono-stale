@@ -5,9 +5,13 @@ import {
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import { NavBar, } from '../components/NavBar'
+import { Footer, } from '../components/Footer'
+import { CallToAction, } from '../components/CallToAction'
 
 const Index = () => (
   <Box>
+	 	<NavBar />
 		<Heading fontSize="6xl">
 			Privacy
 		</Heading>
@@ -18,6 +22,8 @@ const Index = () => (
 		<Link href="/">
 			<a>Return to homepage</a>
 		</Link>
+		<CallToAction />
+		<Footer />
 	</Box>
 )
 

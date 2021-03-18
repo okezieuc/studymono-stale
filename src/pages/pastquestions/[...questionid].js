@@ -6,6 +6,8 @@ import {
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { NavBar, } from '../../components/NavBar'
+import { Footer, } from '../../components/Footer'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -51,6 +53,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 	
 	return(
   <Box>
+	  	<NavBar />
 		<Heading fontSize="4xl">
 			{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 		</Heading>
@@ -85,6 +88,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 		<Link href="/">
 			<a>Return to homepage</a>
 		</Link>
+		<Footer />
 	</Box>
 )}
 

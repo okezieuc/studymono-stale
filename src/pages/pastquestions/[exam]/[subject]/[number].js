@@ -5,6 +5,8 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { NavBar, } from '../../../../components/NavBar'
+import { Footer, } from '../../../../components/Footer'
 
 const Question = ({questionid, data, page, exam, subject}) => {
 	return (<Box mb="2" p="2">
@@ -34,6 +36,7 @@ const Index = ({ dataschema, examsubjectdata, page }) => {
 	return(
 
   <Box>
+	  	<NavBar />
 		<Heading fontSize="6xl">
 			{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
 		</Heading>
@@ -85,6 +88,7 @@ const Index = ({ dataschema, examsubjectdata, page }) => {
 		<Link href="/">
 			<a>Home</a>
 		</Link>
+		<Footer />
 	</Box>
 )}
 

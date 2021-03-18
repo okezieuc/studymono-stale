@@ -6,9 +6,13 @@ import {
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import { getAllPosts } from '../../lib/api'
+import { NavBar, } from '../../components/NavBar'
+import { Footer, } from '../../components/Footer'
+import { CallToAction, } from '../../components/CallToAction'
 
 export default function Index( {allPosts} ) {
 	return (<Box>
+		<NavBar />
 		<Heading fontSize="6xl">
 			Studymono Blog
 		</Heading>
@@ -34,6 +38,8 @@ export default function Index( {allPosts} ) {
 		<Link href="/">
 			<a>Home</a>
 		</Link>
+		<CallToAction />
+		<Footer />
 	</Box>
 )
 }

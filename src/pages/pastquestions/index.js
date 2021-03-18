@@ -5,9 +5,13 @@ import {
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import { NavBar, } from '../../components/NavBar'
+import { Footer, } from '../../components/Footer'
+import { CallToAction, } from '../../components/CallToAction'
 
 const Index = ({ dataschema }) => (
   <Box>
+	  	<NavBar />
 		<Heading fontSize="6xl">
 			Past Questions
 		</Heading>
@@ -69,6 +73,7 @@ const Index = ({ dataschema }) => (
 		<Link href="/">
 			<a>Home</a>
 		</Link>
+		<Footer />
 	</Box>
 )
 

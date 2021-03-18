@@ -7,6 +7,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getPostBySlug, getAllPosts, getNextPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { NavBar, } from '../../components/NavBar'
+import { Footer, } from '../../components/Footer'
+import { CallToAction, } from '../../components/CallToAction'
 
 
 const Index = ({ post, nextPosts }) => {
@@ -15,6 +18,7 @@ const Index = ({ post, nextPosts }) => {
 	const content = markdownToHtml(post.content || '')
 	
 	return( <Box>
+		<NavBar />
 		<Heading fontSize="6xl">
 			Studymono Blog
 		</Heading>
@@ -43,6 +47,8 @@ const Index = ({ post, nextPosts }) => {
 		<Link href="/blog"><a>Return to blog</a></Link><br />
 		<Link href="/"><a>Return to home</a></Link>
 		<br /><Link href="/pastquestions"><a>Start studying</a></Link>
+		<CallToAction />
+		<Footer />
 	</Box>
 	)
 }
