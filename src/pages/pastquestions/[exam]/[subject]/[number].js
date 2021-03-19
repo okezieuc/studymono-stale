@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { NavBar, } from '../../../../components/NavBar'
 import { Footer, } from '../../../../components/Footer'
+import { RecommendedReads, } from '../../../../components/RecommendedReads'
 
 const Question = ({questionid, data, page, exam, subject}) => {
 	return (<Box mb="2" p="2">
@@ -88,7 +89,8 @@ const Index = ({ dataschema, examsubjectdata, page }) => {
 		<Link href="/">
 			<a>Home</a>
 		</Link>
-		<Footer />
+		<RecommendedReads />
+		<Footer hideTop={true} />
 	</Box>
 )}
 

@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { NavBar, } from '../components/NavBar'
 import { Footer, } from '../components/Footer'
 import { CallToAction, } from '../components/CallToAction'
+import { RecommendedReads, } from '../components/RecommendedReads'
 
 const Index = () => (
   <Box>
@@ -22,6 +23,7 @@ const Index = () => (
 		<Link href="/">
 			<a>Return to homepage</a>
 		</Link>
+		<RecommendedReads />
 		<CallToAction />
 		<Footer hideTop={true} />
 	</Box>
