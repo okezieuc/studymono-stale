@@ -1,7 +1,7 @@
 import {
   Link as ChakraLink,
 	Box, Heading, Text,
-	
+	SimpleGrid,
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
@@ -9,6 +9,7 @@ import { getAllPosts } from '../../lib/api'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { CallToAction, } from '../../components/CallToAction'
+import { BlogListItem } from '../../components/blog/BlogListItem'
 
 export default function Index( {allPosts} ) {
 	return (<Box>
@@ -20,6 +21,12 @@ export default function Index( {allPosts} ) {
 			Posts
 		</Text>
 		
+		<SimpleGrid px={[24]} columns={[2]} spacing={[12]}>
+			<BlogListItem />
+			<BlogListItem />
+			<BlogListItem />
+			<BlogListItem />
+		</SimpleGrid>
 				
 				{
 					
