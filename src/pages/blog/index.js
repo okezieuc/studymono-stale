@@ -21,7 +21,7 @@ export default function Index( {allPosts} ) {
 			Posts
 		</Text>
 		
-		<SimpleGrid px={[24]} columns={[2]} spacing={[12]}>
+		<SimpleGrid px={[4, null, 24]} columns={[1, null, 2]} spacingX={[12]} spacingY={[8, null, 20]}>
 			<BlogListItem />
 			<BlogListItem />
 			<BlogListItem />
