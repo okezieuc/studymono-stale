@@ -10,7 +10,7 @@ import markdownToHtml from '../../lib/markdownToHtml'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { CallToAction, } from '../../components/CallToAction'
-
+import { BlogNavigation, } from '../../components/blog/BlogNavigation'
 
 const Index = ({ post, nextPosts }) => {
 	const router = useRouter()
@@ -47,6 +47,7 @@ const Index = ({ post, nextPosts }) => {
 		<Link href="/blog"><a>Return to blog</a></Link><br />
 		<Link href="/"><a>Return to home</a></Link>
 		<br /><Link href="/pastquestions"><a>Start studying</a></Link>
+		<BlogNavigation />
 		<CallToAction />
 		<Footer hideTop={true} />
 	</Box>
