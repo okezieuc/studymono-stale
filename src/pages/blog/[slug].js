@@ -51,7 +51,7 @@ const Index = ({ post, nextPosts }) => {
 		<Link href="/blog"><a>Return to blog</a></Link><br />
 		<Link href="/"><a>Return to home</a></Link>
 		<br /><Link href="/pastquestions"><a>Start studying</a></Link>
-		<BlogNavigation />
+		<BlogNavigation nextPosts={nextPosts} />
 		<CallToAction />
 		<Footer hideTop={true} />
 	</Box>
