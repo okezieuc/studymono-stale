@@ -11,6 +11,7 @@ import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { CallToAction, } from '../../components/CallToAction'
 import { BlogNavigation, } from '../../components/blog/BlogNavigation'
+import { BlogPostHeader, } from '../../components/blog/BlogPostHeader'
 
 const Index = ({ post, nextPosts }) => {
 	const router = useRouter()
@@ -19,10 +20,13 @@ const Index = ({ post, nextPosts }) => {
 	
 	return( <Box>
 		<NavBar />
-		<Heading fontSize="6xl">
+		<Heading fontSize={["3xl", null, "6xl"]} ml={4}>
 			Studymono Blog
 		</Heading>
-		<Flex><Avatar size="sm" /> {post.author} </Flex>
+
+		<BlogPostHeader />
+
+		
 		<Text mb="8">
 			Published 20 Feb 2021 at {slug}
 		</Text>
