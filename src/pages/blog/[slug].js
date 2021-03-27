@@ -24,7 +24,7 @@ const Index = ({ post, nextPosts }) => {
 			Studymono Blog
 		</Heading>
 
-		<BlogPostHeader />
+		<BlogPostHeader title={post.title} />
 
 		
 		<Text mb="8">
