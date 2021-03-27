@@ -21,30 +21,16 @@ export default function Index( {allPosts} ) {
 			Posts
 		</Text>
 		
-		<SimpleGrid px={[4, null, 24]} columns={[1, null, 2]} spacingX={[12]} spacingY={[8, null, 20]}>
-			<BlogListItem />
-			<BlogListItem />
-			<BlogListItem />
-			<BlogListItem />
+		<SimpleGrid px={[4, null, 24]} columns={[1, null, 2]} spacingX={[12]} spacingY={[8, null, 20]} mb={24}>
+			{	
+				allPosts.map((post) => <BlogListItem post={post} key={post.slug} />)
+			}
 		</SimpleGrid>
 				
-				{
-					
-					allPosts.map((post) => (
-					<>
-						<Link href={`/blog/${post.slug}`}>
-							<a> {post.title} </a>
-						</Link>
-						<br />
-						</>
-					) )
-				}
+				
 		
 	
-		<br />
-		<Link href="/">
-			<a>Home</a>
-		</Link>
+		
 		<CallToAction />
 		<Footer hideTop={true} />
 	</Box>
