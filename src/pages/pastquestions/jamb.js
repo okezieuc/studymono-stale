@@ -1,7 +1,7 @@
 import {
   Link as ChakraLink,
 	Box, Heading, Text,
-	
+	SimpleGrid,
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
@@ -9,6 +9,7 @@ import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
 import { ExamPageInfo, } from '../../components/pastquestions/ExamPageInfo'
+import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
 
 const Index = ({ subjects }) => (
   <Box>
@@ -19,6 +20,17 @@ const Index = ({ subjects }) => (
 			</Heading>
 			<ExamPageInfo />
 		</Box>
+
+		<Heading as="h3" mx={[4, null,20]} mb={4} fontSize={["lg", null, "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
+		<SimpleGrid columns={[2, null, 2]} gap={[4, null, 12]} mx={[4, null,20]}>
+			<SubjectCard />
+			<SubjectCard />
+		</SimpleGrid>
+		<SimpleGrid columns={[3, null, 3]} gap={[4, null, 12]} mt={[4, null, 12]} mx={[4, null,20]}>
+			<SubjectCard />
+			<SubjectCard />
+			<SubjectCard />
+		</SimpleGrid>
 		
 		<Text fontSize="2xl" fontWeight="bold">
 			Subjects
