@@ -42,6 +42,9 @@ const Index = ({ dataschema, examsubjectdata, page }) => {
 		<Heading fontSize="6xl">
 			{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
 		</Heading>
+		<Text>
+			Page {number}
+		</Text>
 		
 		<Text>
 		These questions are from page {number} of {exam} {dataschema.subjects[subject.toUpperCase()]}

@@ -1,6 +1,7 @@
 import {
   Link as ChakraLink,
 	Box, Heading, Text,
+	Flex,
 	
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
@@ -12,18 +13,25 @@ import { RecommendedReads, } from '../../components/RecommendedReads'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
-		<Text>
+		<Heading fontSize={"5xl"}>
 			{data.question.iv}
-		</Text>
-		
-			<Text>a. {data.optiona.iv}</Text>
-		
-		<Text>b. {data.optionb.iv}</Text>
-		<Text>c. {data.optionc.iv}</Text>
-		<Text>d. {data.optiond.iv}</Text>
+		</Heading>
 
+		<QuestionOption option="a" text={data.optiona.iv} />
+		<QuestionOption option="b" text={data.optionb.iv} />
+		<QuestionOption option="c" text={data.optionc.iv} />
+		<QuestionOption option="d" text={data.optiond.iv} />
+		
+		
 	</Box>)
 }
+
+const QuestionOption = ( {option, text} ) => (<Flex my={[4]}>
+    <Text fontWeight="bold" fontSize={["md",null, "xl"]}>{option}.</Text>
+    <Text fontSize={["md",null, "2xl"]} ml={[2, null, 4]}>
+       { text }
+    </Text>
+</Flex>)
 
 const OtherQuestion = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -55,13 +63,10 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 	return(
   <Box>
 	  	<NavBar />
-		<Heading fontSize="4xl">
-			{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
+		<Heading fontSize={["md", null, "xl"]}>
+			{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 		</Heading>
 		
-		<Heading fontSize="2xl">
-			Past question with id {questionid}
-		</Heading>
 		
 		{
 		/*
