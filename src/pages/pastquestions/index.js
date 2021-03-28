@@ -1,6 +1,7 @@
 import {
-  Link as ChakraLink,
+	Link as ChakraLink,
 	Box, Heading, Text,
+	SimpleGrid
 	
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
@@ -9,12 +10,18 @@ import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { CallToAction, } from '../../components/CallToAction'
 import { BigAd, } from '../../components/pastquestions/BigAd'
+import { ExamCard, } from '../../components/pastquestions/ExamCard'
 
 const Index = ({ dataschema }) => (
   <Box>
 	  	<NavBar />
 		
 		<BigAd />
+		<Heading as="h3" mx={[4, null,20]} mb={4} fontSize={["lg", null, "3xl"]}>Exams</Heading>
+		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]} mx={[4, null,20]}>
+			<ExamCard />
+			<ExamCard />
+		</SimpleGrid>
 
 		<Heading fontSize="6xl">
 			Past Questions
