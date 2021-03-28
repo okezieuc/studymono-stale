@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { NavBar, } from '../../../../components/NavBar'
 import { Footer, } from '../../../../components/Footer'
 import { RecommendedReads, } from '../../../../components/RecommendedReads'
+import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -50,6 +51,15 @@ const Index = ({ dataschema, subjectdata, pageid }) => {
 				<Question questionid="1" data={{"exam":{"iv":"JAMB"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":43},"question":{"iv":"Ripening of fruits is hastened by using "},"optiona":{"iv":"Ethanol "},"optionb":{"iv":"Ethane"},"optionc":{"iv":"Ethene "},"optiond":{"iv":"Ethyne"}}} />
 				*/
 		}
+		
+			{
+				
+				subjectdata.data.map((question) => (
+						<QuestionCard questionid={question.id} data={question.data} />
+					)
+				)
+				
+			}
 		
 			{
 				

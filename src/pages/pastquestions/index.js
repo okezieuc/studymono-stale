@@ -12,11 +12,14 @@ import { CallToAction, } from '../../components/CallToAction'
 import { BigAd, } from '../../components/pastquestions/BigAd'
 import { ExamCard, } from '../../components/pastquestions/ExamCard'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
+import { QuestionCard, } from '../../components/pastquestions/QuestionCard'
 
 const Index = ({ dataschema }) => (
   <Box>
 	  	<NavBar />
-		 
+		
+		<QuestionCard />
+
 		<BigAd />
 		<Heading as="h3" mx={[4, null,20]} mb={4} fontSize={["lg", null, "3xl"]}>Exams</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]} mx={[4, null,20]}>
