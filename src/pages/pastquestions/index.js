@@ -8,10 +8,14 @@ import Link from 'next/link'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { CallToAction, } from '../../components/CallToAction'
+import { BigAd, } from '../../components/pastquestions/BigAd'
 
 const Index = ({ dataschema }) => (
   <Box>
 	  	<NavBar />
+		
+		<BigAd />
+
 		<Heading fontSize="6xl">
 			Past Questions
 		</Heading>
