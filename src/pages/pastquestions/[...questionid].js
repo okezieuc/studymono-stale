@@ -10,10 +10,11 @@ import { useRouter } from 'next/router'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
+import { AnswerCard, } from '../../components/pastquestions/AnswerCard'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
-		<Heading fontSize={"5xl"}>
+		<Heading fontSize={["2xl", null, "5xl"]}>
 			{data.question.iv}
 		</Heading>
 
@@ -21,6 +22,8 @@ const Question = ({questionid, data}) => {
 		<QuestionOption option="b" text={data.optionb.iv} />
 		<QuestionOption option="c" text={data.optionc.iv} />
 		<QuestionOption option="d" text={data.optiond.iv} />
+
+		<AnswerCard />
 		
 		
 	</Box>)
@@ -34,18 +37,11 @@ const QuestionOption = ( {option, text} ) => (<Flex my={[4]}>
 </Flex>)
 
 const OtherQuestion = ({questionid, data}) => {
-	return (<Box mb="2" p="2">
-		<Text>
-			{data.question.iv}
-		</Text>
+	return (<Box mb="2" p="2" fontSize={["xl", null, "3xl"]}>
 		
-			<Text>a. {data.optiona.iv}</Text>
 		
-		<Text>b. {data.optionb.iv}</Text>
-		<Text>c. {data.optionc.iv}</Text>
-		<Text>d. {data.optiond.iv}</Text>
 		<Link href={`/pastquestions/${questionid}`}>
-		 Expand question
+			{data.question.iv}		
 		</Link>
 	</Box>)
 }
@@ -63,7 +59,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 	return(
   <Box>
 	  	<NavBar />
-		<Heading fontSize={["md", null, "xl"]}>
+		<Heading fontSize={["sm", null, "xl"]}>
 			{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 		</Heading>
 		
@@ -78,7 +74,8 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 	
 	<Question questionid={questionid} data={questiondata} />
 	
-	<Text>Next up</Text>
+	<Heading as="h3" fontSize={["2xl", null, "3xl"]}>More from { dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }</Heading>
+
 	{
 		otherdata.map((otherquestion) => (<>{otherquestion ? <OtherQuestion data={otherquestion.data} questionid={otherquestion.id} />: ""}</>)
 		)
