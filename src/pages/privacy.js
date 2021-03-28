@@ -9,10 +9,12 @@ import { NavBar, } from '../components/NavBar'
 import { Footer, } from '../components/Footer'
 import { CallToAction, } from '../components/CallToAction'
 import { RecommendedReads, } from '../components/RecommendedReads'
+import { PageHeading, } from '../components/pages/PageHeading'
 
 const Index = () => (
   <Box>
 	 	<NavBar />
+		<PageHeading />
 		<Heading fontSize="6xl">
 			Privacy
 		</Heading>
