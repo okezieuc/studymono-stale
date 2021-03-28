@@ -8,16 +8,17 @@ import Link from 'next/link'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
+import { ExamPageInfo, } from '../../components/pastquestions/ExamPageInfo'
 
 const Index = ({ subjects }) => (
   <Box>
 	  	<NavBar />
-		<Heading fontSize="6xl">
-			JAMB
-		</Heading>
-		<Text fontSize="3xl">
-			JAMB past questions
-		</Text>
+		<Box m={[4, null, 20]}>
+			<Heading fontSize={["4xl", null, "6xl"]} mb={[4, null, 8]}>
+				JAMB
+			</Heading>
+			<ExamPageInfo />
+		</Box>
 		
 		<Text fontSize="2xl" fontWeight="bold">
 			Subjects
