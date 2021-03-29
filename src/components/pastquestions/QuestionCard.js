@@ -1,4 +1,5 @@
-import { Box, Text, Flex, } from '@chakra-ui/react'
+import { Box, Text, Flex, LinkBox, LinkOverlay, } from '@chakra-ui/react'
+import Link from 'next/link'
 
 const QuestionCardOption = ( {option, text} ) => (<Flex my={[4]}>
     <Text fontWeight="bold" fontSize={["md",null, "xl"]}>{option}.</Text>
@@ -7,18 +8,23 @@ const QuestionCardOption = ( {option, text} ) => (<Flex my={[4]}>
     </Text>
 </Flex>)
 
-export const QuestionCard = ({ data, questionid }) => (<Box borderRadius={8} p={[2, null, 8]} border="1px solid"
+export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box borderRadius={8} p={[2, null, 8]} border="1px solid"
     m={4}>
     <Box mb={4}>
-        <Text fontSize={["xl", null, "3xl"]} fontWeight="semibold">
-            { data.question.iv }
-        </Text>
+        <Box fontSize={["xl", null, "3xl"]} fontWeight="semibold">
+            <Link href={`/pastquestions/${questionid}`} passHref>
+                <LinkOverlay>
+                   { data.question.iv }
+                </LinkOverlay>
+            </Link>          
+        </Box>
     </Box>
     <QuestionCardOption option='a' text={data.optiona.iv} />
     <QuestionCardOption option='b' text={data.optionb.iv} />
     <QuestionCardOption option='c' text={data.optionc.iv} />
     <QuestionCardOption option='d' text={data.optiond.iv} />
-</Box>)
+</Box>
+</LinkBox>)
 
 QuestionCard.defaultProps = {
     questionid: "abcd1234",

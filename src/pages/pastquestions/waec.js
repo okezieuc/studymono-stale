@@ -24,46 +24,23 @@ const Index = ({ subjects, recommendedPosts }) => (
 
 		<Heading as="h3" mx={[4, null,20]} mb={4} fontSize={["lg", null, "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
 		<SimpleGrid columns={[2, null, 2]} gap={[4, null, 12]} mx={[4, null,20]}>
-			<SubjectCard />
-			<SubjectCard />
+			<SubjectCard subject="Physics" slug="/pastquestions/waec/phy/1" />
+			<SubjectCard subject="Chemistry" slug="/pastquestions/waec/chem/1" />
 		</SimpleGrid>
-		<SimpleGrid columns={[3, null, 3]} gap={[4, null, 12]} mt={[4, null, 12]} mx={[4, null,20]}>
-			<SubjectCard />
-			<SubjectCard />
-			<SubjectCard />
+		<SimpleGrid columns={[3, null, 3]} gap={[4, null, 12]} mt={[4, null, 12]} mx={[4, null,20]}
+			mb={[8, null, 28]}>
+			{
+				Object.keys(subjects).map((key) => (<>
+					{
+						(key != "PHY" && key != "CHEM") ? <SubjectCard subject={subjects[key]} key={key}
+							slug={`/pastquestions/waec/${key.toLowerCase()}/1`} subtitle="Sample Subtitle" /> : ''
+					}
+					</>)
+				)
+			}
 		</SimpleGrid>
 		
-		<Text fontSize="3xl">
-			WAEC past questions
-		</Text>
 		
-		<Text fontSize="2xl" fontWeight="bold">
-			Subjects
-		</Text>
-		{
-			Object.keys(subjects).map((key) => (<>
-				<Link href={`/pastquestions/waec/${key.toLowerCase()}/1`} key={key}>
-					<a>{subjects[key]}</a>
-				</Link><br /></>)
-			)
-		}
-		{/*
-		<Link href="/pastquestions/waec/math/1">
-			<a>Mathematics</a>
-		</Link>
-		<br />
-		<Link href="/pastquestions/waec/phy/1">
-			<a>Physics</a>
-		</Link>
-		<br />
-		*/}
-		
-		
-	
-		<br />
-		<Link href="/">
-			<a>Home</a>
-		</Link>
 		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>

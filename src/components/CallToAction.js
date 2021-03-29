@@ -12,11 +12,11 @@ export const CallToAction = () => <Flex bg="#4715be" px={[3, null, 12]}
 	</Text>
 	<Spacer />
 	<Box>
-		<Text bg="white" color="#4715be" fontSize={["sm", "md", "2xl"]}
+		<Box bg="white" color="#4715be" fontSize={["sm", "md", "2xl"]}
 			minWidth="fit-content" py={["1", null, "2"]} px={["1", "2", "5"]} height="fit-content"
 			borderRadius={["4px", "8px"]} fontWeight={["bold", null, "bold"]}>
-			Get Started
-		</Text>
+			<Link href="/pastquestions">Get Started</Link>
+		</Box>
 		<Text textAlign="center" fontSize={["xs", null, "lg"]} mt={[null, null, "1"]} color="white">It's free</Text>
 	</Box>
 	

@@ -23,8 +23,4 @@ export const NavBar = () => <Box>
 		<Link href="/pastquestions">Get Started</Link>
 	</Box>
 </Flex>
-This will be the location of the special header
-		<Link href="/pastquestions">
-			Get Started
-		</Link>
 </Box>
