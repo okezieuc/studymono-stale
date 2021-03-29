@@ -10,8 +10,9 @@ import { Footer, } from '../components/Footer'
 import { CallToAction, } from '../components/CallToAction'
 import { RecommendedReads, } from '../components/RecommendedReads'
 import { PageHeading, } from '../components/pages/PageHeading'
+import { getRecommendedPosts } from '../lib/api'
 
-const Index = () => (
+const Index = ({ recommendedPosts }) => (
   <Box>
 	 	<NavBar />
 		<PageHeading />
@@ -25,10 +26,20 @@ const Index = () => (
 		<Link href="/">
 			<a>Return to homepage</a>
 		</Link>
-		<RecommendedReads />
+		<RecommendedReads posts={recommendedPosts} />
 		<CallToAction />
 		<Footer hideTop={true} />
 	</Box>
 )
+
+export async function getStaticProps() {
+	const recommendedPosts = getRecommendedPosts()
+  
+	return {
+		props: {
+		  recommendedPosts: recommendedPosts,
+		},
+	  }
+  }
 
 export default Index
