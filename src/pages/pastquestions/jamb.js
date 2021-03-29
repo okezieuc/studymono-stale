@@ -10,8 +10,9 @@ import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
 import { ExamPageInfo, } from '../../components/pastquestions/ExamPageInfo'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
+import { getRecommendedPosts } from '../../lib/api'
 
-const Index = ({ subjects }) => (
+const Index = ({ subjects, recommendedPosts }) => (
   <Box>
 	  	<NavBar />
 		<Box m={[4, null, 20]}>
@@ -59,7 +60,7 @@ const Index = ({ subjects }) => (
 		<Link href="/">
 			<a>Home</a>
 		</Link>
-		<RecommendedReads />
+		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>
 )
@@ -68,9 +69,11 @@ export async function getStaticProps() {
 	//const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Physics","CHEM":"Chemistry","BIO":"Biology","MATH":"Mathematics","ENG":"English"}}
 	const dataschema = JSON.parse(process.env.DATASCHEMA) 
 	const subjects = dataschema.subjects
+	const recommendedPosts = getRecommendedPosts()
 	return {
 		props: {
-			subjects
+			subjects,
+			recommendedPosts,
 		},
 	}
 }

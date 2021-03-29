@@ -11,6 +11,7 @@ import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
 import { AnswerCard, } from '../../components/pastquestions/AnswerCard'
+import { getRecommendedPosts } from '../../lib/api'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -48,7 +49,7 @@ const OtherQuestion = ({questionid, data}) => {
 
 
 
-const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
+const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPosts }) => {
 	const router = useRouter()
 	//const { questionid } = router.query
 	
@@ -91,7 +92,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema }) => {
 		<Link href="/">
 			<a>Return to homepage</a>
 		</Link>
-		<RecommendedReads />
+		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>
 )}
@@ -135,12 +136,14 @@ export async function getStaticProps({ params }) {
 
 	const questiondata = fullquestiondata.data
 	const otherdata = fullquestiondata.other
+	const recommendedPosts = getRecommendedPosts()
 	return {
 		props: {
 			dataschema,
 			questiondata,
 			otherdata,
-			questionid
+			questionid,
+			recommendedPosts,
 		}
 	}
 }

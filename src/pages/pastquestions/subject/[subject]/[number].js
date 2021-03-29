@@ -10,6 +10,7 @@ import { NavBar, } from '../../../../components/NavBar'
 import { Footer, } from '../../../../components/Footer'
 import { RecommendedReads, } from '../../../../components/RecommendedReads'
 import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard'
+import { getRecommendedPosts } from '../../../../lib/api'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -28,7 +29,7 @@ const Question = ({questionid, data}) => {
 	</Box>)
 }
 
-const Index = ({ dataschema, subjectdata, pageid }) => {
+const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 	const router = useRouter()
 	const { subject, number } = router.query
 	
@@ -94,7 +95,7 @@ const Index = ({ dataschema, subjectdata, pageid }) => {
 		<Link href="/">
 			<a>Home</a>
 		</Link>
-		<RecommendedReads />
+		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>
 )}
@@ -137,12 +138,14 @@ export async function getStaticProps({ params }) {
 	//const special = process.env.DATASCHEMA
 	 
 	const dataschema = JSON.parse(process.env.DATASCHEMA)
-	 
+	const recommendedPosts = getRecommendedPosts()
+
 	return {
 		props: {
 			dataschema,
 			subjectdata,
 			page,
+			recommendedPosts,
 		}
 	}
 }

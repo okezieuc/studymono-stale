@@ -9,6 +9,7 @@ import { NavBar, } from '../../../../components/NavBar'
 import { Footer, } from '../../../../components/Footer'
 import { RecommendedReads, } from '../../../../components/RecommendedReads'
 import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard'
+import { getRecommendedPosts } from '../../../../lib/api'
 
 const Question = ({questionid, data, page, exam, subject}) => {
 	return (<Box mb="2" p="2">
@@ -27,7 +28,7 @@ const Question = ({questionid, data, page, exam, subject}) => {
 	</Box>)
 }
 
-const Index = ({ dataschema, examsubjectdata, page }) => {
+const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 	const router = useRouter()
 	const { exam, subject, number } = router.query
 	
@@ -102,7 +103,7 @@ const Index = ({ dataschema, examsubjectdata, page }) => {
 		<Link href="/">
 			<a>Home</a>
 		</Link>
-		<RecommendedReads />
+		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>
 )}
@@ -149,8 +150,9 @@ export async function getStaticProps({ params }) {
 	const page = params.number
 	
 	const res = await fetch(`https://squidex-api-layer.cokezieu.workers.dev/api/questions/examsubject?exam=${exam}&subject=${subject}&page=${page}`)
-  const examsubjectdata = await res.json()
-	 
+  	const examsubjectdata = await res.json()
+ 	const recommendedPosts = getRecommendedPosts()
+
 	return {
 		props: {
 			dataschema,
@@ -158,6 +160,7 @@ export async function getStaticProps({ params }) {
 			page,
 			exam,
 			subject,
+			recommendedPosts,
 		}
 	}
 }
