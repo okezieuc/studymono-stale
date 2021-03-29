@@ -11,6 +11,7 @@ import { Footer, } from '../../../../components/Footer'
 import { RecommendedReads, } from '../../../../components/RecommendedReads'
 import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard'
 import { getRecommendedPosts } from '../../../../lib/api'
+import { PaginationLink } from '../../../../components/pastquestions/PaginationLink'
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -62,39 +63,10 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 				
 			}
 		
-			{
-				
-				subjectdata.data.map((question) => (
-						<Question questionid={question.id} data={question.data} />
-					)
-				)
-				
-			}
-		
-	
-		<br />
-		
-		<Link href={`/pastquestions/subject/${subject.toLowerCase()}/1`} >
-			<a>First</a>
-		</Link>
-		<Link href={`/pastquestions/subject/${subject.toLowerCase()}/${parseInt(number)-1}`} >
-			<a>Previous</a>
-		</Link>
-		<Link href={`/pastquestions/subject/${subject.toLowerCase()}/${parseInt(number)+1}`} >
-			<a>Next</a>
-		</Link>
-		<Link href={`/pastquestions/subject/${subject.toLowerCase()}/${Math.floor((subjectdata.count-1)/10)+1}`} >
-			<a>Last</a>
-		</Link>
-		<br />
-		
-		<Link href="/pastquestions">
-			<a>Return to pastquestions</a>
-		</Link>
-		<br />
-		<Link href="/">
-			<a>Home</a>
-		</Link>
+
+		<PaginationLink prefix={`/pastquestions/subject/${subject.toLowerCase()}/`} 
+			mt={12} mb={24} current={parseInt(number)} total={Math.floor((subjectdata.count-1)/10)+1} />
+
 		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>
