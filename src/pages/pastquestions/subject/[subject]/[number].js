@@ -24,13 +24,13 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
   <Box>
 	  	<NavBar />
 			
-			<Box bg="gray.200" pt={[12, null, 20]} pb={[32, null, 64]}
+			<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
 				mb={[-24, null, -48]}>
 				<Container maxW="5xl" >				
 					<Heading fontSize="6xl">
 						{dataschema.subjects[subject.toUpperCase()]}
 					</Heading>
-					<Text>
+					<Text fontSize={["md"]}>
 						Page {number}
 					</Text>
 				</Container>

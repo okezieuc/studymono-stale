@@ -7,14 +7,16 @@ export const SubjectCard = ({subject, slug, subtitle, ...props}) => (<LinkBox {.
         borderRadius={[4, null, 8]} border="1px solid"></Box>
     </AspectRatio>
     <Box>
-        <Box fontWeight="bold" fontSize={["md", null, "2xl"]} mt={[2, null, 4]} ml={[2, null, 4]}>
+        <Box fontWeight="bold" fontSize={["md", null, "2xl"]} mt={[2, null, 4]} ml={[2, null, 4]}
+					color="tint.600">
             <Link href={slug} passHref>
                 <LinkOverlay>
                     { subject }
                 </LinkOverlay>
             </Link>
         </Box>
-        <Text fontWeight="light" fontSize={["sm", null, "xl"]} ml={[2, null, 4]}>{subtitle}</Text>
+        <Text fontWeight="light" fontSize={["sm", null, "lg"]} ml={[2, null, 4]}
+					color="tint.500">{subtitle}</Text>
     </Box>
 </LinkBox>) 
 

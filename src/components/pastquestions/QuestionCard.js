@@ -8,8 +8,8 @@ const QuestionCardOption = ( {option, text} ) => (<Flex my={[4]}>
     </Text>
 </Flex>)
 
-export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" borderRadius={8} p={[2, null, 8]} border="1px solid"
-    mb={[8, null, 20]}>
+export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" borderRadius={8} p={[2, null, 8]} border="1px none"
+    mb={[8, null, 20]} boxShadow="0px 0px 4px 0px">
     <Box mb={4}>
         <Box fontSize={["xl", null, "3xl"]} fontWeight="semibold">
             <Link href={`/pastquestions/${questionid}`} passHref>

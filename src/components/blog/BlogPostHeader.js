@@ -14,7 +14,7 @@ export const BlogPostHeader = ({ title, }) => <SimpleGrid columns={[1, null, 2]}
 					mb={[20, null, "auto"]}>
             {title}
         </Heading>
-        <Text mt={[4, null, 8]} fontSize={["sm", null, "md"]}
+        <Text mt={[4, null, 8]} fontSize={["sm", null, "md"]} color="tint.600" fontWeight="bold"
 					position="absolute" left={[4, null,8]} bottom={[4, null, 8]}>12 min read</Text>
     </Box>
 </SimpleGrid>

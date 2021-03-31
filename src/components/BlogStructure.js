@@ -5,25 +5,25 @@ import {
 } from '@chakra-ui/react'
 
 export const H1 = ({ children }) => (
-    <Heading fontSize="6xl" as="h1">
+    <Heading fontSize="6xl" mt={2} as="h1">
 			{children}
     </Heading>
   );
 
 export const H2 = ({ children }) => (
-    <Heading fontSize="4xl" as="h2">
+    <Heading fontSize="4xl" mt={2} as="h2">
 			{children}
     </Heading>
   );
 
 export const H3 = ({ children }) => (
-    <Heading fontSize="3xl" as="h3">
+    <Heading fontSize="3xl" mt={2} as="h3">
 			{children}
     </Heading>
   );
 
 export const H4 = ({ children }) => (
-    <Heading fontSize="2xl" as="h4">
+    <Heading fontSize="2xl" mt={2} as="h4">
 			{children}
     </Heading>
   );

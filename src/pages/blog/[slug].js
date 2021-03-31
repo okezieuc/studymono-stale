@@ -20,12 +20,12 @@ const Index = ({ post, nextPosts }) => {
 	
 	return( <Box>
 		<NavBar />
-		<Box bg="gray.200" pt={[12, null, 20]} pb={[32, null, 40]}
+		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 40]}
 				mb={[-32, null, -48]}>
 				<Container maxW="5xl" >			
 				
-				<Heading fontSize={["3xl", null, "6xl"]}>
-					Studymono Blog
+				<Heading fontSize={["3xl", null, "4xl"]}>
+					Studymono <Box as="span" color="brand">Blog</Box>
 				</Heading>
 			</Container>
 		</Box>
@@ -33,7 +33,7 @@ const Index = ({ post, nextPosts }) => {
 		<BlogPostHeader title={post.title} />
 		
 		
-		<Container maxW="5xl" mb={[20, null, 20]}>
+		<Container fontSize="2xl" maxW="5xl" mb={[20, null, 20]}>
 				{content}
 		</Container>
 		

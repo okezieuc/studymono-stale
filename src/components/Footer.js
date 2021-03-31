@@ -6,27 +6,28 @@ import Link from 'next/link'
 export const Footer = ({hideTop = false}) => <Box>
 	
 	<SimpleGrid columns={[2, null, 4]} spacing={[4, null,10]} px={[4, null, 12]} py={[8, null, 20]} borderBottom="1px solid"
-		borderTop={hideTop ? "none" : "1px solid"}>
+		borderTop={hideTop ? "none" : "1px solid"} color="tint.600" fontWeight="semibold">
 		<Box gridColumn={["span 2", null, "span 1"]}>
-			<Text fontSize={["xl", null, "3xl"]} fontWeight="bold" mb="4">studymono.</Text>
-			<Text fontSize="md">Our simple but exquisite tag  line will be displayed below our  name</Text>
+			<Text fontSize={["xl", null, "3xl"]} fontWeight="bold" mb="4" color="black">studymono.</Text>
+			<Text fontSize="md" fontWeight="semibold"
+				color="tint.500">Our simple but exquisite tag  line will be displayed below our  name</Text>
 		</Box>
 		<Box fontSize="lg">
-			<Text fontSize="lg" fontWeight="bold" mb="4"color="gray.600">Navigate</Text>
+			<Text fontSize="lg" fontWeight="bold" mb="4" color="tint.500">Navigate</Text>
 			<Link href="/pastquestions">Past Questions</Link><br />
 			<Link href="/blog">Blog</Link>
 		</Box>
 		<Box>
-			<Text fontSize="lg" fontWeight="bold" mb="4"color="gray.600">Legal</Text>
+			<Text fontSize="lg" fontWeight="bold" mb="4" color="tint.500">Legal</Text>
 			<Link href="/privacy">Privacy Policy</Link>
 		</Box>
 		<Box>
-			<Text fontSize="lg" fontWeight="bold" mb="4"color="gray.600">How we help</Text>
+			<Text fontSize="lg" fontWeight="bold" mb="4" color="tint.500">How we help</Text>
 			<Link href="/blog/hello-world">Why we built this</Link>
 		</Box>
 	</SimpleGrid>
 	<Box>
-		<Text m="0 auto" pt="12" textAlign="center" fontSize={["xl", null, "4xl"]}
+		<Text m="0 auto" pt="12" textAlign="center" fontSize={["xl", null, "3xl"]}
 			fontWeight="bold" maxW={["250px", "500px"]}>Subscribe to our newsletter  for updates</Text>
 		<Box w={["50%", null, "30%"]} h={["30px", null, "50px"]} bg="gray.100" m="0 auto" mt="8" mb="12"></Box>
 	</Box>

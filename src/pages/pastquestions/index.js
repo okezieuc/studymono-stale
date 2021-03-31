@@ -17,11 +17,11 @@ import { QuestionCard, } from '../../components/pastquestions/QuestionCard'
 const Index = ({ dataschema }) => (
   <Box>
 	  	<NavBar />
-		<Box bg="gray.200" pt={[12, null, 20]} pb={[20, null, 40]}>
+		<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
 			<Container maxW="5xl" >
 				<BigAd />
 
-				<Heading as="h3" mb={4} fontSize={["lg", null, "3xl"]}>Exams</Heading>
+				<Heading as="h3" mb={4} fontSize={["lg", null, "3xl"]} color="tint.600">Exams</Heading>
 				<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
 					{
 						Object.keys(dataschema.exams).map((key) => (
@@ -32,7 +32,7 @@ const Index = ({ dataschema }) => (
 			</Container>
 		</Box>
 		<Container maxW="5xl" mb={[20, null, 40]} >
-		<Heading as="h3" mb={4} fontSize={["lg", null, "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
+		<Heading as="h3" mb={4} fontSize={["lg", null, "3xl"]} mt={[12, null, 24]} color="tint.600">Subjects</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
 			<SubjectCard subject="Physics" slug="/pastquestions/subject/phy/1" />
 			<SubjectCard subject="Chemistry" slug="/pastquestions/subject/chem/1" />			

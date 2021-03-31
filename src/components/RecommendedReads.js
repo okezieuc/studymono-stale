@@ -12,7 +12,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
             </LinkOverlay>
         </Link>
     </Box>
-    <Text ml={4} mt={3} fontWeight={["500", null, "bold"]} color="gray.600"
+    <Text ml={4} mt={3} fontWeight={["500", null, "bold"]} color="tint.500"
         fontSize={"xs", null, "md"}>
         { post.date }
     </Text>
@@ -27,11 +27,11 @@ BlogPost.defaultProps = {
     }
 }
 
-export const RecommendedReads = ({posts}) => <Box bg="#f2f2f2"
+export const RecommendedReads = ({posts}) => <Box bg="tint.200"
     px={["6", null, "24"]} py={["12", null,  "24"]}>
       <Flex direction={["column", null, "row"]} >
-            <Text fontSize={["2xl", null,  "4xl"]} mr={8} fontWeight="600"
-                mb="8">Recommended reads</Text>
+            <Text fontSize={["2xl", null,  "4xl"]} mr={8} fontWeight="semibold"
+                mb="8" color="tint.700">Recommended reads</Text>
             <SimpleGrid columns={[1, null, 2]} spacing={16}>
                 <BlogPost post={posts[0]} />
                 <BlogPost post={posts[1]} />

@@ -16,17 +16,17 @@ const Index = ({ subjects, recommendedPosts }) => (
   <Box>
 	  	<NavBar />
 
-		<Box bg="gray.200" pt={[12, null, 20]} pb={[20, null, 40]}>
-		<Container maxW="5xl" >
-			<Heading fontSize={["4xl", null, "6xl"]} mb={[4, null, 8]}>
-				JAMB
-			</Heading>
-			<ExamPageInfo />
-		</Container>
+			<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
+			<Container maxW="5xl" >
+				<Heading fontSize={["4xl", null, "6xl"]} mb={[4, null, 8]} color="tint.700">
+					JAMB
+				</Heading>
+				<ExamPageInfo />
+			</Container>
 		</Box>
 
 		<Container maxW="5xl" mb={[20, null, 40]} >
-		<Heading as="h3" mb={4} fontSize={["lg", null, "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
+		<Heading as="h3" mb={4} color="tint.600" fontSize={["lg", null, "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
 			<SubjectCard subject="Physics" slug="/pastquestions/jamb/phy/1" />
 			<SubjectCard subject="Chemistry" slug="/pastquestions/jamb/chem/1" />			

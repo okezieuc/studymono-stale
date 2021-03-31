@@ -13,14 +13,14 @@ import { BlogListItem } from '../../components/blog/BlogListItem'
 export default function Index( {allPosts} ) {
 	return (<Box>
 		<NavBar />
-		<Box px={[4, null, 24]} pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="gray.300">
-			<Heading fontSize="6xl" as="h1">
-				Studymono Blog
+		<Box px={[4, null, 24]} pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="tint.200">
+			<Heading fontSize={["3xl", null, "6xl"]}>
+				Studymono <Box as="span" color="brand">Blog</Box>
 			</Heading>
-			<Text mt={[4, null, 12]}>
+			<Text mt={[4, null, 12]} fontSize={["2xl"]}>
 				On this blog, we publish articles that will help enlighten you on some
 				very important, but often overlooked details that can help you in your
-				exams and can also have some product updates in here too
+				exams and can also have some product updates in here too!
 			</Text>
 		</Box>
 		

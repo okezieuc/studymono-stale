@@ -8,7 +8,8 @@ const BlogNavigationItem = ({rightBorder = true, post}) => <Box px={[2, null, 12
             {post.title}
         </Link>    
     </Text>
-    <Text mt={[4, null, 16]} fontSize={["xs", null, "md"]}>12 Jan 2021</Text>
+    <Text mt={[4, null, 16]} fontSize={["xs", null, "md"]}
+			color="tint.600" fontWeight="semibold">12 Jan 2021</Text>
 </Box>
 
 export const BlogNavigation = ({ nextPosts }) => <Box px={[0, null, 12]} mb={[0, null, 32]}>

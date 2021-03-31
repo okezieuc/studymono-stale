@@ -9,7 +9,7 @@ export const BlogListItem = ({ post }) => <LinkBox>
             </AspectRatio>
         </Box>
         <Box flex="1">
-            <Box mt={2} ml={2} fontWeight="bold" fontSize={["2xl", null, "3xl"]} maxW="90%">                
+            <Box mt={2} ml={2} fontWeight="bold" fontSize={["2xl", null, "2xl"]} maxW="90%">                
                 <Link href={`/blog/${post.slug}`} passHref>
                     <LinkOverlay>
                         { post.title }

@@ -6,8 +6,8 @@ import Link from 'next/link'
 export const CallToAction = () => <Flex bg="#4715be" px={[3, null, 12]} 
 	py={[8, null, 12]} alignItems="center"
 	boxShadow="0px 0px 12px 0px">
-	<Text color="white" fontSize={["lg", "xl", "5xl"]}
-		fontWeight={["500", null, "bold"]} maxW={["72%", null, "1000px"]}>
+	<Text color="white" fontSize={["lg", "xl", "4xl"]}
+		fontWeight={["500", null, "bold"]} maxW={["72%", null, "800px"]}>
 		Sample Call to Action will be displayed here. Get ready!
 	</Text>
 	<Spacer />

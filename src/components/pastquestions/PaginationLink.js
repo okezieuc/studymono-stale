@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const WideLink = ({ text, slug }) => <LinkBox><Box border="1px solid" p={[0, null, 2]} 
     minW={["50px", null, "150px"]} textAlign="center"
-    borderRadius={[4, null,8]} >
+    borderRadius={[4, null,8]} borderColor="tint.400">
     <Link href={slug} passHref>
         <LinkOverlay>
             { text }
@@ -14,7 +14,7 @@ const WideLink = ({ text, slug }) => <LinkBox><Box border="1px solid" p={[0, nul
 
 const SlimLink = ({ slug, number }) => <LinkBox><Box border="1px solid" p={[0, null, 2]}
      minW={["25px", null, "75px"]} textAlign="center"
-    borderRadius={[4, null,8]}>
+    borderRadius={[4, null,8]} borderColor="tint.400">
     <Link href={slug} passHref>
         <LinkOverlay>
             { number }
@@ -25,7 +25,7 @@ const SlimLink = ({ slug, number }) => <LinkBox><Box border="1px solid" p={[0, n
 
 const NoLinkSlimLink = ({ number, }) => <Box border="1px solid" p={[0, null, 2]} 
     minW={["25px", null, "75px"]} textAlign="center"
-    borderRadius={[4, null,8]}>
+    borderRadius={[4, null,8]} borderColor="tint.400">
             { number }
 </Box>
 
