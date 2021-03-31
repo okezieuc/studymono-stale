@@ -1,7 +1,7 @@
 import {
   Link as ChakraLink,
 	Box, Heading, Text,
-	Avatar, Flex,
+	Avatar, Flex, Container,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -20,37 +20,23 @@ const Index = ({ post, nextPosts }) => {
 	
 	return( <Box>
 		<NavBar />
-		<Heading fontSize={["3xl", null, "6xl"]} ml={4}>
-			Studymono Blog
-		</Heading>
-
+		<Box bg="gray.200" pt={[12, null, 20]} pb={[32, null, 40]}
+				mb={[-32, null, -48]}>
+				<Container maxW="5xl" >			
+				
+				<Heading fontSize={["3xl", null, "6xl"]}>
+					Studymono Blog
+				</Heading>
+			</Container>
+		</Box>
+		
 		<BlogPostHeader title={post.title} />
-
 		
-		<Text mb="8">
-			Published 20 Feb 2021 at {slug}
-		</Text>
-		<Text mb="8" >
 		
-		<div>
-			{content}
-		</div>
-		</Text>
+		<Container maxW="5xl" mb={[20, null, 20]}>
+				{content}
+		</Container>
 		
-		{	
-			nextPosts.map((post) => (
-			<>
-				<Link href={`/blog/${post.slug}`}>
-					<a> {post.title} </a>
-				</Link>
-				<br />
-				</>
-			) )
-		}
-		
-		<Link href="/blog"><a>Return to blog</a></Link><br />
-		<Link href="/"><a>Return to home</a></Link>
-		<br /><Link href="/pastquestions"><a>Start studying</a></Link>
 		<BlogNavigation nextPosts={nextPosts} />
 		<CallToAction />
 		<Footer hideTop={true} />

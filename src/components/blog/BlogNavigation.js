@@ -11,7 +11,7 @@ const BlogNavigationItem = ({rightBorder = true, post}) => <Box px={[2, null, 12
     <Text mt={[4, null, 16]} fontSize={["xs", null, "md"]}>12 Jan 2021</Text>
 </Box>
 
-export const BlogNavigation = ({ nextPosts }) => <Box p={[0, null, 12]}>
+export const BlogNavigation = ({ nextPosts }) => <Box px={[0, null, 12]} mb={[0, null, 32]}>
     <Box borderY="1px solid" borderX={["none", null, "1px solid"]} m={[0, null, 20]}>
         <Box borderBottom={["1px solid"]} p={[1, null, 2]} textAlign="center">Up next</Box>
     
