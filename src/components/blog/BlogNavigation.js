@@ -12,7 +12,7 @@ const BlogNavigationItem = ({rightBorder = true, post}) => <Box px={[2, null, 12
 </Box>
 
 export const BlogNavigation = ({ nextPosts }) => <Box px={[0, null, 12]} mb={[0, null, 32]}>
-    <Box borderY="1px solid" borderX={["none", null, "1px solid"]} m={[0, null, 20]}>
+    <Box borderY="1px solid" borderX={["none", null, "1px solid"]} borderBottom={["none", null, "1px solid"]} m={[0, null, 20]}>
         <Box borderBottom={["1px solid"]} p={[1, null, 2]} textAlign="center">Up next</Box>
     
         <SimpleGrid columns={[2]}>
