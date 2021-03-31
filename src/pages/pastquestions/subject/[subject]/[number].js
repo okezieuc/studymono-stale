@@ -1,7 +1,6 @@
 import {
   Link as ChakraLink,
-	Box, Heading, Text,
-	
+	Box, Heading, Text, Container,
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
@@ -12,6 +11,52 @@ import { RecommendedReads, } from '../../../../components/RecommendedReads'
 import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard'
 import { getRecommendedPosts } from '../../../../lib/api'
 import { PaginationLink } from '../../../../components/pastquestions/PaginationLink'
+
+const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
+	const router = useRouter()
+	const { subject, number } = router.query
+	
+	if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+	
+	return(
+  <Box>
+	  	<NavBar />
+			
+			<Box bg="gray.200" pt={[12, null, 20]} pb={[32, null, 64]}
+				mb={[-24, null, -48]}>
+				<Container maxW="5xl" >				
+					<Heading fontSize="6xl">
+						{dataschema.subjects[subject.toUpperCase()]}
+					</Heading>
+					<Text>
+						Page {number}
+					</Text>
+				</Container>
+			</Box>
+		
+			<Container maxW="6xl" mb={[4, null, 40]}>
+				{					
+					subjectdata.data.map((question) => (
+							<QuestionCard questionid={question.id} data={question.data} />
+						)
+					)
+				}
+				
+				<PaginationLink prefix={`/pastquestions/subject/${subject.toLowerCase()}/`} 
+					mt={12} mb={24} current={parseInt(number)} total={Math.floor((subjectdata.count-1)/10)+1} />
+			</Container>
+
+			
+		
+
+		
+
+		<RecommendedReads posts={recommendedPosts} />
+		<Footer hideTop={true} />
+	</Box>
+)}
 
 const Question = ({questionid, data}) => {
 	return (<Box mb="2" p="2">
@@ -29,48 +74,6 @@ const Question = ({questionid, data}) => {
 		</Link>
 	</Box>)
 }
-
-const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
-	const router = useRouter()
-	const { subject, number } = router.query
-	
-	if (router.isFallback) {
-    return <div>Loading...</div>
-  }
-	
-	return(
-  <Box>
-	  	<NavBar />
-		<Heading fontSize="6xl">
-			{dataschema.subjects[subject.toUpperCase()]} {number}
-		</Heading>
-		
-		<Text>
-		These questions are from page {number} of {subject}
-		</Text>
-		{
-				/*
-				<Question questionid="1" data={{"exam":{"iv":"JAMB"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":43},"question":{"iv":"Ripening of fruits is hastened by using "},"optiona":{"iv":"Ethanol "},"optionb":{"iv":"Ethane"},"optionc":{"iv":"Ethene "},"optiond":{"iv":"Ethyne"}}} />
-				*/
-		}
-		
-			{
-				
-				subjectdata.data.map((question) => (
-						<QuestionCard questionid={question.id} data={question.data} />
-					)
-				)
-				
-			}
-		
-
-		<PaginationLink prefix={`/pastquestions/subject/${subject.toLowerCase()}/`} 
-			mt={12} mb={24} current={parseInt(number)} total={Math.floor((subjectdata.count-1)/10)+1} />
-
-		<RecommendedReads posts={recommendedPosts} />
-		<Footer hideTop={true} />
-	</Box>
-)}
 
 export async function getStaticPaths() {
   

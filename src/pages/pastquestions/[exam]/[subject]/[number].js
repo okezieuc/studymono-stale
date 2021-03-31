@@ -1,6 +1,6 @@
 import {
   Link as ChakraLink,
-	Box, Heading, Text,
+	Box, Heading, Text, Container,
 	
 } from '@chakra-ui/react'
 import Link from 'next/link'
@@ -41,47 +41,31 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 
   <Box>
 	  	<NavBar />
-		<Heading fontSize="6xl">
-			{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
-		</Heading>
-		<Text>
-			Page {number}
-		</Text>
-		
-		<Text>
-		These questions are from page {number} of {exam} {dataschema.subjects[subject.toUpperCase()]}
-	</Text>
-	{
-		/*
-		<Question questionid="1" data={{"exam":{"iv":"JAMB"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":43},"question":{"iv":"Ripening of fruits is hastened by using "},"optiona":{"iv":"Ethanol "},"optionb":{"iv":"Ethane"},"optionc":{"iv":"Ethene "},"optiond":{"iv":"Ethyne"}}} />
-		*/
-	}
-		
-		{
 			
-			examsubjectdata.data.map((question) => (
-					<QuestionCard questionid={question.id} data={question.data} />
-				)
-			)
-			
-		}
-
-		<PaginationLink prefix={`/pastquestions/${exam.toLowerCase()}/${subject.toLowerCase()}/`}
-			mt={12} mb={24} current={parseInt(number)} total={Math.floor((examsubjectdata.count-1)/10)+1} />
-
+			<Box bg="gray.200" pt={[12, null, 20]} pb={[32, null, 64]}
+				mb={[-24, null, -48]}>
+				<Container maxW="5xl" >									
+					<Heading fontSize="6xl">
+						{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
+					</Heading>
+					<Text>
+						Page {number}
+					</Text>
+				</Container>
+			</Box>
 		
+		<Container maxW="6xl" mb={[4, null, 40]}>
+			{		
+				examsubjectdata.data.map((question) => (
+						<QuestionCard questionid={question.id} data={question.data} />
+					)
+				)				
+			}
 		
-		<Link href="/pastquestions">
-			<a>Return to pastquestions</a>
-		</Link>
-		<br />
-<Link href={`/pastquestions/${exam.toLowerCase()}`}>
-			<a>Return to {exam.toUpperCase()}</a>
-		</Link>
-		<br />
-		<Link href="/">
-			<a>Home</a>
-		</Link>
+			<PaginationLink prefix={`/pastquestions/${exam.toLowerCase()}/${subject.toLowerCase()}/`}
+				mt={12} mb={24} current={parseInt(number)} total={Math.floor((examsubjectdata.count-1)/10)+1} />
+		</Container>
+
 		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>

@@ -1,7 +1,7 @@
 import {
   Link as ChakraLink,
 	Box, Heading, Text,
-	Flex,
+	Flex, Container,
 	
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
@@ -13,9 +13,46 @@ import { RecommendedReads, } from '../../components/RecommendedReads'
 import { AnswerCard, } from '../../components/pastquestions/AnswerCard'
 import { getRecommendedPosts } from '../../lib/api'
 
+const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPosts }) => {
+	const router = useRouter()
+	//const { questionid } = router.query
+	
+	if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+	
+	return(
+  <Box>
+	  	<NavBar />
+			
+			<Box bg="gray.200" pt={[12, null, 20]} pb={[12, null, 32]}>
+				<Container maxW="5xl" >
+					<Text fontSize={["sm", null, "xl"]} fontWeight="bold">
+						{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
+					</Text>
+					
+					<Question questionid={questionid} data={questiondata} />
+			</Container>
+		</Box>
+		
+		<Box pt={[12, null, 20]} mb={[12, null, 20]}>
+			<Container maxW="5xl">
+				<Heading as="h3" fontSize={["2xl", null, "3xl"]}>More from { dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }</Heading>
+				{
+					otherdata.map((otherquestion) => (<>{otherquestion ? <OtherQuestion data={otherquestion.data} questionid={otherquestion.id} />: ""}</>)
+					)
+				}
+			</Container>
+		</Box>
+		
+		<RecommendedReads posts={recommendedPosts} />
+		<Footer hideTop={true} />
+	</Box>
+)}
+
 const Question = ({questionid, data}) => {
-	return (<Box mb="2" p="2">
-		<Heading fontSize={["2xl", null, "5xl"]}>
+	return (<Box>
+		<Heading fontSize={["2xl", null, "5xl"]} mb={[2, null, 8]}>
 			{data.question.iv}
 		</Heading>
 
@@ -38,7 +75,7 @@ const QuestionOption = ( {option, text} ) => (<Flex my={[4]}>
 </Flex>)
 
 const OtherQuestion = ({questionid, data}) => {
-	return (<Box mb="2" p="2" fontSize={["xl", null, "3xl"]}>
+	return (<Box mb="2" p="2" pl="0" fontSize={["xl", null, "3xl"]}>
 		
 		
 		<Link href={`/pastquestions/${questionid}`}>
@@ -49,53 +86,6 @@ const OtherQuestion = ({questionid, data}) => {
 
 
 
-const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPosts }) => {
-	const router = useRouter()
-	//const { questionid } = router.query
-	
-	if (router.isFallback) {
-    return <div>Loading...</div>
-  }
-	
-	return(
-  <Box>
-	  	<NavBar />
-		<Heading fontSize={["sm", null, "xl"]}>
-			{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
-		</Heading>
-		
-		
-		{
-		/*
-		<Question questionid="1" data={{"exam":{"iv":"JAMB"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":43},"question":{"iv":"Ripening of fruits is hastened by using "},"optiona":{"iv":"Ethanol "},"optionb":{"iv":"Ethane"},"optionc":{"iv":"Ethene "},"optiond":{"iv":"Ethyne"}}} />
-		*/
-	}
-	
-	
-	
-	<Question questionid={questionid} data={questiondata} />
-	
-	<Heading as="h3" fontSize={["2xl", null, "3xl"]}>More from { dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }</Heading>
-
-	{
-		otherdata.map((otherquestion) => (<>{otherquestion ? <OtherQuestion data={otherquestion.data} questionid={otherquestion.id} />: ""}</>)
-		)
-	}
-	<br />
-	
-		<Link href="/dynamic-routing">
-			<a>Why we built this</a>
-		</Link>
-	
-	<br />
-		
-		<Link href="/">
-			<a>Return to homepage</a>
-		</Link>
-		<RecommendedReads posts={recommendedPosts} />
-		<Footer hideTop={true} />
-	</Box>
-)}
 
 export async function getStaticPaths() {
   // Get the paths we want to pre-render based on posts
