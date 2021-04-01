@@ -25,7 +25,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
   <Box>
 	  	<NavBar />
 			
-			<Box bg="gray.200" pt={[12, null, 20]} pb={[12, null, 32]}>
+			<Box bg="tint.200" pt={[12, null, 20]} pb={[12, null, 32]}>
 				<Container maxW="5xl" >
 					<Text fontSize={["sm", null, "xl"]} fontWeight="bold">
 						{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }

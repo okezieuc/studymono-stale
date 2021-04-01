@@ -9,7 +9,7 @@ export const NavBar = () => <Box>
 <Box fontSize={["sm", "sm", "md"]} pl={["1", null, "4"]} bg="white" borderBottom="1px solid">
 	<Box p={["1", null, "2"]}>
 		<HStack spacing={["4", null, "12"]}>
-			<Box bg="yellow.2000" color="brand" fontSize="2xl" fontWeight="black" mr={["1", null, "4"]}>
+			<Box color="black" fontSize="2xl" fontWeight="black" mr={["1", null, "4"]}>
 				<Link href="/">
 					studymono.
 				</Link>
