@@ -27,7 +27,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 			
 			<Box bg="tint.200" pt={[12, null, 20]} pb={[12, null, 32]}>
 				<Container maxW="5xl" >
-					<Text fontSize={["sm", null, "xl"]} fontWeight="bold">
+					<Text fontSize={["xs", null, "xl"]} fontWeight="bold">
 						{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 					</Text>
 					
@@ -67,7 +67,7 @@ const Question = ({questionid, data}) => {
 	</Box>)
 }
 
-const QuestionOption = ( {option, text} ) => (<Flex my={[4]}>
+const QuestionOption = ( {option, text} ) => (<Flex my={[2, null, 4]}>
     <Text fontWeight="bold" fontSize={["md",null, "xl"]}>{option}.</Text>
     <Text fontSize={["md",null, "2xl"]} ml={[2, null, 4]}>
        { text }
@@ -75,7 +75,7 @@ const QuestionOption = ( {option, text} ) => (<Flex my={[4]}>
 </Flex>)
 
 const OtherQuestion = ({questionid, data}) => {
-	return (<Box mb="2" p="2" pl="0" fontSize={["xl", null, "3xl"]}>
+	return (<Box mb="2" p="2" pl="0" fontSize={["lg", null, "3xl"]}>
 		
 		
 		<Link href={`/pastquestions/${questionid}`}>

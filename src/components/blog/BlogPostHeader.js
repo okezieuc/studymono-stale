@@ -5,7 +5,7 @@ export const BlogPostHeader = ({ title, }) => <SimpleGrid columns={[1, null, 2]}
     <Box w="100%" minH={["200px", null, "350px"]} bg="gray.100"
         borderTopLeftRadius={[8, null, 8]} borderTopRightRadius={[8, null, 0]}
         borderBottomLeftRadius={[null, null, 8]} borderBottomRightRadius={[null, null, 0]}></Box>
-    <Box p={[2, null, 8]} border="1px solid lavender" borderLeft={["block", null, "none"]} bg="white"
+    <Box p={[4, null, 8]} border="1px solid lavender" borderLeft={["block", null, "none"]} bg="white"
         borderTopStyle={["none", null, "solid"]} 
         borderTopLeftRadius={[null, null, 0]} borderTopRightRadius={[null, null, 8]}
         borderBottomLeftRadius={[8, null, 0]} borderBottomRightRadius={[8, null, 8]}

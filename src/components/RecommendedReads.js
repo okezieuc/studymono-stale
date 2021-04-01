@@ -5,7 +5,7 @@ import Link from 'next/link'
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
     <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]}></Box>
     <Box ml={4} mt={4} 
-        fontSize={["lg", null, "2xl"]} fontWeight={["600", null, "bold"]}>
+        fontSize={["md", null, "2xl"]} fontWeight={["600", null, "bold"]}>
         <Link href={`/blog/${post.slug}`} passHref>
             <LinkOverlay>
                 { post.title }
@@ -13,7 +13,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
         </Link>
     </Box>
     <Text ml={4} mt={3} fontWeight={["500", null, "bold"]} color="tint.500"
-        fontSize={"xs", null, "md"}>
+        fontSize={["xs", null, "md"]}>
         { post.date }
     </Text>
 </Box>
@@ -28,7 +28,7 @@ BlogPost.defaultProps = {
 }
 
 export const RecommendedReads = ({posts}) => <Box bg="tint.200"
-    px={["6", null, "24"]} py={["12", null,  "24"]}>
+    px={[4, null, "24"]} py={["12", null,  "24"]}>
       <Flex direction={["column", null, "row"]} >
             <Text fontSize={["2xl", null,  "4xl"]} mr={8} fontWeight="semibold"
                 mb="8" color="tint.700">Recommended reads</Text>

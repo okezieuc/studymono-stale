@@ -18,7 +18,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 
 			<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
 			<Container maxW="5xl" >
-				<Heading fontSize={["4xl", null, "6xl"]} mb={[4, null, 8]} color="tint.700">
+				<Heading fontSize={["3xl", null, "6xl"]} mb={[4, null, 8]} color="tint.700">
 					JAMB
 				</Heading>
 				<ExamPageInfo />

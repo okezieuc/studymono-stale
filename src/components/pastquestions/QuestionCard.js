@@ -1,17 +1,17 @@
 import { Box, Text, Flex, LinkBox, LinkOverlay, } from '@chakra-ui/react'
 import Link from 'next/link'
 
-const QuestionCardOption = ( {option, text} ) => (<Flex my={[4]}>
+const QuestionCardOption = ( {option, text} ) => (<Flex my={[2, null, 4]}>
     <Text fontWeight="bold" fontSize={["md",null, "xl"]}>{option}.</Text>
     <Text fontSize={["md",null, "2xl"]} ml={[2, null, 4]}>
        { text }
     </Text>
 </Flex>)
 
-export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" borderRadius={8} p={[2, null, 8]} border="1px none"
+export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" borderRadius={8} p={[4, null, 8]} border="1px none"
     mb={[8, null, 20]} boxShadow="0px 0px 4px 0px">
     <Box mb={4}>
-        <Box fontSize={["xl", null, "3xl"]} fontWeight="semibold">
+        <Box fontSize={["lg", null, "3xl"]} fontWeight="semibold">
             <Link href={`/pastquestions/${questionid}`} passHref>
                 <LinkOverlay>
                    { data.question.iv }
