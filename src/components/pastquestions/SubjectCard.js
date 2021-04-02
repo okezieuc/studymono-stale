@@ -1,10 +1,18 @@
 import { Box, AspectRatio, Text, LinkBox, LinkOverlay, } from'@chakra-ui/react'
 import Link from 'next/link'
+import Image from 'next/image'
 
-export const SubjectCard = ({subject, slug, subtitle, ...props}) => (<LinkBox {...props}>
+export const SubjectCard = ({subject, slug, subtitle, code="bio", ...props}) => (<LinkBox {...props}>
         <AspectRatio ratio={16 / 12}>
         <Box fontSize={["xl", null, "4xl"]} fontWeight="bold"
-        borderRadius={[4, null, 8]} border="1px solid"></Box>
+        borderRadius={[4, null, 8]} border="1px none">
+					<Image
+						src={`/${code}.png`}
+						alt="Picture of the author"
+						layout="fill"
+						objectFit="cover"
+					/>
+				</Box>
     </AspectRatio>
     <Box>
         <Box fontWeight="bold" fontSize={["md", null, "2xl"]} mt={[2, null, 4]} ml={[2, null, 4]}

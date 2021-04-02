@@ -1,10 +1,21 @@
 import { Box, SimpleGrid, Text, Heading } from '@chakra-ui/react'
+import Image from 'next/image'
 
 export const BlogPostHeader = ({ title, }) => <SimpleGrid columns={[1, null, 2]}  m={[4, null, 20]}
     borderRadius={8}>
     <Box w="100%" minH={["200px", null, "350px"]} bg="gray.100"
         borderTopLeftRadius={[8, null, 8]} borderTopRightRadius={[8, null, 0]}
-        borderBottomLeftRadius={[null, null, 8]} borderBottomRightRadius={[null, null, 0]}></Box>
+        borderBottomLeftRadius={[null, null, 8]} borderBottomRightRadius={[null, null, 0]}
+				position="relative">
+		
+			<Image
+			src="/cover.jpg"
+			alt="Picture of the author"
+			layout="fill"
+			objectFit="cover"
+			/>
+		
+		</Box>
     <Box p={[4, null, 8]} border="1px solid lavender" borderLeft={["block", null, "none"]} bg="white"
         borderTopStyle={["none", null, "solid"]} 
         borderTopLeftRadius={[null, null, 0]} borderTopRightRadius={[null, null, 8]}

@@ -1,11 +1,17 @@
 import { Box, Text, LinkBox, LinkOverlay, AspectRatio, Flex, } from '@chakra-ui/react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const BlogListItem = ({ post }) => <LinkBox>
     <Flex direction="column">
         <Box w="100%">
-            <AspectRatio borderRadius={[4, null,8]} bg="gray.200" ratio={4/3} w={["100%", null, "100%"]}>
-                <Box w="100%" h="auto"/>
+            <AspectRatio borderRadius={[4, null,8]} bg="gray.100" ratio={4/3} w={["100%", null, "100%"]}>
+                <Image
+									src="/cover.jpg"
+									alt="Picture of the author"
+									layout="fill"
+									objectFit="cover"
+								/>
             </AspectRatio>
         </Box>
         <Box flex="1">

@@ -28,9 +28,9 @@ const Index = ({ subjects, recommendedPosts }) => (
 		<Container maxW="5xl" mb={[20, null, 40]} >
 		<Heading as="h3" mb={4} color="tint.600" fontSize={["lg", null, "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
-			<SubjectCard subject="Physics" slug="/pastquestions/waec/phy/1" />
-			<SubjectCard subject="Chemistry" slug="/pastquestions/waec/chem/1" />			
-			<SubjectCard subject="Biology" slug="/pastquestions/waec/bio/1"
+			<SubjectCard subject="Physics" slug="/pastquestions/waec/phy/1" code="phy" />
+			<SubjectCard subject="Chemistry" slug="/pastquestions/waec/chem/1" code="chem" />			
+			<SubjectCard subject="Biology" slug="/pastquestions/waec/bio/1" code="bio"
 				gridColumn={["span 2", null, "span 1"]} />			
 		</SimpleGrid>
 		<SimpleGrid columns={[2, null, 4]} gap={[4, null, 12]} mt={[4, null, 12]}
@@ -38,7 +38,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 			{
 				Object.keys(subjects).map((key) => (<>
 					{
-						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard subject={subjects[key]} 
+						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard subject={subjects[key]} code={key.toLowerCase()}
 							slug={`/pastquestions/waec/${key.toLowerCase()}/1`} subtitle="Sample Subtitle" /> : ''
 					}
 					</>)

@@ -13,6 +13,7 @@ import { BigAd, } from '../../components/pastquestions/BigAd'
 import { ExamCard, } from '../../components/pastquestions/ExamCard'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
 import { QuestionCard, } from '../../components/pastquestions/QuestionCard'
+import Image from 'next/image'
 
 const Index = ({ dataschema }) => (
   <Box>
@@ -34,9 +35,9 @@ const Index = ({ dataschema }) => (
 		<Container maxW="5xl" mb={[20, null, 40]} >
 		<Heading as="h3" mb={4} fontSize={["md", null, "3xl"]} mt={[12, null, 24]} color="tint.600">Subjects</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
-			<SubjectCard subject="Physics" slug="/pastquestions/subject/phy/1" />
-			<SubjectCard subject="Chemistry" slug="/pastquestions/subject/chem/1" />			
-			<SubjectCard subject="Biology" slug="/pastquestions/subject/bio/1"
+			<SubjectCard subject="Physics" slug="/pastquestions/subject/phy/1" code="phy" />
+			<SubjectCard subject="Chemistry" slug="/pastquestions/subject/chem/1" code="chem" />			
+			<SubjectCard subject="Biology" slug="/pastquestions/subject/bio/1" code="bio"
 				gridColumn={["span 2", null, "span 1"]} />			
 		</SimpleGrid>
 		<SimpleGrid columns={[2, null, 4]} gap={[4, null, 12]} mt={[4, null, 12]}
@@ -45,7 +46,7 @@ const Index = ({ dataschema }) => (
 				Object.keys(dataschema.subjects).map((key) => (<>
 					{
 						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard subject={dataschema.subjects[key]} 
-							slug={`/pastquestions/subject/${key.toLowerCase()}/1`} subtitle="Sample Subtitle" /> : ''
+							slug={`/pastquestions/subject/${key.toLowerCase()}/1`} subtitle="Sample Subtitle" code={key.toLowerCase()} /> : ''
 					}
 					</>)
 				)
