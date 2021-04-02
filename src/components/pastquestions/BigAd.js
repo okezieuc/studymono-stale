@@ -2,7 +2,8 @@ import { Box, Text, Flex, Spacer, } from '@chakra-ui/react'
 
 export const BigAd = () => (
     <Box mb={[4, null, 20]} bg="white"
-        border="1px solid" borderRadius={"2px", null, "8px"}>
+        border="1px solid" borderRadius={"2px", null, "8px"}
+				borderColor="tint.400">
         <Flex>
             <Text fontSize={["3xl", null, "6xl"]}
                 ml={[4, null, 20]} fontWeight="bold"
