@@ -8,28 +8,30 @@ import Link from 'next/link'
 import { NavBar, } from '../components/NavBar'
 import { Footer, } from '../components/Footer'
 import { CallToAction, } from '../components/CallToAction'
+import { Hero, } from '../components/landing/Hero'
+import { Catalog, } from '../components/landing/Catalog'
+import { Features, } from '../components/landing/Features'
+import { Stats, } from '../components/landing/Stats'
+import { Special, } from '../components/landing/Special'
+import { BlogPosts, } from '../components/landing/BlogPosts'
+import { FAQ, } from '../components/landing/FAQ'
+import { HeroImage} from '../components/landing/HeroImage'
+import { Vision, } from '../components/landing/Vision'
+
 
 const Index = () => (
 	<Box>
 		<NavBar />
-		<Heading textAlign="center" fontSize="xl">
-			Studymono
-		</Heading>
-		<Text textAlign="center" fontSize="xl">
-			Make it count
-		</Text>
-		<Link href="/pastquestions">
-			Get Started
-		</Link>
-		<br />
-		<Link href="/blog">
-			Go to Blog
-		</Link>
-		<br />
-		<Link href="/privacy">
-			Privacy Policy
-		</Link>
+		<Hero />
+		<Vision />
+		<Catalog />
+		<Features />
+		<Stats />
+		<Special />
+		<BlogPosts />
+		<FAQ />
 		<CallToAction />
+		
 		<Footer hideTop={true} />
 	</Box>
 )
