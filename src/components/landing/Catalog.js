@@ -1,22 +1,53 @@
 import { Box, Heading, Text, Stack, } from '@chakra-ui/react'
 import Link from 'next/link'
+import Image from 'next/image'
 
-const ExamCard = () => (<Box w={["250px"]} border="1px solid" borderColor="tint.300" textAlign="left"
+const ExamCard = ({data}) => (<Box w={["250px"]} border="1px solid" borderColor="tint.300" textAlign="left"
 	borderRadius={[4]}>
-	<Box w="100%" h="200px" bg="tint.300" />
+	<Box w="100%" h="200px" position="relative">
+		<Image
+			src={data.image}
+			alt="Sample feature cover"
+			layout="fill"
+			objectFit="cover"
+		/>
+	</Box>
 	<Box p={[4]}>
-		<Text>WAEC</Text>
-		<Text>Some sample subtitle</Text>
+		<Text fontWeight="bold">{ data.exam }</Text>
+		<Text>{ data.text }</Text>
 	</Box>
 </Box>)
 
-export const Catalog = () => (<Box pt={["120px"]} pb={["120px"]}>
-	<Box  maxW={["800px"]} m="0 auto" textAlign="center">
-		<Heading as="h2" fontSize={["5xl"]} >Another Sample <br /> Section Heading</Heading>
-		<Text as="h2" fontSize={["2xl"]} mt={[4]}>A smaller subtitle text will also follow below the large heading. Lorem ipsum dit olres vrum. It should almost be two lines long</Text>
-		<Stack spacing={[8]} direction={["row"]} m="0 auto" mt={[12]} w="fit-content">
-			<ExamCard />
-			<ExamCard />
+ExamCard.defaultProps = {
+	data: {
+		image: "/waec.png",
+		exam: "WAEC",
+		text: "Some sample subtitle"
+	}
+}
+
+export const Catalog = ({ exams }) => (<Box pt={[20, null, "120px"]} pb={[12,null,"120px"]}>
+	<Box  maxW={["800px"]} m="0 auto" textAlign="center" px={[4, null, 0]}>
+		<Heading as="h2" fontSize={["4xl", null, "5xl"]} >One Compass <br /> Many Destinations</Heading>
+		<Text as="h2" fontSize={["md", null, "2xl"]} mt={[4]}>A smaller subtitle text will also follow below the large heading. Lorem ipsum dit olres vrum. It should almost be two lines long</Text>
+		<Stack spacing={[8]} direction={["column", null, "row"]} m="0 auto" mt={[12]} w="fit-content">
+			<ExamCard data={exams[0]} />
+			<ExamCard data={exams[1]} />
 		</Stack>
 	</Box>
 </Box>)
+
+Catalog.defaultProps={
+	exams: [
+		{
+			image: "/waec.png",
+			exam: "WAEC",
+			text: "Some sample subtitle"
+		},
+		{
+			image: "/jamb.png",
+			exam: "JAMB",
+			text: "Some JAMB subtitle"
+		}
+	]
+}
