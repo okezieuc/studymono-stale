@@ -14,12 +14,13 @@ import { Features, } from '../components/landing/Features'
 import { Stats, } from '../components/landing/Stats'
 import { Special, } from '../components/landing/Special'
 import { BlogPosts, } from '../components/landing/BlogPosts'
+import { getLatestPosts, } from '../lib/api'
 import { FAQ, } from '../components/landing/FAQ'
 import { HeroImage} from '../components/landing/HeroImage'
 import { Vision, } from '../components/landing/Vision'
 
 
-const Index = () => (
+const Index = ({ posts, }) => (
 	<Box>
 		<NavBar />
 		<Hero />
@@ -28,12 +29,21 @@ const Index = () => (
 		<Features />
 		<Stats />
 		<Special />
-		<BlogPosts />
+		<BlogPosts posts={posts} />
 		<FAQ />
 		<CallToAction />
 		
 		<Footer hideTop={true} />
 	</Box>
 )
+
+export async function getStaticProps() {
+	const posts = getLatestPosts()
+	return {
+		props: {
+			posts
+		}
+	}
+}
 
 export default Index
