@@ -34,7 +34,7 @@ export function getPostBySlug(slug, fields = []) {
 }
 
 export function getNextPosts(slugNeeded) {
-	const fields = [ 'title', 'date', 'slug', 'author', 'coverImage', 'excerpt',]
+	const fields = [ 'title', 'date', 'slug', 'author', 'cover', 'excerpt',]
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
@@ -51,7 +51,7 @@ export function getNextPosts(slugNeeded) {
 }
 
 export function getLatestPosts() {
-	const fields = [ 'title', 'date', 'slug', 'author', 'coverImage', 'excerpt',]
+	const fields = [ 'title', 'date', 'slug', 'author', 'cover', 'excerpt',]
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
@@ -61,9 +61,9 @@ export function getLatestPosts() {
 }
 
 export function getRecommendedPosts() {
-	const fields = [ 'title', 'date', 'slug', 'author', 'coverImage', 'excerpt',]
+	const fields = [ 'title', 'date', 'slug', 'author', 'cover', 'excerpt',]
   const slugs = getPostSlugs()
-  const posts = slugs
+  const posts = slugs 
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))

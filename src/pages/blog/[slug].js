@@ -31,7 +31,7 @@ const Index = ({ post, nextPosts }) => {
 			</Container>
 		</Box>
 		
-		<BlogPostHeader title={post.title} />
+		<BlogPostHeader title={post.title} cover={post.cover} />
 		
 		
 		<Container fontSize={["md", null, "2xl"]} maxW={["2xl", null, "5xl"]} mb={[20, null, 20]}>
@@ -50,8 +50,11 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
+		'cover',
     'author',
     'content',
+
+
   ])
   //const content = await markdownToHtml(post.content || '')
 	const nextPosts = getNextPosts(params.slug)

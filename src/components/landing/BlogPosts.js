@@ -6,7 +6,7 @@ import Image from 'next/image'
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
     <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} pos="relative">
 			<Image
-				src="/cover.jpg"
+				src={post.cover}
 				alt="Sample feature cover"
 				layout="fill"
 				objectFit="cover"
@@ -51,17 +51,20 @@ BlogPosts.defaultProps = {
         {
             title: "Sample blog post title comes  here that is a bit short.",
             date: "12th January 2021",
-            slug: "preview"
+            slug: "preview",
+						cover: "/cover.jpg"
         },
         {
             title: "Anonther blog post title follows here that is a bit short.",
             date: "12th January 2021",
-            slug: "dynamic-routing"
+            slug: "dynamic-routing",
+						cover: "/cover.jpg"
         },
         {
             title: "Anonther blog post title follows here that is a bit short.",
             date: "12th January 2021",
-            slug: "dynamic-routing"
+            slug: "dynamic-routing",
+						cover: "/cover.jpg"
         }
     ]
 }

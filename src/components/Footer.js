@@ -45,7 +45,7 @@ export const Footer = ({hideTop = false}) => <Box>
 			fontWeight="bold" maxW={["250px", "500px"]}>Subscribe to our newsletter  for updates</Text>
 		<Box w={["50%", null, "30%"]} h={["30px", null, "50px"]} bg="gray.100" m="0 auto" mt="8" mb="12"></Box>
 	</Box>
-	<Flex fontSize={["sm", "sm", "md"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">
+	<Flex fontSize={["sm", "sm", "md"]} bg="tint.800" w="100%" p="2" pl={["2", null, "6"]} color="white">
 		<Text>Make it count</Text>
 		<Spacer />
 		<Text>2021</Text>

@@ -2,10 +2,11 @@
 title: Harry Potter and the Half-Blood Prince
 author: 'Chief Chef'
 date: '2020-03-16T05:35:07.322Z'
+cover: '/cover.jpg'
 ---
 
 [View raw (TEST.md)](https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md)
-
+ 
 This is a paragraph.
 
     This is a paragraph.

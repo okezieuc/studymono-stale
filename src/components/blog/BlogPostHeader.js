@@ -1,7 +1,7 @@
 import { Box, SimpleGrid, Text, Heading } from '@chakra-ui/react'
 import Image from 'next/image'
 
-export const BlogPostHeader = ({ title, }) => <SimpleGrid columns={[1, 2]}  m={[4, null, 20]}
+export const BlogPostHeader = ({ title, cover }) => <SimpleGrid columns={[1, 2]}  m={[4, null, 20]}
     borderRadius={8}>
     <Box w="100%" minH={["200px", null, "350px"]} bg="gray.100"
         borderTopLeftRadius={[8, null, 8]} borderTopRightRadius={[8, null, 0]}
@@ -9,7 +9,7 @@ export const BlogPostHeader = ({ title, }) => <SimpleGrid columns={[1, 2]}  m={[
 				position="relative">
 		
 			<Image
-			src="/cover.jpg"
+			src={cover}
 			alt="Picture of the author"
 			layout="fill"
 			objectFit="cover"
@@ -30,4 +30,4 @@ export const BlogPostHeader = ({ title, }) => <SimpleGrid columns={[1, 2]}  m={[
     </Box>
 </SimpleGrid>
 
-BlogPostHeader.defaultProps={ title: "Type some example blog post title here."}
+BlogPostHeader.defaultProps={ title: "Type some example blog post title here.", cover: "/pattern.jpg" }
