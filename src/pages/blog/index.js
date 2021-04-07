@@ -15,10 +15,10 @@ export default function Index( {allPosts} ) {
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
 		<Box px={[4, null, 24]} pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="tint.200">
-			<Heading fontSize={["2xl", null, "6xl"]}>
+			<Heading fontSize={["2xl", "4xl", "6xl"]}>
 				Studymono <Box as="span" color="brand">Blog</Box>
 			</Heading>
-			<Text mt={[4, null, 12]} fontSize={["sm", null, "2xl"]} maxW="800px">
+			<Text mt={[4, null, 12]} fontSize={["sm", "md", "2xl"]} maxW="800px">
 				On this blog, we publish articles that will help enlighten you on some
 				very important, but often overlooked details that can help you in your
 				exams and can also have some product updates in here too!
@@ -26,7 +26,7 @@ export default function Index( {allPosts} ) {
 		</Box>
 		
 		<Box px={[4, null, 24]} mb={[20, null, 40]}>
-		<SimpleGrid  columns={[1, 2, 3]} spacingX={[12]} spacingY={[8, null, 20]}>
+		<SimpleGrid  columns={[1, 2, 3]} spacingX={[8, null, 12]} spacingY={[8, null, 20]}>
 			{	
 				allPosts.map((post) => <BlogListItem post={post} key={post.slug} />)
 			}

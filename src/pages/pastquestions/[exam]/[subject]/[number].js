@@ -44,8 +44,8 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 			
 			<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
 				mb={[-24, null, -48]}>
-				<Container maxW="5xl" >									
-					<Heading fontSize={["4xl", null, "6xl"]}>
+				<Container maxW={["2xl",null, "5xl"]} >									
+					<Heading fontSize={["4xl", "5xl", "6xl"]}>
 						{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
 					</Heading>
 					<Text fontSize={["sm", null, "md"]}>
@@ -54,7 +54,7 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 				</Container>
 			</Box>
 		
-		<Container maxW="6xl" mb={[4, null, 40]}>
+		<Container maxW={["2xl",null, "5xl"]} mb={[4, null, 40]}>
 			{		
 				examsubjectdata.data.map((question) => (
 						<QuestionCard questionid={question.id} data={question.data} />

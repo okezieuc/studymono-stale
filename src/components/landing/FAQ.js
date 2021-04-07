@@ -9,9 +9,9 @@ const Question = ({ data }) => (<Box>
 </Box>)
 
 export const FAQ = ({ questions }) => (<Box py={[12, null, 32]} bg="tint.200">
-  <Container maxW={["5xl"]}>
+  <Container maxW={["2xl", null, "5xl"]}>
 	<Heading as="h2" fontSize={["4xl", null, "5xl"]} mb={[8, null, 16]}>FREQUENTLY <br/> ASKED QUESTIONS</Heading>
-	<SimpleGrid columns={[1, null, 2]} spacing={8}>
+	<SimpleGrid columns={[1, 2]} spacing={8}>
 		{
 			questions.map((question) => <Question data={question} />)
 		}

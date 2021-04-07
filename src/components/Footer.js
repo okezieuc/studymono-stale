@@ -5,12 +5,12 @@ import Link from 'next/link'
 
 export const Footer = ({hideTop = false}) => <Box>
 	
-	<SimpleGrid columns={[2, null, 6]} spacingX={[4, null,10]} spacingY={[6, null,10]}
-		px={[4, null, 12]} py={[8, null, 20]} borderBottom="1px solid"
+	<SimpleGrid columns={[2, 4, 6]} spacingX={[4, null,10]} spacingY={[6, null,10]}
+		px={[8, null, 12]} py={[8, null, 20]} borderBottom="1px solid"
 		borderTop={hideTop ? "none" : "1px solid"} color="tint.600" fontWeight="semibold"
-		fontSize={["sm", null, "lg"]} borderColor="tint.400" pb={[20, null, 20]}>
-		<Box gridColumn={["span 2", null, "span 2"]}>
-			<Text fontSize={["xl", null, "3xl"]} fontWeight="bold" mb={["1", null, "4"]} color="black">studymono.</Text>
+		fontSize={["sm", "sm", "lg"]} borderColor="tint.400" pb={[20, null, 20]}>
+		<Box gridColumn={["span 2", "span 4", "span 2"]}>
+			<Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={["1", null, "4"]} color="black">studymono.</Text>
 			<Text fontSize={["sm", null, "md"]} fontWeight="semibold"
 				color="tint.500">Our simple but exquisite tag  line will be displayed below our  name</Text>
 		</Box>

@@ -18,10 +18,10 @@ export const NavBar = () => {
 					studymono.
 				</Link>
 			</Box>
-			<Box d={["none",null, "block"]}>
+			<Box d={["none", "block"]}>
 				<Link href="/pastquestions">Past Questions</Link>
 			</Box>
-			<Box d={["none",null, "block"]}>
+			<Box d={["none", "block"]}>
 				<Link href="/blog">Blog</Link>
 			</Box>
 			<Spacer />
@@ -30,7 +30,7 @@ export const NavBar = () => {
 				<Link href="/pastquestions">Get Started</Link>
 				
 			</Box>
-			<Button size="sm" onClick={onToggle} d={["block", null, "none"]}>
+			<Button size="sm" onClick={onToggle} d={["block", "none"]}>
 					☰
 				</Button>
 		</HStack>

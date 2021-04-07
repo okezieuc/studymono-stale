@@ -26,8 +26,8 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 	  	<NavBar />
 			
 			<Box bg="tint.200" pt={[12, null, 20]} pb={[12, null, 32]}>
-				<Container maxW="5xl" >
-					<Text fontSize={["xs", null, "xl"]} fontWeight="bold">
+				<Container maxW={["2xl",null,"5xl"]} >
+					<Text fontSize={["xs", "md", "xl"]} fontWeight="bold">
 						{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 					</Text>
 					
@@ -36,7 +36,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 		</Box>
 		
 		<Box pt={[12, null, 20]} mb={[12, null, 20]}>
-			<Container maxW="5xl">
+			<Container maxW={["2xl", null, "5xl"]}>
 				<Heading as="h3" fontSize={["2xl", null, "3xl"]}>More from { dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }</Heading>
 				{
 					otherdata.map((otherquestion) => (<>{otherquestion ? <OtherQuestion data={otherquestion.data} questionid={otherquestion.id} />: ""}</>)
@@ -52,7 +52,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 
 const Question = ({questionid, data}) => {
 	return (<Box>
-		<Heading fontSize={["2xl", null, "5xl"]} mb={[2, null, 8]}>
+		<Heading fontSize={["2xl", "3xl", "5xl"]} mb={[2, null, 8]}>
 			{data.question.iv}
 		</Heading>
 
@@ -69,7 +69,7 @@ const Question = ({questionid, data}) => {
 
 const QuestionOption = ( {option, text} ) => (<Flex my={[2, null, 4]}>
     <Text fontWeight="bold" fontSize={["md",null, "xl"]}>{option}.</Text>
-    <Text fontSize={["md",null, "2xl"]} ml={[2, null, 4]}>
+    <Text fontSize={["md","lg", "2xl"]} ml={[2, null, 4]}>
        { text }
     </Text>
 </Flex>)

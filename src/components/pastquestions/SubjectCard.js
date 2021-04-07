@@ -15,7 +15,7 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", ...props}) => 
 				</Box>
     </AspectRatio>
     <Box>
-        <Box fontWeight="bold" fontSize={["md", null, "2xl"]} mt={[2, null, 4]} ml={[2, null, 4]}
+        <Box fontWeight="bold" fontSize={["md", "lg", "2xl"]} mt={[2, null, 4]} ml={[2, null, 4]}
 					color="tint.600">
             <Link href={slug} passHref>
                 <LinkOverlay>

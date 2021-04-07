@@ -13,7 +13,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
 			/>
 		</Box>
     <Box ml={4} mt={4} 
-        fontSize={["md", null, "2xl"]}>
+        fontSize={["md", "xl", "2xl"]}>
         <Link href={`/blog/${post.slug}`} passHref>
             <LinkOverlay>
                 { post.title }
@@ -36,7 +36,7 @@ BlogPost.defaultProps = {
 }
 
 export const BlogPosts = ({posts}) => <Box py={[12, null, 32]}>
-  <Container maxW={["5xl"]}>
+  <Container maxW={["xl", null, "5xl"]}>
 	<Heading as="h2" fontSize={["4xl", null, "5xl"]} mb={[8, null, 16]}>From the Blog</Heading>
 	<SimpleGrid columns={[1, null, 3]} spacing={8}>
 			<BlogPost post={posts[0]} />
