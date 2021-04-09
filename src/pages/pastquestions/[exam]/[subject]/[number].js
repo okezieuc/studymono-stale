@@ -87,7 +87,7 @@ export async function getStaticPaths() {
 			const res = await fetch(`https://squidex-api-layer.cokezieu.workers.dev/api/questions/examsubject/ids?subject=${subject}&exam=${exam}`)
 			let count = await res.json()
 			count = count.count
-			const pageCount = Math.floor((count-1)/10) + 1
+			const pageCount = Math.floor((count-1)/4) + 1
 			for(let i=0; i<pageCount; i++) {
 				paths.push({ params: { exam: exam.toLowerCase(), subject: subject.toLowerCase(), number: String(i+1) } })
 			}

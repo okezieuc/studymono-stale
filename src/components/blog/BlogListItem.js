@@ -11,6 +11,7 @@ export const BlogListItem = ({ post }) => <LinkBox>
 									alt="Picture of the author"
 									layout="fill"
 									objectFit="cover"
+									className="round-corners"
 								/>
             </AspectRatio>
         </Box>

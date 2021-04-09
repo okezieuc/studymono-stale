@@ -20,8 +20,13 @@ const Index = ({ dataschema }) => (
 	  	<NavBar />
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
 			<Container maxW={["2xl", null, "5xl"]} >
-				<BigAd />
-
+				<Heading fontSize={["3xl", "4xl", "5xl"]} as="h1"
+					>Free WAEC and JAMB Past Questions</Heading>
+				<Text mb={[12, 16, 20]} fontSize={["md", "lg", "xl"]}>
+					Below here, we will have a sampe subtitle. This will just list out some stuff
+					that we offer likek the subjects, exams and other things.
+				</Text>
+				
 				<Heading as="h3" mb={4} fontSize={["md", "xl", "3xl"]} color="tint.600">Exams</Heading>
 				<SimpleGrid columns={[2, 3]} gap={[4, null, 12]}>
 					{

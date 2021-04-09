@@ -3,13 +3,23 @@ import { Box, Flex, SimpleGrid, Text,
 import Link from 'next/link'
 import Image from 'next/image'
 
-const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
-    <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} pos="relative">
+
+const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
+    <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} pos="relative" transition="0.3s ease-in-out"
+			_groupHover = {{
+				transform: { 
+					lg: "translate(0px, -10px)",
+				},	
+				boxShadow: {
+					lg:"0px 10px 10px 0px #b1b1b1"
+				}
+			}}> 
 			<Image
 				src={post.cover}
 				alt="Sample feature cover"
 				layout="fill"
 				objectFit="cover"
+				className="round-corners"
 			/>
 		</Box>
     <Box ml={4} mt={4} 

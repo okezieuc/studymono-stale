@@ -10,7 +10,12 @@ const Question = ({ data }) => (<Box>
 
 export const FAQ = ({ questions }) => (<Box py={[12, null, 32]} bg="tint.200">
   <Container maxW={["2xl", null, "5xl"]}>
-	<Heading as="h2" fontSize={["4xl", null, "5xl"]} mb={[8, null, 16]}>FREQUENTLY <br/> ASKED QUESTIONS</Heading>
+	<Heading as="h2" fontSize={["4xl", null, "5xl"]} mb={[8, null, 16]} transition="0.3s ease-in-out"
+		_hover={{
+			transform: { 
+				lg: "translate(10px, 0px)",
+			}
+		}}>FREQUENTLY <br/> ASKED QUESTIONS</Heading>
 	<SimpleGrid columns={[1, 2]} spacing={8}>
 		{
 			questions.map((question) => <Question data={question} />)

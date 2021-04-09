@@ -3,7 +3,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const ExamCard = ({data}) => (<LinkBox><Box w={["250px"]} border="1px solid" borderColor="tint.300" textAlign="left"
-	borderRadius={[4]}>
+	borderRadius={[4]} transition="0.3s ease-in-out"
+	_hover = {{
+		transform: { 
+			lg: "scale(1.05,1.05)",
+		},	
+	}}>
 	<Box w="100%" h="200px" position="relative">
 		<Image
 			src={data.image}
