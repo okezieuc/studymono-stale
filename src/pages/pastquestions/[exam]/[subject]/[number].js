@@ -63,7 +63,7 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 			}
 		
 			<PaginationLink prefix={`/pastquestions/${exam.toLowerCase()}/${subject.toLowerCase()}/`}
-				mt={12} mb={24} current={parseInt(number)} total={Math.floor((examsubjectdata.count-1)/10)+1} />
+				mt={12} mb={24} current={parseInt(number)} total={Math.floor((examsubjectdata.count-1)/4)+1} />
 		</Container>
 
 		<RecommendedReads posts={recommendedPosts} />
