@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const Footer = ({hideTop = false}) => <Box>
 	
 	<SimpleGrid columns={[2, 4, 6]} spacingX={[4, null,10]} spacingY={[6, null,10]}
-		px={[8, null, 12]} py={[8, null, 20]} borderBottom="1px solid"
+		px={[4, 8, 12]} py={[8, null, 20]} borderBottom="1px solid"
 		borderTop={hideTop ? "none" : "1px solid"} color="tint.600" fontWeight="semibold"
 		fontSize={["sm", "sm", "lg"]} borderColor="tint.400" pb={[20, null, 20]}>
 		<Box gridColumn={["span 2", "span 4", "span 2"]}>
