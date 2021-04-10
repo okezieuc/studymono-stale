@@ -1,9 +1,18 @@
 import { Box, Flex, SimpleGrid, Text, 
     LinkBox, LinkOverlay, } from '@chakra-ui/react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
-    <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]}></Box>
+    <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} position="relative">
+			<Image
+				src={post.cover}
+				alt="Picture of the author"
+				layout="fill"
+				objectFit="cover"
+				className="round-corners"
+			/>
+		</Box>
     <Box ml={4} mt={4} 
         fontSize={["md", null, "2xl"]} fontWeight={["600", null, "bold"]}>
         <Link href={`/blog/${post.slug}`} passHref>
