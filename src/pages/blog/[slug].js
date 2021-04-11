@@ -21,10 +21,22 @@ const Index = ({ post, nextPosts }) => {
 	
 	return( <Box>
 		<Head>
-			<title>{ post.title } - Studymono Blog</title>
+			<title>{ post.title } - Studymono Blog</title> 
 			<meta name="description" content={ post.excerpt } />
 			<meta property="og:title" content={`${post.title} - Studymono Blog`} />
-			<meta property="og:description" content={ post.excerpt } />			
+			<meta property="og:description" content={ post.excerpt } />
+			<script type="application/ld+json">
+			{`{
+					"@context": "https://schema.org",
+					"@type": "NewsArticle",
+					"headline": "${post.title}",
+					"image": [
+						"https://www.example.com${post.cover}",
+					 ],
+					"datePublished": "${post.date}",
+					"dateModified": "${post.date}"
+			}`}
+			</script>
 		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
