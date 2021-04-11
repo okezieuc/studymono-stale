@@ -25,17 +25,20 @@ const Index = ({ post, nextPosts }) => {
 			<meta name="description" content={ post.excerpt } />
 			<meta property="og:title" content={`${post.title} - Studymono Blog`} />
 			<meta property="og:description" content={ post.excerpt } />
-			<script type="application/ld+json">
-			{`{
-					"@context": "https://schema.org",
-					"@type": "NewsArticle",
-					"headline": "${post.title}",
-					"image": [
-						"https://www.example.com${post.cover}",
-					 ],
-					"datePublished": "${post.date}",
-					"dateModified": "${post.date}"
-			}`}
+			<script type="application/ld+json" 
+				dangerouslySetInnerHTML={{__html:
+					(`{
+						"@context": "https://schema.org",
+						"@type": "NewsArticle",
+						"headline": "${post.title}",
+						"image": [
+							"https://www.example.com${post.cover}",
+						 ],
+						"datePublished": "${post.date}",
+						"dateModified": "${post.date}"
+				}`)
+			}}>
+			
 			</script>
 		</Head>
 		<NavBar />
