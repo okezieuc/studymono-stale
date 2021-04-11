@@ -46,6 +46,9 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 			<meta name="description" content="This is a sample description for this page" />
 			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
 			<meta property="og:description" content="This is a sample description for this page" />			
+			{
+				(parseInt(number) > 10) ? <meta name="robots" content="noindex" /> : ""
+			}
 		</Head>
 		<NavBar />
 		

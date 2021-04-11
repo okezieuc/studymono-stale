@@ -28,7 +28,10 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 			<title>Sample Product Heading - we offer this and offer that too!</title>
 			<meta name="description" content="This is a sample description for this page" />
 			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<meta property="og:description" content="This is a sample description for this page" />
+			{
+				(parseInt(number) > 10) ? <meta name="robots" content="noindex" /> : ""
+			}
 		</Head>
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
 			mb={[-24, null, -48]}>
