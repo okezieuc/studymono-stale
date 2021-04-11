@@ -21,10 +21,10 @@ const Index = ({ post, nextPosts }) => {
 	
 	return( <Box>
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<title>{ post.title } - Studymono Blog</title>
+			<meta name="description" content={ post.excerpt } />
+			<meta property="og:title" content={`${post.title} - Studymono Blog`} />
+			<meta property="og:description" content={ post.excerpt } />			
 		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
@@ -60,6 +60,7 @@ export async function getStaticProps({ params }) {
 		'cover',
     'author',
     'content',
+		'excerpt'
 
 
   ])
