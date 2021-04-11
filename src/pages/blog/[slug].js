@@ -32,10 +32,22 @@ const Index = ({ post, nextPosts }) => {
 						"@type": "NewsArticle",
 						"headline": "${post.title}",
 						"image": [
-							"https://www.example.com${post.cover}",
+							"https://www.example.com${post.cover}"
 						 ],
 						"datePublished": "${post.date}",
-						"dateModified": "${post.date}"
+						"dateModified": "${post.date}",
+						"author": {
+							"@type": "Person",
+							"name": "${post.author}"
+						},
+						"publisher": {
+							"@type": "Organization",
+							"name": "Company Name",
+							"logo": {
+								"@type": "ImageObject",
+								"url": "https://google.com/logo.jpg"
+							}
+						}
 				}`)
 			}}>
 			
