@@ -50,7 +50,7 @@ const Index = ({ post, nextPosts }) => {
 			</Container>
 		</Box>
 		
-		<BlogPostHeader title={post.title} cover={post.cover} />
+		<BlogPostHeader title={post.title} cover={post.cover} date={post.date} />
 		
 		
 		<Container fontSize={["md", null, "2xl"]} maxW={["2xl", null, "5xl"]} mb={[20, null, 20]}>

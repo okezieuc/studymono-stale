@@ -1,6 +1,7 @@
 import { Box, Text, LinkBox, LinkOverlay, AspectRatio, Flex, } from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { dateInWords } from '../../lib/dateInWords'
 
 export const BlogListItem = ({ post }) => <LinkBox>
     <Flex direction="column">
@@ -23,9 +24,9 @@ export const BlogListItem = ({ post }) => <LinkBox>
                     </LinkOverlay>
                 </Link>
             </Box>
-            <Text mt={[2, null,4]} fontSize={["sm", null, "md"]} ml={2}>12th March 2021</Text>
+            <Text mt={[2, null,4]} fontSize={["sm", null, "md"]} ml={2}>{ dateInWords(post.date) }</Text>
         </Box>
     </Flex>
 </LinkBox>
 
-BlogListItem.defaultProps={ post: {title: "There is a sample blog post title here", slug:"dynamic-routing"}}
+BlogListItem.defaultProps={ post: {title: "There is a sample blog post title here", slug:"dynamic-routing", date:"2020-03-16T05:35:07.322Z"}}
