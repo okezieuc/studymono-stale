@@ -4,6 +4,7 @@ import {
 	
 } from '@chakra-ui/react'
 import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { NavBar, } from '../../../../components/NavBar'
 import { Footer, } from '../../../../components/Footer'
@@ -40,19 +41,25 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 	return(
 
   <Box>
-	  	<NavBar />
-			
-			<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
-				mb={[-24, null, -48]}>
-				<Container maxW={["2xl",null, "5xl"]} >									
-					<Heading fontSize={["4xl", "5xl", "6xl"]}>
-						{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
-					</Heading>
-					<Text fontSize={["sm", null, "md"]}>
-						Page {number}
-					</Text>
-				</Container>
-			</Box>
+		<Head>
+			<title>Sample Product Heading - we offer this and offer that too!</title>
+			<meta name="description" content="This is a sample description for this page" />
+			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
+			<meta property="og:description" content="This is a sample description for this page" />			
+		</Head>
+		<NavBar />
+		
+		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
+			mb={[-24, null, -48]}>
+			<Container maxW={["2xl",null, "5xl"]} >									
+				<Heading fontSize={["4xl", "5xl", "6xl"]}>
+					{dataschema.exams[exam.toUpperCase()]} {dataschema.subjects[subject.toUpperCase()]}
+				</Heading>
+				<Text fontSize={["sm", null, "md"]}>
+					Page {number}
+				</Text>
+			</Container>
+		</Box>
 		
 		<Container maxW={["2xl",null, "5xl"]} mb={[4, null, 40]}>
 			{		

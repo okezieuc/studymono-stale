@@ -4,6 +4,7 @@ import {
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { NavBar, } from '../../../../components/NavBar'
 import { Footer, } from '../../../../components/Footer'
@@ -22,37 +23,36 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 	
 	return(
   <Box>
-	  	<NavBar />
-			
-			<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
-				mb={[-24, null, -48]}>
-				<Container maxW={["2xl",null, "5xl"]} >				
-					<Heading fontSize={["4xl", "5xl", "6xl"]}>
-						{dataschema.subjects[subject.toUpperCase()]}
-					</Heading>
-					<Text fontSize={["sm", null, "md"]}>
-						Page {number}
-					</Text>
-				</Container>
-			</Box>
-		
-			<Container maxW={["2xl",null, "5xl"]} mb={[4, null, 40]}>
-				{					
-					subjectdata.data.map((question) => (
-							<QuestionCard questionid={question.id} data={question.data} />
-						)
-					)
-				}
-				
-				<PaginationLink prefix={`/pastquestions/subject/${subject.toLowerCase()}/`} 
-					mt={12} mb={24} current={parseInt(number)} total={Math.floor((subjectdata.count-1)/4)+1} />
+		<NavBar />
+		<Head>
+			<title>Sample Product Heading - we offer this and offer that too!</title>
+			<meta name="description" content="This is a sample description for this page" />
+			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
+			<meta property="og:description" content="This is a sample description for this page" />			
+		</Head>
+		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
+			mb={[-24, null, -48]}>
+			<Container maxW={["2xl",null, "5xl"]} >				
+				<Heading fontSize={["4xl", "5xl", "6xl"]}>
+					{dataschema.subjects[subject.toUpperCase()]}
+				</Heading>
+				<Text fontSize={["sm", null, "md"]}>
+					Page {number}
+				</Text>
 			</Container>
-
+		</Box>
+	
+		<Container maxW={["2xl",null, "5xl"]} mb={[4, null, 40]}>
+			{					
+				subjectdata.data.map((question) => (
+						<QuestionCard questionid={question.id} data={question.data} />
+					)
+				)
+			}
 			
-		
-
-		
-
+			<PaginationLink prefix={`/pastquestions/subject/${subject.toLowerCase()}/`} 
+				mt={12} mb={24} current={parseInt(number)} total={Math.floor((subjectdata.count-1)/4)+1} />
+		</Container>
 		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>

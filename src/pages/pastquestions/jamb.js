@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import Head from 'next/head'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
@@ -14,9 +15,15 @@ import { getRecommendedPosts } from '../../lib/api'
 
 const Index = ({ subjects, recommendedPosts }) => (
   <Box>
-	  	<NavBar />
+		<Head>
+			<title>Sample Product Heading - we offer this and offer that too!</title>
+			<meta name="description" content="This is a sample description for this page" />
+			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
+			<meta property="og:description" content="This is a sample description for this page" />			
+		</Head>
+	  <NavBar />
 
-			<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
+		<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
 			<Container maxW={["2xl", null, "5xl"]} >
 				<Heading fontSize={["3xl", "4xl", "6xl"]} mb={[4, null, 8]} color="tint.700">
 					JAMB

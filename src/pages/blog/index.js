@@ -3,7 +3,7 @@ import {
 	Box, Heading, Text,
 	SimpleGrid, Container,
 } from '@chakra-ui/react'
-
+import Head from 'next/head'
 import { getAllPosts } from '../../lib/api'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
@@ -12,6 +12,12 @@ import { BlogListItem } from '../../components/blog/BlogListItem'
 
 export default function Index( {allPosts} ) {
 	return (<Box>
+		<Head>
+			<title>Sample Product Heading - we offer this and offer that too!</title>
+			<meta name="description" content="This is a sample description for this page" />
+			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
+			<meta property="og:description" content="This is a sample description for this page" />			
+		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
 		<Box px={[4, null, 24]} pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="tint.200">

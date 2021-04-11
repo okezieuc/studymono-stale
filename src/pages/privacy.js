@@ -3,6 +3,7 @@ import {
 	Container,
 	
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import { NavBar, } from '../components/NavBar'
 import { Footer, } from '../components/Footer'
 import { CallToAction, } from '../components/CallToAction'
@@ -12,6 +13,12 @@ import { getRecommendedPosts } from '../lib/api'
 
 const Index = ({ recommendedPosts }) => (
   <Box>
+		<Head>
+			<title>Sample Product Privacy Policy - we offer this and offer that too!</title>
+			<meta name="description" content="Our users are very important to us, here are ..." />
+			<meta property="og:title" content="Sample Product Privacy Policy - we offer this and offer that too!" />
+			<meta property="og:description" content="Our users are very important to us, here are ..." />			
+		</Head>
 	 	<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} />
 		<Box bg="tint.200" h={[40, null, 56]} mb={[-28, null, -48]} />

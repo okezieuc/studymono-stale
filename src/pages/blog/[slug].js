@@ -4,6 +4,7 @@ import {
 	Avatar, Flex, Container,
 } from '@chakra-ui/react'
 import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { getPostBySlug, getAllPosts, getNextPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
@@ -19,6 +20,12 @@ const Index = ({ post, nextPosts }) => {
 	const content = markdownToHtml(post.content || '')
 	
 	return( <Box>
+		<Head>
+			<title>Sample Product Heading - we offer this and offer that too!</title>
+			<meta name="description" content="This is a sample description for this page" />
+			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
+			<meta property="og:description" content="This is a sample description for this page" />			
+		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 40]}
