@@ -19,10 +19,10 @@ import Image from 'next/image'
 const Index = ({ dataschema }) => (
   <Box>
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<title>StudyMono WAEC and JAMB Past Question Collection</title>
+			<meta name="description" content="We strive to bring WAEC and JAMB past questions to your screens. Here are freely provided past questions on Mathematics, Physics, Chemistry, and other subjects from over four years." />
+			<meta property="og:title" content="StudyMono WAEC and JAMB Past Question Collection" />
+			<meta property="og:description" content="We strive to bring WAEC and JAMB past questions to your screens. Here are freely provided past questions on Mathematics, Physics, Chemistry, and other subjects from over four years." />			
 		</Head>
   	<NavBar />
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
@@ -30,8 +30,7 @@ const Index = ({ dataschema }) => (
 				<Heading fontSize={["3xl", "4xl", "5xl"]} as="h1"
 					>Free WAEC and JAMB Past Questions</Heading>
 				<Text mb={[12, 16, 20]} fontSize={["md", "lg", "xl"]}>
-					Below here, we will have a sampe subtitle. This will just list out some stuff
-					that we offer likek the subjects, exams and other things.
+					We strive to bring WAEC and JAMB past questions to your screens. Here are freely provided past questions on Mathematics, Physics, Chemistry, and other subjects from over four years.
 				</Text>
 				
 				<Heading as="h3" mb={4} fontSize={["md", "xl", "3xl"]} color="tint.600">Exams</Heading>

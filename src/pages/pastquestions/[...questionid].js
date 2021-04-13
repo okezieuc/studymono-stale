@@ -2,7 +2,6 @@ import {
   Link as ChakraLink,
 	Box, Heading, Text,
 	Flex, Container,
-	
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
@@ -25,10 +24,10 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 	return(
   <Box>
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<title>{`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}`.slice(0, 120) } </title>
+			<meta name="description" content={`${questiondata.question.iv} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
+			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}`.slice(0, 120) } />
+			<meta property="og:description" content={`${questiondata.question.iv} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
 		</Head>
 		<NavBar />
 		
@@ -37,7 +36,6 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 				<Text fontSize={["xs", "md", "xl"]} fontWeight="bold">
 					{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 				</Text>
-				
 				<Question questionid={questionid} data={questiondata} />
 			</Container>
 		</Box>
