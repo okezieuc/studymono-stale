@@ -25,12 +25,14 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
   <Box>
 		<NavBar />
 		<Head>
-			<title>{`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB`}</title>
-			<meta name="description" content={`Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.`} />
-			<meta property="og:title" content={`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB`} />
-			<meta property="og:description" content={`Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.`} />
+			<title>{`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB` + ( parseInt(number) != 1 ? ` - Page ${number}` : "" )}</title>
+			<meta name="description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
+				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${subjectdata.data[0].data.question.iv} a. ${subjectdata.data[0].data.optiona.iv} b. ${subjectdata.data[0].data.optionb.iv} c. ${subjectdata.data[0].data.optionc.iv} d. ${subjectdata.data[0].data.optiond.iv}`.slice(0,160))} />
+			<meta property="og:title" content={`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB` + ( parseInt(number) != 1 ? ` - Page ${number}` : "" )} />
+			<meta property="og:description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
+				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${subjectdata.data[0].data.question.iv} a. ${subjectdata.data[0].data.optiona.iv} b. ${subjectdata.data[0].data.optionb.iv} c. ${subjectdata.data[0].data.optionc.iv} d. ${subjectdata.data[0].data.optiond.iv}`.slice(0,160))} />
 			{
-				(parseInt(number) > 3) ? <meta name="robots" content="noindex" /> : ""
+				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}
 		</Head>
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}

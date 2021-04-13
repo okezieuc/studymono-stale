@@ -43,11 +43,15 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
   <Box>
 		<Head>
 			<title>{`${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} Past Questions from StudyMono` +  ( parseInt(number) != 1 ? ` - Page ${number}` : "" )}</title>
-			<meta name="description" content="This is a sample description for this page" />
+			<meta name="description" content={(parseInt(number) == 1 ? 
+					`As ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} ${exam.toLowerCase()=="waec" ? "papers are" : "CBT is" } fast approaching, solving past questions is a big plus. Take advantage of our over 4 years of ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} questions to prepare.` :
+				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${examsubjectdata.data[0].data.question.iv} a. ${examsubjectdata.data[0].data.optiona.iv} b. ${examsubjectdata.data[0].data.optionb.iv} c. ${examsubjectdata.data[0].data.optionc.iv} d. ${examsubjectdata.data[0].data.optiond.iv}`.slice(0,160))} />
 			<meta property="og:title" content={`${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} Past Questions from StudyMono` +  ( parseInt(number) != 1 ? ` - Page ${number}` : "" )} />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<meta property="og:description" content={(parseInt(number) == 1 ? 
+					`As ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} ${exam.toLowerCase()=="waec" ? "papers are" : "CBT is" } fast approaching, solving past questions is a big plus. Take advantage of our over 4 years of ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} questions to prepare.` :
+				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${examsubjectdata.data[0].data.question.iv} a. ${examsubjectdata.data[0].data.optiona.iv} b. ${examsubjectdata.data[0].data.optionb.iv} c. ${examsubjectdata.data[0].data.optionc.iv} d. ${examsubjectdata.data[0].data.optiond.iv}`.slice(0,160))} />			
 			{
-				(parseInt(number) > 10) ? <meta name="robots" content="noindex" /> : ""
+				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}
 		</Head>
 		<NavBar />
@@ -61,7 +65,6 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 				<Text fontSize={["sm", null, "md"]}>
 					Page {number}
 				</Text>
-				{`As ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} ${exam.toLowerCase()=="waec" ? "papers are" : "CBT is" } fast approaching, solving past questions is a big plus. Take advantage of our over 4 years of ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} questions to prepare.`}
 			</Container>
 		</Box>
 		
