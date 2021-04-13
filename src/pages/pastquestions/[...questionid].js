@@ -2,7 +2,6 @@ import {
   Link as ChakraLink,
 	Box, Heading, Text,
 	Flex, Container,
-	
 } from '@chakra-ui/react'
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
