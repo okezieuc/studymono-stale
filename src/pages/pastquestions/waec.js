@@ -16,10 +16,10 @@ import { getRecommendedPosts } from '../../lib/api'
 const Index = ({ subjects, recommendedPosts }) => (
   <Box>
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<title>Practice with actual WAEC Past Questions for Free on StudyMono</title>
+			<meta name="description" content="Because solving WAEC past questions is a great way to prepare for the main exam in August, we made a library of real WAEC past questions in Physics, Chemistry, Biology, and other subjects." />
+			<meta property="og:title" content="Practice with actual WAEC Past Questions for Free on StudyMono" />
+			<meta property="og:description" content="Because solving WAEC past questions is a great way to prepare for the main exam in August, we made a library of real WAEC past questions in Physics, Chemistry, Biology, and other subjects." />			
 		</Head>
 	 	<NavBar />
 

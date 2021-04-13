@@ -25,12 +25,12 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
   <Box>
 		<NavBar />
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />
+			<title>{`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB`}</title>
+			<meta name="description" content={`Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.`} />
+			<meta property="og:title" content={`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB`} />
+			<meta property="og:description" content={`Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.`} />
 			{
-				(parseInt(number) > 10) ? <meta name="robots" content="noindex" /> : ""
+				(parseInt(number) > 3) ? <meta name="robots" content="noindex" /> : ""
 			}
 		</Head>
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
@@ -41,7 +41,7 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 				</Heading>
 				<Text fontSize={["sm", null, "md"]}>
 					Page {number}
-				</Text>
+				</Text>				
 			</Container>
 		</Box>
 	
