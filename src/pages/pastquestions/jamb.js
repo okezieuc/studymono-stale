@@ -28,7 +28,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 				<Heading fontSize={["3xl", "4xl", "6xl"]} mb={[4, null, 8]} color="tint.700">
 					JAMB
 				</Heading>
-				<ExamPageInfo />
+				<ExamPageInfo text="On this side of the page will be a well crafted text about anything (JAMB) I plan to write about on the left side of the page. Hopefully, I can insert some key sentences here that will give some extra SEO juice to the site." />
 			</Container>
 		</Box>
 

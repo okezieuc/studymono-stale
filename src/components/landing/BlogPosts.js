@@ -2,6 +2,7 @@ import { Box, Flex, SimpleGrid, Text,
     LinkBox, LinkOverlay, Container, Heading, } from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { dateInWords } from '../../lib/dateInWords'
 
 
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
@@ -32,7 +33,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
     </Box>
     <Text ml={4} mt={3} fontWeight={["500", null, "bold"]} color="tint.500"
         fontSize={["xs", null, "md"]}>
-        { post.date }
+        { dateInWords(post.date) }
     </Text>
 </Box>
 </LinkBox>
