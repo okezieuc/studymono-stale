@@ -20,6 +20,24 @@ import { FAQ, } from '../components/landing/FAQ'
 import { HeroImage} from '../components/landing/HeroImage'
 import { Vision, } from '../components/landing/Vision'
 
+const FAQData = [
+	{
+		question: "Do you have answers to all questions?",
+		answer: "We do not yet have answers to all the questions. We are seriously working to add answers to the questions."
+	},
+	{
+		question: "Which subjects do you have past questions from?",
+		answer: "Our past questions are from Mathematics, English, Phyics, Chemistry, Biology."
+	},
+	{
+		question: "Are there plans to add questions from more subjects?",
+		answer: "We don't currently have plans to add questions from more subjects. We are presently focussing on five subjects."
+	},
+	{
+		question: "I have a question that is not answered here",
+		answer: "You can make enquiries by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
+	},
+]
 
 const Index = ({ posts, }) => (
 	<Box>
@@ -33,11 +51,10 @@ const Index = ({ posts, }) => (
 		<Hero />
 		<Vision />
 		<Catalog />
-		<Features />
 		<Stats />
 		<Special />
 		<BlogPosts posts={posts} />
-		<FAQ />
+		<FAQ questions={FAQData} />
 		<CallToAction />
 		
 		<Footer hideTop={true} />
