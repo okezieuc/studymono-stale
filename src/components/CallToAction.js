@@ -8,7 +8,7 @@ export const CallToAction = () => <Flex bg="#4715be" px={[3, 8, 12]}
 	boxShadow="0px 0px 4px 0px" direction={["column", null, "row"]}>
 	<Text color="white" fontSize={["lg", "3xl", "4xl"]}
 		fontWeight={["500", "bold"]} maxW={["100%", null, "800px"]}>
-		Sample Call to Action will be displayed here. Get ready!
+		Visit the Catalog of Past Questions to Get Ready for WAEC and JAMB
 	</Text>
 	<Spacer />
 	<Box mt={[4, null, 0]}>

@@ -46,7 +46,7 @@ export const Footer = ({hideTop = false}) => <Box>
 		<Box w={["50%", null, "30%"]} h={["30px", null, "50px"]} bg="gray.100" m="0 auto" mt="8" mb="12"></Box>
 	</Box>
 	<Flex fontSize={["sm", "sm", "md"]} bg="tint.800" w="100%" p="2" pl={["2", null, "6"]} color="white">
-		<Text>Make it count</Text>
+		<Text>Built with ❤ by Okezie and the team</Text>
 		<Spacer />
 		<Text>2021</Text>
 	</Flex>

@@ -23,7 +23,7 @@ import { Vision, } from '../components/landing/Vision'
 const FAQData = [
 	{
 		question: "Do you have answers to all questions?",
-		answer: "We do not yet have answers to all the questions. We are seriously working to add answers to the questions."
+		answer: "We do not yet have answers to all the questions. We are seriously working towards adding answers to the questions."
 	},
 	{
 		question: "Which subjects do you have past questions from?",
@@ -42,10 +42,10 @@ const FAQData = [
 const Index = ({ posts, }) => (
 	<Box>
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<title>Studymono - Educational Resources for Nigerian Students</title>
+			<meta name="description" content="Studymono is an online collection of past questions and articles that will help you to be better prepared for any exam you face" />
+			<meta property="og:title" content="Studymono - Educational Resources for Nigerian Students" />
+			<meta property="og:description" content="Studymono is an online collection of past questions and articles that will help you to be better prepared for any exam you face" />			
 		</Head>
 		<NavBar />
 		<Hero />
