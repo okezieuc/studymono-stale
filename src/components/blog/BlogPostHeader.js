@@ -10,7 +10,7 @@ export const BlogPostHeader = ({ title, cover, date }) => <SimpleGrid columns={[
 				position="relative">
 		
 			<Image
-			src={cover}
+			src={`studymono/blog/${cover}`}
 			alt="Picture of the author"
 			layout="fill"
 			objectFit="cover"

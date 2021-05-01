@@ -7,7 +7,7 @@ import { dateInWords } from '../lib/dateInWords'
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
     <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} position="relative">
 			<Image
-				src={post.cover}
+				src={`studymono/blog/${post.cover}`}
 				alt="Picture of the author"
 				layout="fill"
 				objectFit="cover"
