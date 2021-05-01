@@ -32,7 +32,7 @@ const Index = ({ post, nextPosts }) => {
 						"@type": "NewsArticle",
 						"headline": "${post.title}",
 						"image": [
-							"https://www.example.com${post.cover}"
+							"https://res.cloudinary.com/okezieuc/image/upload/studymono/blog${post.cover}"
 						 ],
 						"datePublished": "${post.date}",
 						"dateModified": "${post.date}",

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, } from '@chakra-ui/react';
+import { Image as ChakraImage, } from '@chakra-ui/react';
 
 export const Logo = props => (
-  <Image
+  <ChakraImage
     src={ props.image || "/white-logo.svg" }
     {...props}
   />

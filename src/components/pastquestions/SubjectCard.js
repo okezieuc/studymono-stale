@@ -18,7 +18,7 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", ...props}) => 
 					}
 				}}>
 					<Image
-						src={`/${code}.png`}
+						src={`studymono/categories/${code}.png`}
 						alt="Picture of the author"
 						layout="fill"
 						objectFit="cover"

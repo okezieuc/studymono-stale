@@ -33,7 +33,6 @@ const Index = ({ posts, }) => (
 		<Hero />
 		<Vision />
 		<Catalog />
-		<Features />
 		<Stats />
 		<Special />
 		<BlogPosts posts={posts} />
