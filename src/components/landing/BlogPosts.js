@@ -16,7 +16,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
 				}
 			}}> 
 			<Image
-				src={post.cover}
+				src={`studymono/blog/${post.cover}`}
 				alt="Sample feature cover"
 				layout="fill"
 				objectFit="cover"

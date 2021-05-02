@@ -11,7 +11,7 @@ const ExamCard = ({data}) => (<LinkBox><Box w={["250px"]} border="1px solid" bor
 	}}>
 	<Box w="100%" h="200px" position="relative">
 		<Image
-			src={data.image}
+			src={`studymono/categories/${data.image}`}
 			alt="Sample feature cover"
 			layout="fill"
 			objectFit="cover"
