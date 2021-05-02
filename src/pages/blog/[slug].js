@@ -68,7 +68,8 @@ const Index = ({ post, nextPosts }) => {
 		<BlogPostHeader title={post.title} cover={post.cover} date={post.date} />
 		
 		
-		<Container fontSize={["md", null, "2xl"]} maxW={["2xl", null, "5xl"]} mb={[20, null, 20]}>
+		<Container fontSize={["md", null, "2xl"]} maxW={["2xl", null, "4xl"]} mb={[20, null, 20]}
+			px={["1.5em"]}>
 				{content}
 		</Container>
 		
