@@ -1,7 +1,7 @@
 import { Box, Heading, Text, Stack, Flex } from '@chakra-ui/react'
 import Link from 'next/link'
 
-export const Special = () => (<Box bg="tint.200" mt={[32]} py={[20]}>
+export const Special = () => (<Box bg="tint.200" mt={[32, null, 48]} py={[20, null, 32]}>
 <Box maxW={["xl", null, "5xl"]} m="0 auto" textAlign="left" px={[4, null, 0]}>
 	<Stack direction={["column", null, "row"]}>
 		<Box w={[60, null, "300px"]} fontSize={["2xl", null, "3xl"]} fontWeight="bold">
@@ -9,7 +9,7 @@ export const Special = () => (<Box bg="tint.200" mt={[32]} py={[20]}>
 		</Box>
 		<Box flex="1" ml={[null, null, 8]}>
 			<Text fontSize={["md", null, "2xl"]}>
-				Studymono was not created to be a replacement for textbooks. It is designed to be a supplementary material for solving problems based on what you learn school in preparation for WAEC, JAMB and other examinations.
+				We did not create Studymono to be a replacement for textbooks. Why would we do such? Studymono is <Box as="span" fontWeight="bold">a supplementary material</Box> for solving questions of your choice in preparation for WAEC, JAMB and higher education.
 			</Text>
 		</Box>
 	</Stack>

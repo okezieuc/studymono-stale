@@ -13,10 +13,10 @@ import { BlogListItem } from '../../components/blog/BlogListItem'
 export default function Index( {allPosts} ) {
 	return (<Box>
 		<Head>
-			<title>Sample Product Heading - we offer this and offer that too!</title>
-			<meta name="description" content="This is a sample description for this page" />
-			<meta property="og:title" content="Sample Product Heading - we offer this and offer that too!" />
-			<meta property="og:description" content="This is a sample description for this page" />			
+			<title>The Studymono Blog - Studymono Announcements, Tips and Educational News</title>
+			<meta name="description" content="The Studymono Blog is a channel we created to reach out to students and everyone in education with education tips and news, and talk about new features on Studymono." />
+			<meta property="og:title" content="The Studymono Blog - Studymono Announcements, Tips and Educational News" />
+			<meta property="og:description" content="The Studymono Blog is a channel we created to reach out to students and everyone in education with education tips and news, and talk about new features on Studymono." />			
 		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
@@ -25,9 +25,9 @@ export default function Index( {allPosts} ) {
 				Studymono <Box as="span" color="brand">Blog</Box>
 			</Heading>
 			<Text mt={[4, null, 12]} fontSize={["sm", "md", "2xl"]} maxW="800px">
-				On this blog, we publish articles that will help enlighten you on some
-				very important, but often overlooked details that can help you in your
-				exams and can also have some product updates in here too!
+				You don't want to miss out on any of our articles. We talk about new features we bring to
+				Studymono and give <Box as="span" fontWeight="bold">tips on how to study effectively</Box>. We also write about the latest news in the
+				Nigerian educational ecosystem.						
 			</Text>
 		</Box>
 		

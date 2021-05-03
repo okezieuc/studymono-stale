@@ -27,7 +27,7 @@ const FAQData = [
 	},
 	{
 		question: "Which subjects do you have past questions from?",
-		answer: "Our past questions are from Mathematics, English, Phyics, Chemistry, Biology."
+		answer: "Our past questions are from Mathematics, English, Physics, Chemistry and Biology."
 	},
 	{
 		question: "Are there plans to add questions from more subjects?",
@@ -35,7 +35,7 @@ const FAQData = [
 	},
 	{
 		question: "I have a question that is not answered here",
-		answer: "You can make enquiries by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
+		answer: "Sorry to hear that. You can always reach us by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
 	},
 ]
 
