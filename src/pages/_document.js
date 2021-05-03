@@ -16,3 +16,8 @@ export default class Document extends NextDocument {
     )
   }
 }
+
+//<link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet" />
+//<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+//<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&display=swap" rel="stylesheet" />
+//<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet" />

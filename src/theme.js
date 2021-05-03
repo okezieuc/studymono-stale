@@ -25,7 +25,10 @@ const theme = extendTheme({
 		},
 		brand: '#4715BE'
   },
-  fonts,
+	fonts: {
+		heading: "Zilla Slab",
+		body: "Nunito"
+	},
   breakpoints,
   icons: {
     logo: {

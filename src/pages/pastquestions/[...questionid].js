@@ -33,9 +33,9 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 		
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[12, null, 32]}>
 			<Container maxW={["2xl",null,"5xl"]} >
-				<Text fontSize={["xs", "md", "xl"]} fontWeight="bold">
+				<Heading fontSize={["xs", "md", "xl"]} fontWeight="bold" as="p">
 					{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
-				</Text>
+				</Heading>
 				<Question questionid={questionid} data={questiondata} />
 			</Container>
 		</Box>
@@ -57,9 +57,10 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 
 const Question = ({questionid, data}) => {
 	return (<Box>
-		<Heading fontSize={["2xl", "3xl", "5xl"]} mb={[2, null, 8]}>
+		<Text fontSize={["2xl", "3xl", "5xl"]} fontWeight="bold" mb={[2, null, 8]}
+			lineHeight="1.2em" as="h1">
 			{data.question.iv}
-		</Heading>
+		</Text>
 
 		<QuestionOption option="a" text={data.optiona.iv} />
 		<QuestionOption option="b" text={data.optionb.iv} />
