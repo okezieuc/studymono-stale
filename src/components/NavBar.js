@@ -19,15 +19,27 @@ export const NavBar = () => {
 				</Link>
 			</Box>
 			<Box d={["none", "block"]}>
-				<Link href="/pastquestions">Past Questions</Link>
+				<Link href="/pastquestions">
+					<a className="umami--click--nav-pastquestions-link">
+						Past Questions
+					</a>
+				</Link>
 			</Box>
 			<Box d={["none", "block"]}>
-				<Link href="/blog">Blog</Link>
+				<Link href="/blog">
+					<a className="umami--click--nav-blog-link">
+						Blog
+					</a>
+				</Link>
 			</Box>
 			<Spacer />
 			<Box d={["block"]} bg="white" py={["1", null, "2"]} px={["2", null, "6"]} fontWeight="bold" color="black"
 				border="black 1px solid" borderRadius={8} >
-				<Link href="/pastquestions">Get Started</Link>
+				<Link href="/pastquestions">
+					<a className="umami--click--nav-get-started">
+						Get Started
+					</a>
+			</Link>
 				
 			</Box>
 			<Button size="sm" onClick={onToggle} d={["block", "none"]}>
@@ -39,9 +51,17 @@ export const NavBar = () => {
 				 bg="white" w="100%"
 				alignItems="flex-start"
 				fontSize="lg" fontWeight="bold" p={8} textAlign="left">
-				<Link href="/pastquestions">Home</Link>
-				<Link href="/pastquestions">Past Questions</Link>
-				<Link href="/pastquestions">Blog</Link>
+				<Link href="/">Home</Link>
+				<Link href="/pastquestions">
+					<a className="umami--click--nav-pastquestions-link">
+						Past Questions
+					</a>
+				</Link>
+				<Link href="/blog">
+					<a className="umami--click--nav-blog-link">
+						Blog
+					</a>
+				</Link>
 				<Button colorScheme="red" mt={20} size="sm" onClick={onClose}>X</Button>
 			</VStack>
 		</Box>

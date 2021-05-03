@@ -35,9 +35,9 @@ const Index = ({ subjects, recommendedPosts }) => (
 		<Container maxW={["2xl", null, "5xl"]} mb={[20, null, 40]} >
 		<Heading as="h3" mb={4} color="tint.600" fontSize={["lg", "xl", "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
-			<SubjectCard subject="Physics" slug="/pastquestions/jamb/phy/1" code="phy" />
-			<SubjectCard subject="Chemistry" slug="/pastquestions/jamb/chem/1" code="chem" />			
-			<SubjectCard subject="Biology" slug="/pastquestions/jamb/bio/1" code="bio"
+			<SubjectCard exam="jamb" subject="Physics" slug="/pastquestions/jamb/phy/1" code="phy" />
+			<SubjectCard exam="jamb" subject="Chemistry" slug="/pastquestions/jamb/chem/1" code="chem" />			
+			<SubjectCard exam="jamb" subject="Biology" slug="/pastquestions/jamb/bio/1" code="bio"
 				gridColumn={["span 2", null, "span 1"]} />			
 		</SimpleGrid>
 		<SimpleGrid columns={[2, null, 4]} gap={[4, null, 12]} mt={[4, null, 12]}
@@ -45,7 +45,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 			{
 				Object.keys(subjects).map((key) => (<>
 					{
-						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard subject={subjects[key]} code={key.toLowerCase()}
+						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard exam="jamb" subject={subjects[key]} code={key.toLowerCase()}
 							slug={`/pastquestions/jamb/${key.toLowerCase()}/1`} subtitle="Sample Subtitle" /> : ''
 					}
 					</>)

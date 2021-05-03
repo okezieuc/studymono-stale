@@ -6,7 +6,9 @@ const BlogNavigationItem = ({rightBorder = true, post}) => <Box px={[2, 8, 12]} 
     borderRight={ rightBorder ? "1px solid" :"none" }>
     <Text fontWeight="bold" fontSize={["md", "2xl", "4xl"]} minH={["60px", null, "120px"]}>
         <Link href={`/blog/${post.slug}`}>
-            {post.title}
+            <a className="umami--click--blog-navigation-link">
+							{post.title}
+						</a>
         </Link>    
     </Text>
     <Text mt={[4, null, 16]} fontSize={["xs", "sm", "md"]}

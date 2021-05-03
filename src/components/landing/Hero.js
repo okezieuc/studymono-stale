@@ -7,7 +7,11 @@ const LinkButton = () => (<Box w="max-content" bg="brand" px={[4, null, 8]} py={
 		background: "#6830e8",
 		transition: "background 0.1s ease-in-out"
 	}} >
-	<Link href="/pastquestions">Get Started</Link>
+	<Link href="/pastquestions">
+		<a className="umami--click--landing-pastquestions-cta">
+			Get Started
+		</a>
+	</Link>
 </Box>)
 
 export const Hero = () => (<Box bg="tint.200" pt={["60px", null, "80px"]} pb={["200px"]}>

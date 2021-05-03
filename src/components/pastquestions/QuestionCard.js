@@ -13,7 +13,7 @@ export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" 
     <Box mb={4}>
         <Box fontSize={["lg", null, "3xl"]} fontWeight="semibold">
             <Link href={`/pastquestions/${questionid}`} passHref>
-                <LinkOverlay>
+                <LinkOverlay className="umami--click--open-pastquestion">
                    { data.question.iv }
                 </LinkOverlay>
             </Link>          
