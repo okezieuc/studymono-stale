@@ -17,7 +17,9 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
     <Box ml={4} mt={4} 
         fontSize={["md", null, "2xl"]} fontWeight={["600", null, "bold"]}>
         <Link href={`/blog/${post.slug}`} passHref>
-            <LinkOverlay>
+            <LinkOverlay
+							className="umami--click--recommended-post"
+						>
                 { post.title }
             </LinkOverlay>
         </Link>

@@ -5,7 +5,7 @@ export const ExamCard = ({ exam, slug }) => (<LinkBox><AspectRatio ratio={16 / 1
     <Box fontSize={["md", null, "4xl"]} fontWeight="bold"
     borderRadius={[4, null, 8]} border="1px solid" borderColor="tint.400">
         <Link href={`/pastquestions/${slug}`} passHref>
-            <LinkOverlay>
+            <LinkOverlay className={`umami--click--study-${exam.toLowerCase()}-questions`}>
                 {exam}
             </LinkOverlay>
         </Link>

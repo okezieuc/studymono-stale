@@ -5,7 +5,15 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+					<script 
+						async
+						defer
+						data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+						data-host-url={process.env.NEXT_PUBLIC_UMAMI_DATA_HOST}
+						src="/umami.js"
+					/>
+				</Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
           <ColorModeScript />
