@@ -4,6 +4,7 @@ excerpt: "2020 was a very different year. The pandemic brought various challenge
 date: "2020-05-16T05:35:07.322Z"
 author: "Okezie Chiedozie"
 cover: "/waec-and-jamb-in-2021_c5zw7f.jpg"
+credits: '<a href="http://www.freepik.com">Designed by Freepik</a>'
 ---
 
  

@@ -4,6 +4,7 @@ excerpt: "Studymono is a very new product. Our goal is to provide excellent reso
 date: "2020-05-17T05:35:07.322Z"
 author: "Okezie Chiedozie"
 cover: "/giving-us-feedback_qn5ci8.jpg"
+credits: '<a href="http://www.freepik.com">Designed by pikisuperstar / Freepik</a>'
 ---
 
 Studymono is a very new product. Our goal is to provide excellent resources that will students prepare for WAEC and JAMB. We work continuously to help make Studymono more and more helpful for students. There is one thing that can contribute greatly to the success of Studymono and that that is your feedback.
