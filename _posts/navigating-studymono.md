@@ -3,7 +3,7 @@ title: "A Newcomer's Guide to Navigating Studymono"
 excerpt: "Studymono is a new platform that provides secondary school students with past questions from the most popular examinations for senior secondary school students in Nigeria-WAEC and JAMB. As many people are not acquainted with our website, we decided to write this article to help people to find their way around Studymono faster."
 date: "2020-05-19T05:35:07.322Z"
 author: "Okezie Chiedozie"
-cover: "/pattern.jpg"
+cover: "/navigating-studymono_nzjkwc.jpg"
 ---
 
 Studymono is a new platform that provides secondary school students with past questions from the most popular examinations for senior secondary school students in Nigeria-WAEC and JAMB. As many people are not acquainted with our website, we decided to write this article to help people to find their way around Studymono faster.

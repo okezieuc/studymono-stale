@@ -3,7 +3,7 @@ title: "You can Help Improve Studymono! Here's How to do So."
 excerpt: "Studymono is a very new product. Our goal is to provide excellent resources that will students prepare for WAEC and JAMB. We work continuously to help make Studymono more and more helpful for students. There is one thing that can contribute greatly to the success of Studymono and that that is your feedback."
 date: "2020-05-17T05:35:07.322Z"
 author: "Okezie Chiedozie"
-cover: "/pattern.jpg"
+cover: "/giving-us-feedback_qn5ci8.jpg"
 ---
 
 Studymono is a very new product. Our goal is to provide excellent resources that will students prepare for WAEC and JAMB. We work continuously to help make Studymono more and more helpful for students. There is one thing that can contribute greatly to the success of Studymono and that that is your feedback.
