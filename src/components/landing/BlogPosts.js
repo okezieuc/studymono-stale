@@ -17,7 +17,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
 			}}> 
 			<Image
 				src={`studymono/blog/${post.cover}`}
-				alt="Sample feature cover"
+				alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
 				layout="fill"
 				objectFit="cover"
 				className="round-corners"

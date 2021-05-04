@@ -11,7 +11,7 @@ export const BlogPostHeader = ({ title, cover, date }) => <SimpleGrid columns={[
 		
 			<Image
 			src={`studymono/blog/${cover}`}
-			alt="Picture of the author"
+			alt={`Cover image for the post "${title}" on The Studymono Blog`}
 			layout="fill"
 			objectFit="cover"
 			/>
