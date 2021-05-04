@@ -19,7 +19,7 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", exam=null, ...
 				}}>
 					<Image
 						src={`studymono/categories/${code}.png`}
-						alt="Picture of the author"
+						alt={`Cover for ${subject} questions on Studymono`}
 						layout="fill"
 						objectFit="cover"
 					/>

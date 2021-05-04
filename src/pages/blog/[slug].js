@@ -25,6 +25,7 @@ const Index = ({ post, nextPosts }) => {
 			<meta name="description" content={ post.excerpt } />
 			<meta property="og:title" content={`${post.title} - Studymono Blog`} />
 			<meta property="og:description" content={ post.excerpt } />
+			<meta property="og:image" content={`https://res.cloudinary.com/okezieuc/image/upload/studymono/blog/${post.cover}`} />
 			<script type="application/ld+json" 
 				dangerouslySetInnerHTML={{__html:
 					(`{

@@ -9,7 +9,7 @@ export const BlogListItem = ({ post }) => <LinkBox>
             <AspectRatio borderRadius={[4, null,8]} bg="gray.100" ratio={4/3} w={["100%", null, "100%"]}>
                 <Image
 									src={`studymono/blog/${post.cover}`}
-									alt="Picture of the author"
+									alt={`Cover image for the post "${post.title}" on The Studymono Blog`}
 									layout="fill"
 									objectFit="cover"
 									className="round-corners"

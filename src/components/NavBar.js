@@ -8,7 +8,9 @@ export const NavBar = () => {
 	
 	return(<Box>
 <Box fontSize={["sm", "sm", "sm"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">
-	Special announcement that is displayed at top
+	<Link href="/blog/waec-and-jamb-in-2021">
+		Few thoughts on WAEC and JAMB in 2021
+	</Link>
 </Box> 
 <Box fontSize={["sm", "sm", "lg"]} pl={["1", null, "4"]} bg="white" borderBottom="1px solid" borderBottomColor="tint.400">
 	<Box p={["2", null, "4"]}>

@@ -29,7 +29,9 @@ const Index = ({ subjects, recommendedPosts }) => (
 				<Heading fontSize={["3xl", "4xl", "6xl"]} mb={[4, null, 8]} color="tint.700">
 					JAMB
 				</Heading>
-				<ExamPageInfo text="On this side of the page will be a well crafted text about anything (JAMB) I plan to write about on the left side of the page. Hopefully, I can insert some key sentences here that will give some extra SEO juice to the site." />
+				<ExamPageInfo 
+					text="Because solving JAMB past questions is a great way to prepare for the CBT in June, we made a library of real JAMB past questions in Physics, Chemistry, Biology, and other subjects."
+				/>
 			</Container>
 		</Box>
 

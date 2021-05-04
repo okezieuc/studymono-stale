@@ -17,7 +17,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
 			}}> 
 			<Image
 				src={`studymono/blog/${post.cover}`}
-				alt="Sample feature cover"
+				alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
 				layout="fill"
 				objectFit="cover"
 				className="round-corners"
@@ -48,7 +48,7 @@ BlogPost.defaultProps = {
 
 export const BlogPosts = ({posts}) => <Box py={[12, null, 32]}>
   <Container maxW={["xl", null, "5xl"]}>
-	<Heading as="h2" fontSize={["4xl", null, "5xl"]} mb={[8, null, 16]}>From the Blog</Heading>
+	<Heading as="h2" fontSize={["4xl", null, "5xl"]} mb={[8, null, 16]}>From <Box as="span" color="brand">the Blog</Box></Heading>
 	<SimpleGrid columns={[1, null, 3]} spacing={8}>
 			<BlogPost post={posts[0]} />
 			<BlogPost post={posts[1]} />

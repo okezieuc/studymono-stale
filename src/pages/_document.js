@@ -6,6 +6,9 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
+					<link rel="shortcut icon" href="/favicon.png" />
+					<link rel="icon" type="image/png" href="/favicon-196x196.png" />
+					<link rel="apple-touch-icon" href="/touch-icon-iphone.png" />
 					<script 
 						async
 						defer

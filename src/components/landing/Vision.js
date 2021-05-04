@@ -7,13 +7,14 @@ export const Vision = () => (<Box mx={[4]} >
 	position="relative" overflow="hidden" py={[8, null, 16]} px={[8]} >
 	<Flex color="white" direction={["column", "row"]} align="center">
 		<Box w={["100px", null, "200px"]} fontSize={["3xl"]} fontWeight="bold"  mr={[null, 8]} mb={[8,  null, 0]}>
-			<Logo size="xs" />
+			<Logo 
+				size="xs"
+				alt="Studymono's logo"
+			/>
 		</Box>
 		<Box flex="1">
 			<Text fontSize={["md", null, "2xl"]}>
-				Here is a long explanation for this stuff that we say that we do.
-				We go on to say even more about it here. Lorem isum dot olres, bla, bla.
-				We will also add a little more detail for this to span more lines
+				Our goal at Studymono is to <Box as="span" fontWeight="bold">make learning accesible</Box>. We want to bring <Box as="span" fontWeight="bold">helpful educational resources</Box> to everyone's fingertips.
 			</Text>
 		</Box>
 	</Flex>
