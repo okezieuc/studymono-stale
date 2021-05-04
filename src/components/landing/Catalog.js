@@ -20,7 +20,7 @@ const ExamCard = ({data}) => (<LinkBox><Box w={["250px"]} border="1px solid" bor
 	<Box p={[4]}>
 		<Text fontWeight="bold">
 			<Link href={`/pastquestions/${data.exam.toLowerCase()}`} passHref>
-				<LinkOverlay>
+				<LinkOverlay className={`umami--click--landing-${data.exam.toLowerCase()}-cta`}>
 					{ data.exam }
 				</LinkOverlay>
 			</Link>

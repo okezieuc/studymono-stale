@@ -14,6 +14,7 @@ import { BigAd, } from '../../components/pastquestions/BigAd'
 import { ExamCard, } from '../../components/pastquestions/ExamCard'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
 import { QuestionCard, } from '../../components/pastquestions/QuestionCard'
+import { Credits, } from '../../components/pastquestions/Credits'
 import Image from 'next/image'
 
 const Index = ({ dataschema }) => (
@@ -63,6 +64,7 @@ const Index = ({ dataschema }) => (
 				)
 			}
 		</SimpleGrid>
+		<Credits />
 		</Container>
 		<Footer />
 	</Box>

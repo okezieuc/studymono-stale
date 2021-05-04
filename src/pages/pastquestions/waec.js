@@ -11,6 +11,7 @@ import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
 import { ExamPageInfo, } from '../../components/pastquestions/ExamPageInfo'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
+import { Credits, } from '../../components/pastquestions/Credits'
 import { getRecommendedPosts } from '../../lib/api'
 
 const Index = ({ subjects, recommendedPosts }) => (
@@ -37,9 +38,9 @@ const Index = ({ subjects, recommendedPosts }) => (
 		<Container maxW={["2xl", null, "5xl"]} mb={[20, null, 40]} >
 		<Heading as="h3" mb={4} color="tint.600" fontSize={["lg", "xl", "3xl"]} mt={[12, null, 24]}>Subjects</Heading>
 		<SimpleGrid columns={[2, null, 3]} gap={[4, null, 12]}>
-			<SubjectCard subject="Physics" slug="/pastquestions/waec/phy/1" code="phy" />
-			<SubjectCard subject="Chemistry" slug="/pastquestions/waec/chem/1" code="chem" />			
-			<SubjectCard subject="Biology" slug="/pastquestions/waec/bio/1" code="bio"
+			<SubjectCard exam="waec" subject="Physics" slug="/pastquestions/waec/phy/1" code="phy" />
+			<SubjectCard exam="waec" subject="Chemistry" slug="/pastquestions/waec/chem/1" code="chem" />			
+			<SubjectCard exam="waec" subject="Biology" slug="/pastquestions/waec/bio/1" code="bio"
 				gridColumn={["span 2", null, "span 1"]} />			
 		</SimpleGrid>
 		<SimpleGrid columns={[2, null, 4]} gap={[4, null, 12]} mt={[4, null, 12]}
@@ -47,13 +48,14 @@ const Index = ({ subjects, recommendedPosts }) => (
 			{
 				Object.keys(subjects).map((key) => (<>
 					{
-						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard subject={subjects[key]} code={key.toLowerCase()}
+						(key != "PHY" && key != "CHEM" && key != "BIO") ? <SubjectCard exam="waec" subject={subjects[key]} code={key.toLowerCase()}
 							slug={`/pastquestions/waec/${key.toLowerCase()}/1`} subtitle="Sample Subtitle" /> : ''
 					}
 					</>)
 				)
 			}
 		</SimpleGrid>
+		<Credits />
 		</Container>
 		
 		

@@ -8,7 +8,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
     <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} position="relative">
 			<Image
 				src={`studymono/blog/${post.cover}`}
-				alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
+        alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
 				layout="fill"
 				objectFit="cover"
 				className="round-corners"
@@ -17,7 +17,9 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
     <Box ml={4} mt={4} 
         fontSize={["md", null, "2xl"]} fontWeight={["600", null, "bold"]}>
         <Link href={`/blog/${post.slug}`} passHref>
-            <LinkOverlay>
+            <LinkOverlay
+							className="umami--click--recommended-post"
+						>
                 { post.title }
             </LinkOverlay>
         </Link>

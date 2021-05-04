@@ -15,7 +15,11 @@ export const CallToAction = () => <Flex bg="#4715be" px={[3, 8, 12]}
 		<Box bg="white" color="#4715be" fontSize={["md", "md", "2xl"]}
 			width="fit-content" py={["1", "2", "2"]} px={["2", "4", "5"]} height="fit-content"
 			borderRadius={["4px", "8px"]} fontWeight={["bold", null, "bold"]}>
-			<Link href="/pastquestions">Get Started</Link>
+			<Link href="/pastquestions">
+				<a className="umami--click--footer-cta">
+					Get Started
+				</a>
+			</Link>
 		</Box>
 		<Text textAlign={["left", null, "center"]} fontSize={["xs", "md", "lg"]}
 			mt={[null, 1, "1"]} color="white">It's free</Text>

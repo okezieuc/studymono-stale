@@ -4,6 +4,7 @@ excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
 author: 'Chief Chef'
 date: '2020-03-16T05:35:07.322Z'
 cover: '/cover.jpg'
+credits: '<a href="http://www.freepik.com">Designed by Freepik</a>'
 ---
 
 [View raw (TEST.md)](https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md)

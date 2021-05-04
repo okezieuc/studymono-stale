@@ -2,7 +2,7 @@ import { Box, AspectRatio, Text, LinkBox, LinkOverlay, } from'@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export const SubjectCard = ({subject, slug, subtitle, code="bio", ...props}) => (<LinkBox {...props} role="group">
+export const SubjectCard = ({subject, slug, subtitle, code="bio", exam=null, ...props}) => (<LinkBox {...props} role="group">
         <AspectRatio ratio={16 / 12}>
         <Box fontSize={["xl", null, "4xl"]} fontWeight="bold"
         borderRadius={[4, null, 8]} border="1px none" transition="0.3s ease-in-out"
@@ -29,7 +29,9 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", ...props}) => 
         <Box fontWeight="bold" fontSize={["md", "lg", "2xl"]} mt={[2, null, 4]} ml={[2, null, 4]}
 					color="tint.600">
             <Link href={slug} passHref>
-                <LinkOverlay>
+                <LinkOverlay
+									 className={`umami--click--study-${exam ? exam.toLowerCase() + "-" : ""}${code.toLowerCase()}-questions`}
+								>
                     { subject }
                 </LinkOverlay>
             </Link>

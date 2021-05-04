@@ -5,7 +5,7 @@ const WideLink = ({ text, slug }) => <LinkBox><Box border="1px solid" p={[1, nul
     minW={["50px", null, "150px"]} textAlign="center"
     borderRadius={[4, null,8]} borderColor="tint.400">
     <Link href={slug} passHref>
-        <LinkOverlay>
+        <LinkOverlay className="umami--click--switch-pastquestions-page">
             { text }
         </LinkOverlay>
     </Link>
@@ -16,7 +16,7 @@ const SlimLink = ({ slug, text, valid }) => <LinkBox><Box border="1px solid" p={
      minW={["75px", null, "150px"]} textAlign="center"
     borderRadius={[4, null,8]} borderColor="tint.400" d={valid ? "block" : "none"}>
     <Link href={slug} passHref>
-        <LinkOverlay>
+        <LinkOverlay className="umami--click--switch-pastquestions-page">
             { text }
         </LinkOverlay>
     </Link>

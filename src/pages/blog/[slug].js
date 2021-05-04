@@ -68,8 +68,21 @@ const Index = ({ post, nextPosts }) => {
 		<BlogPostHeader title={post.title} cover={post.cover} date={post.date} />
 		
 		
-		<Container fontSize={["md", null, "2xl"]} maxW={["2xl", null, "5xl"]} mb={[20, null, 20]}>
+		<Container fontSize={["md", null, "2xl"]} maxW={["2xl", null, "4xl"]} mb={[20, null, 20]}
+			px={["1.5em"]}>
 				{content}
+				
+				{ 
+					post.credits 
+					? <Box color="tint.400" fontSize={["xs", null, "md"]}
+						dangerouslySetInnerHTML={
+							{
+								__html: `Cover Credits: ${post.credits}`
+							}
+						}
+					/>
+					: ""
+				}
 		</Container>
 		
 		<BlogNavigation nextPosts={nextPosts} />
@@ -87,8 +100,8 @@ export async function getStaticProps({ params }) {
 		'cover',
     'author',
     'content',
-		'excerpt'
-
+		'excerpt',
+		'credits'
 
   ])
   //const content = await markdownToHtml(post.content || '')
