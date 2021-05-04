@@ -14,6 +14,7 @@ export const BlogPostHeader = ({ title, cover, date }) => <SimpleGrid columns={[
 			alt="Picture of the author"
 			layout="fill"
 			objectFit="cover"
+			priority={true}
 			/>
 		
 		</Box>

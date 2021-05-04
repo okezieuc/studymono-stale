@@ -11,6 +11,7 @@ import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
 import { ExamPageInfo, } from '../../components/pastquestions/ExamPageInfo'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
+import { Credits, } from '../../components/pastquestions/Credits'
 import { getRecommendedPosts } from '../../lib/api'
 
 const Index = ({ subjects, recommendedPosts }) => (
@@ -52,6 +53,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 				)
 			}
 		</SimpleGrid>
+		<Credits />
 		</Container>
 		
 		
