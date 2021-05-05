@@ -18,6 +18,7 @@ const Index = ({ recommendedPosts }) => (
 			<meta name="description" content="Our users are very important to us, here are ..." />
 			<meta property="og:title" content="Sample Product Privacy Policy - we offer this and offer that too!" />
 			<meta property="og:description" content="Our users are very important to us, here are ..." />			
+			<link rel="canonical" href="https://www.studymono.com/privacy" />
 		</Head>
 	 	<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} />

@@ -24,6 +24,7 @@ const Index = ({ dataschema }) => (
 			<meta name="description" content="We strive to bring WAEC and JAMB past questions to your screens. Here are freely provided past questions on Mathematics, Physics, Chemistry, and other subjects from over four years." />
 			<meta property="og:title" content="StudyMono WAEC and JAMB Past Question Collection" />
 			<meta property="og:description" content="We strive to bring WAEC and JAMB past questions to your screens. Here are freely provided past questions on Mathematics, Physics, Chemistry, and other subjects from over four years." />			
+			<link rel="canonical" href="https://www.studymono.com/pastquestions" />
 		</Head>
   	<NavBar />
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[20, null, 40]}>
