@@ -98,7 +98,7 @@ export async function getStaticPaths() {
 		for (let subnum=0; subnum<Object.keys(dataschema.subjects).length; subnum++) {
 			const subject = Object.keys(dataschema.subjects)[subnum]
 			
-			const res = await fetch(`https://squidex-api-layer.cokezieu.workers.dev/api/questions/examsubject/ids?subject=${subject}&exam=${exam}`)
+			const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/examsubject/ids?subject=${subject}&exam=${exam}`)
 			let count = await res.json()
 			count = count.count
 			const pageCount = Math.floor((count-1)/4) + 1
@@ -126,7 +126,7 @@ export async function getStaticProps({ params }) {
 	const subject = params.subject
 	const page = params.number
 	
-	const res = await fetch(`https://squidex-api-layer.cokezieu.workers.dev/api/questions/examsubject?exam=${exam}&subject=${subject}&page=${page}`)
+	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/examsubject?exam=${exam}&subject=${subject}&page=${page}`)
   	const examsubjectdata = await res.json()
  	const recommendedPosts = getRecommendedPosts()
 

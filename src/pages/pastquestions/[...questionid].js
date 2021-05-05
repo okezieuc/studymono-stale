@@ -101,7 +101,7 @@ export async function getStaticPaths() {
 	let current = 1
 	
 	while (current<=pages) {
-		const res = await fetch(`https://squidex-api-layer.cokezieu.workers.dev/api/questions/ids?page=${current}`)
+		const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/ids?page=${current}`)
 		let data = await res.json()
 		
 		if(current == 1)  {
@@ -119,10 +119,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 	//const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Physics","CHEM":"Chemistry","BIO":"Biology","MATH":"Mathematics","ENG":"English"}}
 	//const fullquestiondata = {"id":"eb331476-338e-4f59-b383-78576b57e2c4","data":{"exam":{"iv":"WAEC"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":44},"question":{"iv":"the compound that makes palm wine taste sour after exposure to the air for few days is"},"optiona":{"iv":"Ethanol"},"optionb":{"iv":"Ethanoic acid "},"optionc":{"iv":"Methanol"},"optiond":{"iv":"Methaoic acid"}},"other":[{"id":"2c5e1e9f-1ac8-44c9-a331-fffa535be03e","data":{"exam":{"iv":"WAEC"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":42},"question":{"iv":"When compound X is heated with concentrated tetraoxosulphate(VI) acid, it produces an alkene. X is an "},"optiona":{"iv":"Alkaline "},"optionb":{"iv":"Alcohol"},"optionc":{"iv":"Alkanoate"},"optiond":{"iv":"Alkyne"}}},{"id":"701cc25a-f23f-4b5c-aaf3-fcc66d105399","data":{"exam":{"iv":"WAEC"},"subject":{"iv":"CHEM"},"year":{"iv":2016},"number":{"iv":29},"question":{"iv":"Chemical equilibrium is attained when"},"optiona":{"iv":"All the reactants have been completely used up"},"optionb":{"iv":"The reaction goes to completion"},"optionc":{"iv":"The concentration of reactions and products remain constant"},"optiond":{"iv":"The concentration of reactants and products are equal"}}},null]}
-	//https://squidex-api-layer.cokezieu.workers.dev/api/questions?id=23dc7447-8133-47f6-b6d1-a8d8b269d9dd
+	//${process.env.SQUIDEX_DATA_URL}/api/questions?id=23dc7447-8133-47f6-b6d1-a8d8b269d9dd
 	
 	const questionid = params.questionid
-	const res = await fetch(`https://squidex-api-layer.cokezieu.workers.dev/api/questions?id=${questionid}`)
+	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions?id=${questionid}`)
   const fullquestiondata = await res.json()
 	
 	//const router = useRouter()
