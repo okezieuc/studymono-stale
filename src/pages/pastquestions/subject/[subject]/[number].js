@@ -34,6 +34,7 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 			{
 				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}
+			<link rel="canonical" href={`https://www.studymono.com/pastquestions/subject/${subject.toLowerCase()}/${number}`} />
 		</Head>
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
 			mb={[-24, null, -48]}>

@@ -53,6 +53,7 @@ const Index = ({ post, nextPosts }) => {
 			}}>
 			
 			</script>
+			<link rel="canonical" href={`https://www.studymono.com/blog/${slug}`} />
 		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
