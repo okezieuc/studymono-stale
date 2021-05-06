@@ -21,6 +21,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 			<meta name="description" content="Because solving WAEC past questions is a great way to prepare for the main exam in August, we made a library of real WAEC past questions in Physics, Chemistry, Biology, and other subjects." />
 			<meta property="og:title" content="Practice with actual WAEC Past Questions for Free on StudyMono" />
 			<meta property="og:description" content="Because solving WAEC past questions is a great way to prepare for the main exam in August, we made a library of real WAEC past questions in Physics, Chemistry, Biology, and other subjects." />			
+			<link rel="canonical" href="https://www.studymono.com/pastquestions/waec" />
 		</Head>
 	 	<NavBar />
 

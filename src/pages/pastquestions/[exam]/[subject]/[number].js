@@ -53,6 +53,7 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts }) => {
 			{
 				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}
+			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${exam.toLowerCase()}/${subject.toLowerCase()}/${number}`} />
 		</Head>
 		<NavBar />
 		
