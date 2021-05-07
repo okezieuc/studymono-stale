@@ -91,7 +91,12 @@ export async function getStaticPaths() {
 	
 	for (let num=0; num<Object.keys(dataschema.subjects).length; num++) {
 		const subject = Object.keys(dataschema.subjects)[num]
-		const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/subject/ids?subject=${subject}`)
+		const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/subject/ids?subject=${subject}`, 
+			{
+				headers: {
+					"Authorization": `Basic ${process.env.DATA_AUTH_TOKEN}`
+				}
+			})
 		let count = await res.json()
 		count = count.count
 		const pageCount = Math.floor((count-1)/4) + 1
@@ -112,7 +117,12 @@ export async function getStaticProps({ params }) {
 	const page = params.number
 	const subject = params.subject
 	
-	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/subject?subject=${subject}&page=${page}`)
+	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/subject?subject=${subject}&page=${page}`, 
+			{
+				headers: {
+					"Authorization": `Basic ${process.env.DATA_AUTH_TOKEN}`
+				}
+			})
   const subjectdata = await res.json()
 	
 	//const pageid = params.number

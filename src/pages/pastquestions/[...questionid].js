@@ -102,7 +102,12 @@ export async function getStaticPaths() {
 	let current = 1
 	
 	while (current<=pages) {
-		const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/ids?page=${current}`)
+		const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/ids?page=${current}`, 
+			{
+				headers: {
+					"Authorization": `Basic ${process.env.DATA_AUTH_TOKEN}`
+				}
+			})
 		let data = await res.json()
 		
 		if(current == 1)  {
@@ -123,7 +128,12 @@ export async function getStaticProps({ params }) {
 	//${process.env.SQUIDEX_DATA_URL}/api/questions?id=23dc7447-8133-47f6-b6d1-a8d8b269d9dd
 	
 	const questionid = params.questionid
-	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions?id=${questionid}`)
+	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions?id=${questionid}`, 
+		{
+			headers: {
+				"Authorization": `Basic ${process.env.DATA_AUTH_TOKEN}`
+			}
+		})
   const fullquestiondata = await res.json()
 	
 	//const router = useRouter()
