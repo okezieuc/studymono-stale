@@ -37,7 +37,7 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", exam=null, ...
             </Link>
         </Box>
         <Text fontWeight="light" fontSize={["sm", null, "lg"]} ml={[2, null, 4]}
-					color="tint.500">{subtitle}</Text>
+					color="tint.500">{`${exam ? exam.toUpperCase() : "Study" } ${subject} Questions`}</Text>
     </Box>
 </LinkBox>) 
 

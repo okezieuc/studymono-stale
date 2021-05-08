@@ -56,12 +56,12 @@ Catalog.defaultProps={
 		{
 			image: "/waec.png",
 			exam: "WAEC",
-			text: "Some sample subtitle"
+			text: "You can get 9 A's"
 		},
 		{
 			image: "/jamb.png",
 			exam: "JAMB",
-			text: "Some JAMB subtitle"
+			text: "And score higher than 300"
 		}
 	]
 }
