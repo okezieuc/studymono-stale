@@ -14,7 +14,7 @@ export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" 
         <Box fontSize={["lg", null, "3xl"]} fontWeight="semibold">
             <Link href={`/pastquestions/${questionid}`} passHref>
                 <LinkOverlay className="umami--click--open-pastquestion">
-                   { data.question.iv }
+                   { data.question.iv.replace(/_{3,}/gm, "_______") }
                 </LinkOverlay>
             </Link>          
         </Box>

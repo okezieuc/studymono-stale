@@ -60,7 +60,7 @@ const Question = ({questionid, data}) => {
 	return (<Box>
 		<Text fontSize={["2xl", "3xl", "5xl"]} fontWeight="bold" mb={[2, null, 8]}
 			lineHeight="1.2em" as="h1">
-			{data.question.iv}
+			{data.question.iv.replace(/_{3,}/gm, "_______")}
 		</Text>
 
 		<QuestionOption option="a" text={data.optiona.iv} />
