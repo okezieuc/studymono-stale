@@ -24,17 +24,17 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 	return(
   <Box>
 		<Head>
-			<title>{`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}`.slice(0, 120) } </title>
-			<meta name="description" content={`${questiondata.question.iv} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
-			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}`.slice(0, 120) } />
-			<meta property="og:description" content={`${questiondata.question.iv} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
+			<title>{`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv} - ${questiondata.prompt ? questiondata.prompt.iv : ""}`.slice(0, 120) } </title>
+			<meta name="description" content={`${questiondata.question.iv} - ${questiondata.prompt ? questiondata.prompt.iv : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
+			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv} - ${questiondata.prompt ? questiondata.prompt.iv : ""}`.slice(0, 120) } />
+			<meta property="og:description" content={`${questiondata.question.iv} - ${questiondata.prompt ? questiondata.prompt.iv : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
 			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${questionid}`} />
 		</Head>
 		<NavBar />
 		
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[12, null, 32]}>
 			<Container maxW={["2xl",null,"5xl"]} >
-				<Heading fontSize={["xs", "md", "xl"]} fontWeight="bold" as="p">
+				<Heading fontSize={["xs", "md", "xl"]} fontWeight="bold" as="p" mb={[4]}>
 					{ dataschema.exams[questiondata.exam.iv.toUpperCase()] } { questiondata.year.iv } { dataschema.subjects[questiondata.subject.iv.toUpperCase()] }
 				</Heading>
 				<Question questionid={questionid} data={questiondata} />
@@ -58,6 +58,15 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 
 const Question = ({questionid, data}) => {
 	return (<Box>
+		{
+			data.prompt ? 
+				<Text fontSize={["lg", "xl", "3xl"]} fontWeight="normal" mb={[1, null, 4]}
+					lineHeight="1.2em" as="h1">
+					{data.prompt.iv}
+				</Text> 
+			: null 
+		}
+		
 		<Text fontSize={["2xl", "3xl", "5xl"]} fontWeight="bold" mb={[2, null, 8]}
 			lineHeight="1.2em" as="h1">
 			{data.question.iv.replace(/_{3,}/gm, "_______")}

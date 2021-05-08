@@ -11,7 +11,10 @@ const QuestionCardOption = ( {option, text} ) => (<Flex my={[2, null, 4]}>
 export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" borderRadius={8} p={[4, null, 8]} border="1px none"
     mb={[8, null, 20]} boxShadow="0px 0px 4px 0px">
     <Box mb={4}>
-        <Box fontSize={["lg", null, "3xl"]} fontWeight="semibold">
+        <Box fontSize={["sm", null, "xl"]} fontWeight="semibold" mb={[1, null, 2]}>
+            { data.prompt.iv }          
+        </Box>
+				<Box fontSize={["lg", null, "3xl"]} fontWeight="semibold">
             <Link href={`/pastquestions/${questionid}`} passHref>
                 <LinkOverlay className="umami--click--open-pastquestion">
                    { data.question.iv.replace(/_{3,}/gm, "_______") }
