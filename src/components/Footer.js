@@ -48,6 +48,11 @@ export const Footer = ({hideTop = false}) => <Box>
 	<Flex fontSize={["sm", "sm", "md"]} bg="tint.800" w="100%" p="2" pl={["2", null, "6"]} color="white">
 		<Text>Built with ❤ by Okezie and the team</Text>
 		<Spacer />
-		<Text>2021</Text>
+		<Text>
+			<img 
+				src="/squidex-badge.png"
+				style={{height: "1.5em"}}
+			/>
+		</Text>
 	</Flex>
 </Box>

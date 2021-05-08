@@ -52,7 +52,9 @@ export const NavBar = () => {
 			<VStack position="absolute" top="80px" left="0"
 				 bg="white" w="100%"
 				alignItems="flex-start"
-				fontSize="lg" fontWeight="bold" p={8} textAlign="left">
+				fontSize="lg" fontWeight="bold" p={8} textAlign="left"
+				boxShadow="0px 2px 2px #aaa" zIndex="1"
+			>
 				<Link href="/">Home</Link>
 				<Link href="/pastquestions">
 					<a className="umami--click--nav-pastquestions-link">
