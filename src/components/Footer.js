@@ -13,7 +13,7 @@ export const Footer = ({hideTop = false}) => <Box>
 			<Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold" mb={["1", null, "4"]} color="black">studymono.</Text>
 			<Text fontSize={["sm", null, "md"]} fontWeight="semibold"
 				color="tint.500">Bringing super helpful educational resources to your fingertips.</Text>
-		</Box>
+		</Box> 
 		<Box>
 			<Text fontSize={["sm", null, "lg"]} fontWeight="bold" mb={["1", null, "4"]} color="tint.500">Navigate</Text>
 			<Link href="/pastquestions">Past Questions</Link><br />
@@ -21,7 +21,7 @@ export const Footer = ({hideTop = false}) => <Box>
 		</Box>
 		<Box>
 			<Text fontSize={["sm", null, "lg"]} fontWeight="bold" mb={["1", null, "4"]} color="tint.500">Legal</Text>
-			<Link href="/privacy">Privacy Policy</Link>
+			<Link href="/terms-and-conditions">Terms and Conditions</Link>
 		</Box>
 		<Box>
 			<Text fontSize={["sm", null, "lg"]} fontWeight="bold" mb={["1", null, "4"]} color="tint.500">Studymono Blog</Text>
