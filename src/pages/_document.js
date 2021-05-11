@@ -14,6 +14,7 @@ export default class Document extends NextDocument {
 						defer
 						data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
 						data-host-url={process.env.NEXT_PUBLIC_UMAMI_DATA_HOST}
+						data-domains="www.studymono.com"
 						src="/umami.js"
 					/>
 				</Head>

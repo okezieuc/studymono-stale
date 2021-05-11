@@ -35,8 +35,17 @@ export const NavBar = () => {
 				</Link>
 			</Box>
 			<Spacer />
-			<Box d={["block"]} bg="white" py={["1", null, "2"]} px={["2", null, "6"]} fontWeight="bold" color="black"
-				border="black 1px solid" borderRadius={8} >
+			<Box d={["block"]} bg="white" py={["1", null, "2"]} px={["2", null, "6"]} fontWeight="normal"
+				border="1px solid" borderRadius={8} 
+				borderColor="brand"
+				color="white"
+				background="brand"
+				_hover = {{
+					background: "white",
+					transition: "background 0.1s ease-in-out",
+					color: "brand"
+				}}
+			>
 				<Link href="/pastquestions">
 					<a className="umami--click--nav-get-started">
 						Get Started

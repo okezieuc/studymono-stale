@@ -3,9 +3,11 @@ import Link from 'next/link'
 
 const LinkButton = () => (<Box w="max-content" bg="brand" px={[4, null, 8]} py={[2, null, 4]}  
 	m="0 auto" borderRadius={[4]} color="white" fontSize={["sm", null, "xl"]}
+	border="1px solid" borderColor="brand"
 	mt={[8]} _hover = {{
-		background: "#6830e8",
-		transition: "background 0.1s ease-in-out"
+		background: "tint.200",
+		transition: "background 0.1s ease-in-out",
+		color: "brand"
 	}} >
 	<Link href="/pastquestions">
 		<a className="umami--click--landing-pastquestions-cta">
