@@ -24,10 +24,10 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 	return(
   <Box>
 		<Head>
-			<title>{`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? (" - " + questiondata.prompt.iv) : ""}`.slice(0, 120) } </title>
-			<meta name="description" content={`${questiondata.question.iv}${!!questiondata.prompt ? (" - " + questiondata.prompt.iv) : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
-			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? (" - " + questiondata.prompt.iv) : ""}`.slice(0, 120) } />
-			<meta property="og:description" content={`${questiondata.question.iv}${!!questiondata.prompt ? (" - " + questiondata.prompt.iv) : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
+			<title>{`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""}`.slice(0, 120) } </title>
+			<meta name="description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
+			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""}`.slice(0, 120) } />
+			<meta property="og:description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
 			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${questionid}`} />
 		</Head>
 		<NavBar />
@@ -144,7 +144,7 @@ export async function getStaticProps({ params }) {
 			}
 		})
   const fullquestiondata = await res.json()
-	
+  
 	//const router = useRouter()
 	//const { subject, number } = router.query
 	const dataschema = JSON.parse(process.env.DATASCHEMA) 
