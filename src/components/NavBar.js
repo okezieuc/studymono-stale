@@ -36,7 +36,7 @@ export const NavBar = () => {
 			</Box>
 			<Spacer />
 			<Box d={["block"]} bg="white" py={["1", null, "2"]} px={["2", null, "6"]} fontWeight="normal"
-				border="1px solid" borderRadius={8} 
+				border="1px solid"
 				borderColor="brand"
 				color="white"
 				background="brand"

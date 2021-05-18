@@ -2,7 +2,7 @@ import { Box, Heading, Text, } from '@chakra-ui/react'
 import Link from 'next/link'
 
 const LinkButton = () => (<Box w="max-content" bg="brand" px={[4, null, 8]} py={[2, null, 4]}  
-	m="0 auto" borderRadius={[4]} color="white" fontSize={["sm", null, "xl"]}
+	m="0 auto" color="white" fontSize={["sm", null, "xl"]}
 	border="1px solid" borderColor="brand"
 	mt={[8]} _hover = {{
 		background: "tint.200",

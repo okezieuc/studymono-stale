@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const WideLink = ({ text, slug }) => <LinkBox><Box border="1px solid" p={[1, null, 2]} 
     minW={["50px", null, "150px"]} textAlign="center"
-    borderRadius={[4, null,8]} borderColor="tint.400">
+    borderColor="tint.400">
     <Link href={slug} passHref>
         <LinkOverlay className="umami--click--switch-pastquestions-page">
             { text }
@@ -14,7 +14,7 @@ const WideLink = ({ text, slug }) => <LinkBox><Box border="1px solid" p={[1, nul
 
 const SlimLink = ({ slug, text, valid }) => <LinkBox><Box border="1px solid" p={[1, null, 2]}
      minW={["75px", null, "150px"]} textAlign="center"
-    borderRadius={[4, null,8]} borderColor="tint.400" d={valid ? "block" : "none"}>
+    borderColor="tint.400" d={valid ? "block" : "none"}>
     <Link href={slug} passHref>
         <LinkOverlay className="umami--click--switch-pastquestions-page">
             { text }
@@ -25,7 +25,7 @@ const SlimLink = ({ slug, text, valid }) => <LinkBox><Box border="1px solid" p={
 
 const NoLinkSlimLink = ({ number, }) => <Box border="1px solid" p={[1, null, 2]} 
     minW={["25px", null, "75px"]} textAlign="center"
-    borderRadius={[4, null,8]} borderColor="tint.400">
+    borderColor="tint.400">
             { number }
 </Box>
 

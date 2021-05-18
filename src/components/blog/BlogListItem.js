@@ -6,13 +6,12 @@ import { dateInWords } from '../../lib/dateInWords'
 export const BlogListItem = ({ post }) => <LinkBox>
     <Flex direction="column">
         <Box w="100%">
-            <AspectRatio borderRadius={[4, null,8]} bg="gray.100" ratio={4/3} w={["100%", null, "100%"]}>
+            <AspectRatio bg="gray.100" ratio={4/3} w={["100%", null, "100%"]}>
                 <Image
 									src={`studymono/blog/${post.cover}`}
 									alt={`Cover image for the post "${post.title}" on The Studymono Blog`}
 									layout="fill"
 									objectFit="cover"
-									className="round-corners"
 								/>
             </AspectRatio>
         </Box>
