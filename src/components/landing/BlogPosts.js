@@ -6,7 +6,11 @@ import { dateInWords } from '../../lib/dateInWords'
 
 
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
-    <Box borderRadius={8} bg="gray.300" h={["200px", null, "250px"]} pos="relative" transition="0.3s ease-in-out"
+    <Box 
+			bg="gray.300" 
+			h={["200px", null, "250px"]}
+			pos="relative"
+			transition="0.3s ease-in-out"
 			_groupHover = {{
 				transform: { 
 					lg: "translate(0px, -10px)",
@@ -19,8 +23,7 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
 				src={`studymono/blog/${post.cover}`}
 				alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
 				layout="fill"
-				objectFit="cover"
-				className="round-corners"
+				objectFit="cover"				
 			/>
 		</Box>
     <Box ml={4} mt={4} 

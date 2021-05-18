@@ -5,8 +5,6 @@ import { dateInWords } from '../../lib/dateInWords'
 export const BlogPostHeader = ({ title, cover, date }) => <SimpleGrid columns={[1, 2]}  m={[4, null, 20]}
     borderRadius={8}>
     <Box w="100%" minH={["200px", null, "350px"]} bg="gray.100"
-        borderTopLeftRadius={[8, null, 8]} borderTopRightRadius={[8, null, 0]}
-        borderBottomLeftRadius={[null, null, 8]} borderBottomRightRadius={[null, null, 0]}
 				position="relative">
 		
 			<Image
@@ -20,9 +18,7 @@ export const BlogPostHeader = ({ title, cover, date }) => <SimpleGrid columns={[
 		</Box>
     <Box p={[4, null, 8]} border="1px solid lavender" borderLeft={["block", null, "none"]} bg="white"
         borderTopStyle={["none", null, "solid"]} 
-        borderTopLeftRadius={[null, null, 0]} borderTopRightRadius={[null, null, 8]}
-        borderBottomLeftRadius={[8, null, 0]} borderBottomRightRadius={[8, null, 8]}
-				position="relative">
+        position="relative">
         <Heading fontSize={["2xl", "4xl", "5xl"]} as="h1" fontWeight="bold"
 					mb={[20, null, "auto"]}>
             {title} 

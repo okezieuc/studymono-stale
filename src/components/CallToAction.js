@@ -14,7 +14,8 @@ export const CallToAction = () => <Flex bg="#4715be" px={[3, 8, 12]}
 	<Box mt={[4, null, 0]}>
 		<Box bg="white" color="#4715be" fontSize={["md", "md", "2xl"]}
 			width="fit-content" py={["1", "2", "2"]} px={["2", "4", "5"]} height="fit-content"
-			borderRadius={["4px", "8px"]} fontWeight={["bold", null, "bold"]}>
+			fontWeight={["bold", null, "bold"]}
+		>
 			<Link href="/pastquestions">
 				<a className="umami--click--footer-cta">
 					Get Started
