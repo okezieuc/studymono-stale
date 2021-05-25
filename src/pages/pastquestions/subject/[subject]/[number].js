@@ -13,7 +13,26 @@ import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard
 import { getRecommendedPosts } from '../../../../lib/api'
 import { PaginationLink } from '../../../../components/pastquestions/PaginationLink'
 
-const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
+import sanity from "../../../../lib/sanity";
+import BlockContent from "../../../../components/pastquestions/BlockContent";
+import KaTeX from 'katex';
+
+
+const subjectQuestionQuery = (subject, page) => `*[_type == "pastquestion" && subject == "${subject.toUpperCase()}"]{
+  _id,
+  exam,
+  subject,
+  year,
+  'prompt': prompt->prompt,
+  question,
+  optiona, optionb, optionc, optiond, optione,
+}[${4*(page-1)}...${4*(page)}]`
+
+const pageCountQuery = (subject) => `count(*[_type == "pastquestion" && subject == "${subject.toUpperCase()}"])`
+
+
+
+const Index = ({ dataschema, subjectdata, pageid, recommendedPosts, count }) => {
 	const router = useRouter()
 	const { subject, number } = router.query
 	
@@ -24,7 +43,10 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 	return(
   <Box>
 		<NavBar />
+		
 		<Head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous"/>
+{/*
 			<title>{`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB` + ( parseInt(number) != 1 ? ` - Page ${number}` : "" )}</title>
 			<meta name="description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
 				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${subjectdata.data[0].data.question.iv} a. ${subjectdata.data[0].data.optiona.iv} b. ${subjectdata.data[0].data.optionb.iv} c. ${subjectdata.data[0].data.optionc.iv} d. ${subjectdata.data[0].data.optiond.iv}`.slice(0,160))} />
@@ -35,7 +57,9 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}
 			<link rel="canonical" href={`https://www.studymono.com/pastquestions/subject/${subject.toLowerCase()}/${number}`} />
+		*/}
 		</Head>
+		
 		<Box bg="tint.200" pt={[12, null, 20]} pb={[32, null, 64]}
 			mb={[-24, null, -48]}>
 			<Container maxW={["2xl",null, "5xl"]} >				
@@ -47,18 +71,19 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts }) => {
 				</Text>				
 			</Container>
 		</Box>
-	
+		
 		<Container maxW={["2xl",null, "5xl"]} mb={[4, null, 40]}>
 			{					
-				subjectdata.data.map((question) => (
-						<QuestionCard questionid={question.id} data={question.data} />
+				subjectdata.map((question) => (
+						<QuestionCard questionid={question._id} data={question} />
 					)
 				)
 			}
 			
 			<PaginationLink prefix={`/pastquestions/subject/${subject.toLowerCase()}/`} 
-				mt={12} mb={24} current={parseInt(number)} total={Math.floor((subjectdata.count-1)/4)+1} />
+				mt={12} mb={24} current={parseInt(number)} total={Math.floor((count-1)/4)+1} />
 		</Container>
+	
 		<RecommendedReads posts={recommendedPosts} />
 		<Footer hideTop={true} />
 	</Box>
@@ -91,14 +116,17 @@ export async function getStaticPaths() {
 	
 	for (let num=0; num<Object.keys(dataschema.subjects).length; num++) {
 		const subject = Object.keys(dataschema.subjects)[num]
+		/*
 		const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/subject/ids?subject=${subject}`, 
 			{
 				headers: {
 					"Authorization": `Basic ${process.env.DATA_AUTH_TOKEN}`
 				}
 			})
-		let count = await res.json()
-		count = count.count
+		*/
+		const count = await sanity.fetch(pageCountQuery(subject))
+		//let count = await res.json()
+		//count = count.count
 		const pageCount = Math.floor((count-1)/4) + 1
 		for(let i=0; i<pageCount; i++) {
 			paths.push({ params: { subject: subject.toLowerCase(), number: String(i+1) } })
@@ -114,7 +142,8 @@ export async function getStaticProps({ params }) {
 	
 	//const router = useRouter()
 	//const { subject, number } = router.query
-	const page = params.number
+	/*
+	
 	const subject = params.subject
 	
 	const res = await fetch(`${process.env.SQUIDEX_DATA_URL}/api/questions/subject?subject=${subject}&page=${page}`, 
@@ -127,7 +156,13 @@ export async function getStaticProps({ params }) {
 	
 	//const pageid = params.number
 	//const special = process.env.DATASCHEMA
-	 
+	*/
+	const subject = params.subject
+	const page = params.number
+	const subjectdata = await sanity.fetch(subjectQuestionQuery(subject, page))
+	const count = await sanity.fetch(pageCountQuery(subject))
+	
+	
 	const dataschema = JSON.parse(process.env.DATASCHEMA)
 	const recommendedPosts = getRecommendedPosts()
 
@@ -136,6 +171,7 @@ export async function getStaticProps({ params }) {
 			dataschema,
 			subjectdata,
 			page,
+			count,
 			recommendedPosts,
 		}
 	}
