@@ -1,6 +1,10 @@
 .round-corners {
 	border-radius: 8px;
-} 
+}
+
+.katex {
+	font-size: 1.05em;
+}
 
 /* nunito-regular - latin */
 @font-face {
