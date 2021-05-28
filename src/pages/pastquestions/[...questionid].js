@@ -13,6 +13,7 @@ import { Footer, } from '../../components/Footer'
 import { RecommendedReads, } from '../../components/RecommendedReads'
 import { AnswerCard, } from '../../components/pastquestions/AnswerCard'
 import { getRecommendedPosts } from '../../lib/api'
+import blockToText from "../../lib/blockToText";
 
 import sanity from "../../lib/sanity";
 import BlockContent from "../../components/pastquestions/BlockContent";
@@ -46,8 +47,13 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 		<Head>
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous"/>
 			
+			
+			<title>{`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)}${!!questiondata.prompt ? blockToText(questiondata.prompt) : ""}`.slice(0, 120) } </title>
+			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)}${!!questiondata.prompt ? blockToText(questiondata.prompt) : ""}`.slice(0, 120) } />
+			<meta name="description" content={`${blockToText(questiondata.question)}${!!questiondata.prompt ? blockToText(questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
+			<meta property="og:description" content={`${blockToText(questiondata.question)}${!!questiondata.prompt ? blockToText(questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />			
+			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${questionid}`} />
 			{/*
-			<title>{`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""}`.slice(0, 120) } </title>
 			<meta name="description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
 			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""}`.slice(0, 120) } />
 			<meta property="og:description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			

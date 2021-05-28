@@ -12,6 +12,8 @@ import { RecommendedReads, } from '../../../../components/RecommendedReads'
 import { QuestionCard, } from '../../../../components/pastquestions/QuestionCard'
 import { getRecommendedPosts } from '../../../../lib/api'
 import { PaginationLink } from '../../../../components/pastquestions/PaginationLink'
+import blockToText from "../../../../lib/blockToText";
+
 
 import sanity from "../../../../lib/sanity";
 import BlockContent from "../../../../components/pastquestions/BlockContent";
@@ -45,7 +47,18 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts, count }) => 
 		<NavBar />
 		
 		<Head>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous"/>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous"/>
+			<title>{`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB` + ( parseInt(number) != 1 ? ` - Page ${number}` : "" )}</title>
+			<meta property="og:title" content={`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB` + ( parseInt(number) != 1 ? ` - Page ${number}` : "" )} />
+			<meta name="description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
+				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${blockToText(subjectdata[0].question)} a. ${blockToText(subjectdata[0].optiona)} b. ${blockToText(subjectdata[0].optionb)} c. ${blockToText(subjectdata[0].optionc)} d. ${blockToText(subjectdata[0].optiond)}`.slice(0,160))} />
+			<meta property="og:description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
+				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${blockToText(subjectdata[0].question)} a. ${blockToText(subjectdata[0].optiona)} b. ${blockToText(subjectdata[0].optionb)} c. ${blockToText(subjectdata[0].optionc)} d. ${blockToText(subjectdata[0].optiond)}`.slice(0,160))} />
+			{
+				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
+			}
+			<link rel="canonical" href={`https://www.studymono.com/pastquestions/subject/${subject.toLowerCase()}/${number}`} />
+
 {/*
 			<title>{`Practice over 4 Years of ${dataschema.subjects[subject.toUpperCase()]} Questions from WAEC and JAMB` + ( parseInt(number) != 1 ? ` - Page ${number}` : "" )}</title>
 			<meta name="description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
