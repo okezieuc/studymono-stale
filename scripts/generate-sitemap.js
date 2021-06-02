@@ -36,7 +36,7 @@ const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Phy
 	for (let num=0; num<Object.keys(dataschema.subjects).length; num++) {
 		const subject = Object.keys(dataschema.subjects)[num]
 		for(let i=0; i<2; i++) {
-			locations.push(`/pastquestions/${subject.toLowerCase()}/${i+1}`)
+			locations.push(`/pastquestions/subject/${subject.toLowerCase()}/${i+1}`)
 		}
 	}
 	
