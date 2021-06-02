@@ -32,7 +32,7 @@ const questionQuery = (id) => `*[_type == "pastquestion" && _id == "${id}"]{
 
 const questionIdQuery = () => `*[_type == "pastquestion" ]._id`
 
-const similarQuestionIdQuery = (exam, subject, year) => `*[_type == "pastquestion" && exam == "${exam}" && subject == "${subject}" && year == ${year}]._id`
+const similarQuestionIdQuery = (exam, subject, year) => `*[_type == "pastquestion" && exam == "${exam}" && subject == "${subject}" && year == ${year}]._id | order(_createdAt asc)`
 
 const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPosts }) => {
 	const router = useRouter()
