@@ -1,10 +1,13 @@
 import { Box, Text, Flex, LinkBox, LinkOverlay, } from '@chakra-ui/react'
 import Link from 'next/link'
+import BlockContent from "./BlockContent";
 
-const QuestionCardOption = ( {option, text} ) => (<Flex my={[2, null, 4]}>
+const QuestionCardOption = ( {option, blocks} ) => (<Flex my={[2, null, 4]}>
     <Text fontWeight="bold" fontSize={["md",null, "xl"]}>{option}.</Text>
     <Text fontSize={["md",null, "2xl"]} ml={[2, null, 4]}>
-       { text }
+       <BlockContent
+				body={blocks}
+			/>
     </Text>
 </Flex>)
 
@@ -14,23 +17,25 @@ export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" 
 			{
 				data.prompt ?
 					<Box fontSize={["sm", null, "xl"]} fontWeight="semibold" mb={[1, null, 2]}>
-            { data.prompt.iv }          
+            { data.prompt }          
 					</Box>
 				: null
 			}
         
-				<Box fontSize={["lg", null, "3xl"]} fontWeight="semibold">
+				<Box fontSize={["lg", null, "3xl"]}>
             <Link href={`/pastquestions/${questionid}`} passHref>
                 <LinkOverlay className="umami--click--open-pastquestion">
-                   { data.question.iv.replace(/_{3,}/gm, "_______") }
+                   <BlockContent
+										body={data.question}
+									/>
                 </LinkOverlay>
             </Link>          
         </Box>
     </Box>
-    <QuestionCardOption option='a' text={data.optiona.iv} />
-    <QuestionCardOption option='b' text={data.optionb.iv} />
-    <QuestionCardOption option='c' text={data.optionc.iv} />
-    <QuestionCardOption option='d' text={data.optiond.iv} />
+    <QuestionCardOption option='a' blocks={data.optiona} />
+    <QuestionCardOption option='b' blocks={data.optionb} />
+    <QuestionCardOption option='c' blocks={data.optionc} />
+    <QuestionCardOption option='d' blocks={data.optiond} />
 </Box>
 </LinkBox>)
 
