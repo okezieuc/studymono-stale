@@ -28,7 +28,7 @@ const subjectQuestionQuery = (subject, page) => `*[_type == "pastquestion" && su
   'prompt': prompt->prompt,
   question,
   optiona, optionb, optionc, optiond, optione,
-}[${4*(page-1)}...${4*(page)}]`
+} | order(_createdAt asc) [${4*(page-1)}...${4*(page)}]`
 
 const pageCountQuery = (subject) => `count(*[_type == "pastquestion" && subject == "${subject.toUpperCase()}"])`
 
