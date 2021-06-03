@@ -21,8 +21,7 @@ export default function Index( {allPosts} ) {
 			
 			<meta name="twitter:title" content="The Studymono Blog - Studymono Announcements, Tips and Educational News" />
 			<meta name="twitter:description" content="The Studymono Blog is a channel we created to reach out to students and everyone in education with education tips and news, and talk about new features on Studymono." />
-			<meta name="twitter:image" content="https://www.studymono.com/cover.png" />
-			{/*Create an Image for this page*/}
+			<meta name="twitter:image" content="https://res.cloudinary.com/okezieuc/image/upload/studymono/covers/blog-cover-image_wfyirk.png" />
 		</Head>
 		<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
