@@ -54,6 +54,7 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts, count }) => 
 				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${blockToText(subjectdata[0].question)} a. ${blockToText(subjectdata[0].optiona)} b. ${blockToText(subjectdata[0].optionb)} c. ${blockToText(subjectdata[0].optionc)} d. ${blockToText(subjectdata[0].optiond)}`.slice(0,160))} />
 			<meta property="og:description" content={(parseInt(number) == 1 ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` :
 				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${blockToText(subjectdata[0].question)} a. ${blockToText(subjectdata[0].optiona)} b. ${blockToText(subjectdata[0].optionb)} c. ${blockToText(subjectdata[0].optionc)} d. ${blockToText(subjectdata[0].optiond)}`.slice(0,160))} />
+			<meta name="og:image" content={`https://res.cloudinary.com/okezieuc/image/upload/studymono/categories/${subject.toLowerCase()}.png`} />
 			{
 				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}

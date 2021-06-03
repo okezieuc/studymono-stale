@@ -21,6 +21,7 @@ const Index = ({ subjects, recommendedPosts }) => (
 			<meta name="description" content="Because solving JAMB past questions is a great way to prepare for the CBT in June, we made a library of real JAMB past questions in Physics, Chemistry, Biology, and other subjects." />
 			<meta property="og:title" content="Practice with actual JAMB Past Questions for Free on StudyMono" />
 			<meta property="og:description" content="Because solving JAMB past questions is a great way to prepare for the CBT in June, we made a library of real JAMB past questions in Physics, Chemistry, Biology, and other subjects." />			
+			<meta name="og:image" content="https://res.cloudinary.com/okezieuc/image/upload/studymono/covers/jamb-past-questions-cover-image_mmj6w7.png" />
 			<link rel="canonical" href="https://www.studymono.com/pastquestions/jamb" />
 			
 			<meta name="twitter:title" content="Practice with actual JAMB Past Questions for Free on StudyMono" />

@@ -72,6 +72,7 @@ const Index = ({ dataschema, examsubjectdata, page, recommendedPosts, count, }) 
 			<meta property="og:description" content={(parseInt(number) == 1 ? 
 					`As ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} ${exam.toLowerCase()=="waec" ? "papers are" : "CBT is" } fast approaching, solving past questions is a big plus. Take advantage of our over 4 years of ${dataschema.exams[exam.toUpperCase()]} ${dataschema.subjects[subject.toUpperCase()]} questions to prepare.` :
 				`${dataschema.subjects[subject.toUpperCase()]} Page ${number}: ${blockToText(examsubjectdata[0].question)} a. ${blockToText(examsubjectdata[0].optiona)} b. ${blockToText(examsubjectdata[0].optionb)} c. ${blockToText(examsubjectdata[0].optionc)} d. ${blockToText(examsubjectdata[0].optiond)}`.slice(0,160))} />			
+			<meta name="og:image" content={`https://res.cloudinary.com/okezieuc/image/upload/studymono/categories/${subject.toLowerCase()}.png`} />
 			{
 				(parseInt(number) > 2) ? <meta name="robots" content="noindex" /> : ""
 			}
