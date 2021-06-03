@@ -48,6 +48,10 @@ const Index = ({ posts, }) => (
 			<meta property="og:description" content="Studymono is an online collection of past questions and articles that will help you to be better prepared for any exam you face" />			
 			<meta property="og:image" content="https://www.studymono.com/cover.png" />
 			<link rel="canonical" href="https://www.studymono.com" />			
+			
+			<meta name="twitter:title" content="Studymono - Educational Resources for Nigerian Students" />
+			<meta name="twitter:description" content="Studymono is an online collection of past questions and articles that will help you to be better prepared for any exam you face" />
+			<meta name="twitter:image" content="https://www.studymono.com/cover.png" />
 		</Head>
 		<NavBar />
 		<Hero />

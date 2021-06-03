@@ -59,6 +59,11 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 			<meta property="og:description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
 			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${questionid}`} />
 			*/}
+			
+			<meta name="twitter:title" content={`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}`.slice(0, 120) } />
+			<meta name="twitter:description" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
+			<meta name="twitter:image" content="https://www.studymono.com/cover.png" />
+			{/*Create an Image for this page*/}
 		</Head>
 		<NavBar />
 		
