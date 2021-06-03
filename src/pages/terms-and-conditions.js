@@ -23,6 +23,8 @@ const Index = ({ recommendedPosts }) => (
 			<title>Terms and Conditions - Studymono</title>
 			<meta property="og:title" content="Terms and Conditions - Studymono" />	
 			<link rel="canonical" href="https://www.studymono.com/terms-and-conditions" />
+			
+			<meta name="twitter:title" content="Terms and Conditions - Studymono" />
 		</Head>
 	 	<NavBar />
 		<Box bg="tint.400" h={[6, null, 8]} />
