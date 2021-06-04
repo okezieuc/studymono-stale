@@ -64,6 +64,27 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 			<meta name="twitter:title" content={`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}`.slice(0, 120) } />
 			<meta name="twitter:description" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
 			<meta name="twitter:image" content="https://res.cloudinary.com/okezieuc/image/upload/studymono/covers/past-questions-cover-image_z13zcz.png" />
+			
+			<script type="application/ld+json" 
+				dangerouslySetInnerHTML={{__html:
+					(`{
+						"@context": "https://schema.org",
+						"@type": "BreadcrumbList",
+							"itemListElement": [{
+								"@type": "ListItem",
+								"position": 1,
+								"name": "Past Questions",
+								"item": "https://www.studymono.com/pastquestions"
+							},{
+								"@type": "ListItem",
+								"position": 2,
+								"name": "${dataschema.subjects[questiondata.subject.toUpperCase()]}",
+								"item": "https://www.studymono.com/pastquestions/${questiondata.subject.toLowerCase()}"
+							}]
+						}`)
+			}}>
+			
+			</script>
 		</Head>
 		<NavBar />
 		
