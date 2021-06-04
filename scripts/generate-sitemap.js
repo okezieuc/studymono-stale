@@ -14,10 +14,14 @@ const sanity = sanityClient({
 
 const siteUrl = "https://www.studymono.com"
 
+const getLastMod = (date) => date.slice(0, 10)
+
 let locations = [
 	"", "/blog", "/terms-and-conditions",
 	"/pastquestions", "/pastquestions/waec", "/pastquestions/jamb", 
 ]
+
+let questionLocations = []
 
 const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Physics","CHEM":"Chemistry","BIO":"Biology","MATH":"Mathematics","ENG":"English"}}
 
@@ -52,10 +56,16 @@ const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Phy
 	}
 	
 	//create /pastquestions/[...questionid] pages 
-	const questionIdQuery = () => `*[_type == "pastquestion" ]._id`
-	const questionIdList = await sanity.fetch(questionIdQuery())
-	questionIdList.map((id) => locations.push(`/pastquestions/${id}`) )
-
+	const questionQuery = () => `*[_type == "pastquestion" ]{
+		_id,
+		_updatedAt
+	}`
+	const questionList = await sanity.fetch(questionQuery())
+	questionList.map((question) => questionLocations.push({
+		url: `/pastquestions/${question._id}`,
+		lastmod: getLastMod(question._updatedAt)
+	}))
+	
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -63,6 +73,13 @@ const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Phy
 						locations.map((loc)=>(`
 						<url>
 							<loc>${`${siteUrl}${loc}`}</loc>
+							</url>`))
+						.join('')
+					}${
+						questionLocations.map((question)=>(`
+						<url>
+							<loc>${`${siteUrl}${question.url}`}</loc>
+							<lastmod>${`${question.lastmod}`}</lastmod>
 							</url>`))
 						.join('')
 					}
