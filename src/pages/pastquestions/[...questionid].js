@@ -79,7 +79,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 								"@type": "ListItem",
 								"position": 2,
 								"name": "${dataschema.subjects[questiondata.subject.toUpperCase()]}",
-								"item": "https://www.studymono.com/pastquestions/${question.subject.toLowerCase()}"
+								"item": "https://www.studymono.com/pastquestions/${questiondata.subject.toLowerCase()}"
 							}]
 						}`)
 			}}>
