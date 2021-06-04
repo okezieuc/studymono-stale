@@ -28,6 +28,7 @@ const questionQuery = (id) => `*[_type == "pastquestion" && _id == "${id}"]{
   'prompt': prompt->prompt,
   question,
   optiona, optionb, optionc, optiond, optione,
+	answer, explanation,
 }`
 
 const questionIdQuery = () => `*[_type == "pastquestion" ]._id`
@@ -152,7 +153,7 @@ const Question = ({questionid, data}) => {
 		<QuestionOption option="c" body={data.optionc} />
 		<QuestionOption option="d" body={data.optiond} />
 
-		<AnswerCard />
+		<AnswerCard answer={data.answer} explanation={data.explanation} />
 		
 		
 		
