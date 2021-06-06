@@ -1,21 +1,14 @@
 import {
-	Link as ChakraLink,
 	Box, Heading, Text,
 	SimpleGrid, Container,
 	
 } from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
-import Link from 'next/link'
 import Head from 'next/head'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
-import { CallToAction, } from '../../components/CallToAction'
-import { BigAd, } from '../../components/pastquestions/BigAd'
 import { ExamCard, } from '../../components/pastquestions/ExamCard'
 import { SubjectCard, } from '../../components/pastquestions/SubjectCard'
-import { QuestionCard, } from '../../components/pastquestions/QuestionCard'
 import { Credits, } from '../../components/pastquestions/Credits'
-import Image from 'next/image'
 
 const Index = ({ dataschema }) => (
   <Box>
@@ -77,7 +70,6 @@ const Index = ({ dataschema }) => (
 )
 
 export async function getStaticProps() {
-	//const dataschema = ...
 	//const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Physics","CHEM":"Chemistry","BIO":"Biology","MATH":"Mathematics","ENG":"English"}}
 	const dataschema = JSON.parse(process.env.DATASCHEMA) 
 	return {

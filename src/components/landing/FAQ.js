@@ -1,5 +1,4 @@
-import { Box, Heading, Text, Stack, Flex, Container, SimpleGrid, } from '@chakra-ui/react'
-import Link from 'next/link'
+import { Box, Heading, Text, Container, SimpleGrid, } from '@chakra-ui/react'
 
 const Question = ({ data }) => (<Box>
 	<Text fontSize={["md", null, "2xl"]} fontWeight="bold">{data.question}</Text>

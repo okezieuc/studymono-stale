@@ -21,7 +21,7 @@ WAEC has traditionally been held in months May and  June of every year. In 2020,
 
 ## When will 2021 JAMB be conducted
 
-The period when JAMB will be written will also be different from previous years. JAMB has traditionally been administered in the middle of March. This year, because not all schools did the first term at the ending of 2020, the body decided to shift the examination to a later part of the year. The exam is scheduled to hold between 5th June 2021 and 12th June 2021. Registration for JAMB CBT 2021 ends on the 13th of May 2021.
+The period when JAMB will be written will also be different from previous years. JAMB has traditionally been administered in the middle of March. This year, because not all schools did the first term at the ending of 2020, the body decided to shift the examination to a later part of the year. The exam is scheduled to hold between 19th June 2021 and 3rd July 2021. Registration for JAMB CBT 2021 ends on the 29th of May 2021.
 
 ## Making the Best out of this Years Exams
 

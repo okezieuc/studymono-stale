@@ -1,6 +1,4 @@
-import { Box, Heading, Text, Stack,
-	Flex, Container, } from '@chakra-ui/react'
-import Link from 'next/link'
+import { Box, Heading, Text, Flex, Container, } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const Feature = ({ data }) => (<Box mt={[8,null, 20]} mb={[12, null, 32]}> 

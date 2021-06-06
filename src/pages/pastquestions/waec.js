@@ -1,10 +1,7 @@
 import {
-  Link as ChakraLink,
-	Box, Heading, Text, Container,
+	Box, Heading, Container,
 	SimpleGrid,
 } from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
-import Link from 'next/link'
 import Head from 'next/head'
 import { NavBar, } from '../../components/NavBar'
 import { Footer, } from '../../components/Footer'
@@ -71,7 +68,6 @@ const Index = ({ subjects, recommendedPosts }) => (
 )
 
 export async function getStaticProps() {
-	//const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Physics","CHEM":"Chemistry","BIO":"Biology","MATH":"Mathematics","ENG":"English"}}
 	const dataschema = JSON.parse(process.env.DATASCHEMA) 
 	const subjects = dataschema.subjects
 	const recommendedPosts = getRecommendedPosts()
