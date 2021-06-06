@@ -90,6 +90,9 @@ const Index = ({ dataschema, subjectdata, pageid, recommendedPosts, count }) => 
 					{dataschema.subjects[subject.toUpperCase()]}
 				</Heading>
 				<Text fontSize={["sm", null, "md"]}>
+					{(parseInt(number) == 1) ? `Many see ${dataschema.subjects[subject.toUpperCase()]} as a tricky subject, but we're here to change it. After practicing these ${dataschema.subjects[subject.toUpperCase()]} questions from WAEC and JAMB, you should be ready to withstand any tensions these exams bring.` : ""}
+				</Text>		
+				<Text fontSize={["sm", null, "md"]}>
 					Page {number}
 				</Text>				
 			</Container>
