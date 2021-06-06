@@ -1,6 +1,5 @@
-import { Box, Heading, Text, Flex, } from '@chakra-ui/react'
+import { Box, Text, Flex, } from '@chakra-ui/react'
 import { Logo, } from './Logo'
-import Image from 'next/image'
 
 export const Vision = () => (<Box mx={[4]} >
 <Box maxW={["xl", null, "5xl"]} bg="brand" m="0 auto" mt={["-120px"]}

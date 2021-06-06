@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text, 
+import { Box, SimpleGrid, Text, 
     LinkBox, LinkOverlay, Container, Heading, } from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'

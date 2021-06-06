@@ -1,7 +1,5 @@
 import {
-  Link as ChakraLink,
-	Box, Heading, Text,
-	Avatar, Flex,
+  Heading, Text,
 } from '@chakra-ui/react'
 
 export const H1 = ({ children }) => (

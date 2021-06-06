@@ -1,6 +1,5 @@
-import { Box, Heading, Text, Stack, Flex } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack, } from '@chakra-ui/react'
 import { Logo, } from './Logo'
-import Link from 'next/link'
 
 export const Stats = () => (<Box maxW={["xl",null, "5xl"]} m="0 auto" textAlign={["center", null, "left"]} px={[4, null, 0]}>
 	<Stack direction={["column", null, "row"]} align="center" mt={[24,null]}>

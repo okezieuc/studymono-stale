@@ -1,9 +1,6 @@
 import {
-  Link as ChakraLink,
-	Box, Heading, Text,
-	Avatar, Flex, Container,
+	Box, Heading, Container,
 } from '@chakra-ui/react'
-import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { getPostBySlug, getAllPosts, getNextPosts } from '../../lib/api'

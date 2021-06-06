@@ -1,5 +1,4 @@
-import { Box, Flex, Spacer, HStack,
-	SimpleGrid, Text, } from '@chakra-ui/react'
+import { Box, Flex,	SimpleGrid, Text, } from '@chakra-ui/react'
 import Link from 'next/link'
 
 
@@ -47,12 +46,5 @@ export const Footer = ({hideTop = false}) => <Box>
 	</Box>
 	<Flex fontSize={["sm", "sm", "md"]} bg="tint.800" w="100%" p="2" pl={["2", null, "6"]} color="white">
 		<Text>Built with ❤ by Okezie and the team</Text>
-		<Spacer />
-		<Text>
-			<img 
-				src="/squidex-badge.png"
-				style={{height: "1.5em"}}
-			/>
-		</Text>
 	</Flex>
 </Box>

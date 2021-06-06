@@ -1,10 +1,10 @@
-import { Box, Flex, Spacer, HStack, VStack,
+import { Box, Spacer, HStack, VStack,
 	Button, useDisclosure, } from '@chakra-ui/react'
 import Link from 'next/link'
 
 
 export const NavBar = () => {
-	const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
+	const { isOpen, onClose, onToggle } = useDisclosure()
 	
 	return(<Box>
 <Box fontSize={["sm", "sm", "sm"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">

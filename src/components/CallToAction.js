@@ -1,5 +1,4 @@
-import { Box, Flex, Spacer, HStack,
-	SimpleGrid, Text, } from '@chakra-ui/react'
+import { Box, Flex, Spacer, Text, } from '@chakra-ui/react'
 import Link from 'next/link'
 
 

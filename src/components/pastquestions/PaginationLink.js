@@ -23,14 +23,6 @@ const SlimLink = ({ slug, text, valid }) => <LinkBox><Box border="1px solid" p={
 </Box>
 </LinkBox>
 
-const NoLinkSlimLink = ({ number, }) => <Box border="1px solid" p={[1, null, 2]} 
-    minW={["25px", null, "75px"]} textAlign="center"
-    borderColor="tint.400">
-            { number }
-</Box>
-
-
-
 export const PaginationLink = ({ prefix, current, total, ...props }) => (<HStack spacing={[2, null, 4]} w="min-content"
      m="0 auto" fontSize={["sm", null,"md"]} {...props} >
     <WideLink text ="First" slug={`${prefix}1`} />
