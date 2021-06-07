@@ -8,7 +8,7 @@ export const NavBar = () => {
 	
 	return(<Box>
 <Box fontSize={["sm", "sm", "sm"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">
-	<Container maxW={["2xl", null, "5xl"]} >	
+	<Container maxW={["2xl", null, "5xl"]} px={[0, "1rem"]}>	
 		<Link href="/blog/waec-and-jamb-in-2021">
 			Few thoughts on WAEC and JAMB in 2021
 		</Link>
@@ -16,7 +16,7 @@ export const NavBar = () => {
 </Box> 
 <Box fontSize={["sm", "sm", "lg"]} pl={["1", null, "4"]} bg="white" borderBottom="1px solid" borderBottomColor="tint.400">
 	<Box p={["2", null, "4"]}>
-	<Container maxW={["2xl", null, "5xl"]} >	
+	<Container maxW={["2xl", null, "5xl"]} px={[0, "1rem"]}>	
 		<HStack spacing={["4", null, "12"]}>
 			<Box color="black" fontSize={["lg", null, "2xl"]} fontWeight="black" mr={["1", null, "4"]}>
 				<Link href="/">
