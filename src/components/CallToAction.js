@@ -10,7 +10,9 @@ export const CallToAction = () => <Box bg="brand" py={[3, 8, 12]}>
 			fontSize={["lg", "3xl", "4xl"]}>
 			Preparing for WAEC and JAMB? Study with our Catalog of Past Questions.
 		</Text>
-		<Box bg="white" px="1em" py="0.5em" w="max-content" mt={2}>
+		<Box 
+			bg="white" borderRadius="1em"
+			px="1em" py="0.5em" w="max-content" mt={2}>
 			<Link href="/pastquestions">
 				<a className="umami--click--footer-cta">
 					Get Started

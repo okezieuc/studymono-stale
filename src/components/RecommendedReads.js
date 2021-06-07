@@ -5,12 +5,14 @@ import Image from 'next/image'
 import { dateInWords } from '../lib/dateInWords'
 
 const BlogPost = ({ post, }) => <LinkBox><Box w="100%">
-    <Box bg="gray.300" h={["200px", null, "250px"]} position="relative">
+    <Box bg="gray.300" h={["200px", null, "250px"]} position="relative"
+			borderRadius="1em">
 			<Image
 				src={`studymono/blog/${post.cover}`}
         alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
 				layout="fill"
 				objectFit="cover"
+				className="round-corners"
 			/>
 		</Box>
     <Box ml={4} mt={4} 

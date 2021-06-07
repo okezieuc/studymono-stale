@@ -4,6 +4,7 @@ import Link from 'next/link'
 const LinkButton = () => (<Box w="max-content" bg="brand" px={[4, null, 8]} py={[2, null, 4]}  
 	m="0 auto" color="white" fontSize={["sm", null, "xl"]}
 	border="1px solid" borderColor="brand"
+	borderRadius="1em"
 	mt={[8]} _hover = {{
 		background: "tint.200",
 		transition: "background 0.1s ease-in-out",

@@ -18,12 +18,14 @@ const BlogPost = ({ post, }) => <LinkBox><Box w="100%" role="group">
 				boxShadow: {
 					lg:"0px 10px 10px 0px #b1b1b1"
 				}
-			}}> 
+			}}
+			borderRadius="1em"> 
 			<Image
 				src={`studymono/blog/${post.cover}`}
 				alt={`Pattern cover image for the post "${post.title}" on The Studymono Blog`}
 				layout="fill"
-				objectFit="cover"				
+				objectFit="cover"			
+				className="round-corners"
 			/>
 		</Box>
     <Box ml={4} mt={4} 

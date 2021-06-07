@@ -12,6 +12,7 @@ export const BlogListItem = ({ post }) => <LinkBox>
 									alt={`Cover image for the post "${post.title}" on The Studymono Blog`}
 									layout="fill"
 									objectFit="cover"
+									className="round-corners"
 								/>
             </AspectRatio>
         </Box>

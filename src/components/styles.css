@@ -1,5 +1,10 @@
+.top-round-corners {
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
 .round-corners {
-	border-radius: 8px;
+	border-radius: 1em;
 }
 
 .katex {

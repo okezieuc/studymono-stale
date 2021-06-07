@@ -3,7 +3,8 @@ import { Logo, } from './Logo'
 
 export const Vision = () => (<Box mx={[4]} >
 <Box maxW={["xl", null, "5xl"]} bg="brand" m="0 auto" mt={["-120px"]}
-	position="relative" overflow="hidden" py={[8, null, 16]} px={[8]} >
+	position="relative" overflow="hidden" py={[8, null, 16]} px={[8]} 
+	borderRadius="1em">
 	<Flex color="white" direction={["column", "row"]} align="center">
 		<Box w={["100px", null, "200px"]} fontSize={["3xl"]} fontWeight="bold"  mr={[null, 8]} mb={[8,  null, 0]}>
 			<Logo 

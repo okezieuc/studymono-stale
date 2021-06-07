@@ -3,7 +3,8 @@ import { Box, Heading, Text, Container,  } from '@chakra-ui/react'
 export const PageHeading = () => (
 <Container 
 			maxW={["2xl", null, "5xl"]}>
-    <Box my={[4, null, 20]} py={[12, null, 20]} textAlign="center" bg="white" boxShadow="0px 0px 2px 0px">
+    <Box my={[4, null, 20]} py={[12, null, 20]} textAlign="center" bg="white" boxShadow="0px 0px 2px 0px"
+			borderRadius="1em">
         <Heading as="h1" fontSize={["2xl", null, "4xl"]}>
             Terms and Conditions
         </Heading>

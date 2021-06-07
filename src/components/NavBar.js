@@ -43,6 +43,7 @@ export const NavBar = () => {
 				borderColor="brand"
 				color="white"
 				background="brand"
+				borderRadius="1em"
 				_hover = {{
 					background: "white",
 					transition: "background 0.1s ease-in-out",
