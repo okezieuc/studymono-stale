@@ -16,7 +16,7 @@ export const BlogListItem = ({ post }) => <LinkBox>
             </AspectRatio>
         </Box>
         <Box flex="1">
-            <Box mt={2} ml={2} fontWeight="bold" fontSize={["lg", null, "2xl"]} maxW="90%">                
+            <Box mt={2} ml={2} fontWeight="bold" fontSize={["lg", null, "xl"]} maxW="90%">                
                 <Link href={`/blog/${post.slug}`} passHref>
                     <LinkOverlay
 											className="umami--click--open-blog-post"

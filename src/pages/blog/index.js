@@ -25,8 +25,11 @@ export default function Index( {allPosts} ) {
 			<meta name="twitter:image" content="https://res.cloudinary.com/okezieuc/image/upload/studymono/covers/blog-cover-image_wfyirk.png" />
 		</Head>
 		<NavBar />
+		
+		
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
 		<Box px={[4, null, 24]} pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="tint.200">
+			<Container maxW={["2xl", null, "5xl"]}>
 			<Heading fontSize={["2xl", "4xl", "6xl"]}>
 				Studymono <Box as="span" color="brand">Blog</Box>
 			</Heading>
@@ -35,16 +38,17 @@ export default function Index( {allPosts} ) {
 				Studymono and give <Box as="span" fontWeight="bold">tips on how to study effectively</Box>. We also write about the latest news in the
 				Nigerian educational ecosystem.						
 			</Text>
+			</Container>
 		</Box>
-		
-		<Box px={[4, null, 24]} mb={[20, null, 40]}>
+		<Container maxW={["2xl", null, "5xl"]}>
+		<Box mb={[20, null, 40]}>
 		<SimpleGrid  columns={[1, 2, 3]} spacingX={[8, null, 12]} spacingY={[8, null, 20]}>
 			{	
 				allPosts.map((post) => <BlogListItem post={post} key={post.slug} />)
 			}
 		</SimpleGrid>
 		</Box>
-				
+		</Container>
 		
 	
 		

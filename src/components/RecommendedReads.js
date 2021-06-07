@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text, 
+import { Box, Flex, SimpleGrid, Text, Container, Heading,
     LinkBox, LinkOverlay, } from '@chakra-ui/react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -40,14 +40,16 @@ BlogPost.defaultProps = {
 
 export const RecommendedReads = ({posts}) => <Box bg="tint.200"
     px={[4, 4, "24"]} py={["12", null,  "24"]}>
+		<Container maxW={["2xl", null, "5xl"]}>
       <Flex direction={["column", null, "row"]}  maxW={["2xl", null, "unset"]} m={["0 auto", null, "unset"]} >
-            <Text fontSize={["2xl", null,  "4xl"]} mr={8} fontWeight="semibold"
-                mb="8" color="tint.700">Recommended reads</Text>
+            <Heading fontSize={["2xl", null,  "3xl"]} mr={8} fontWeight="semibold"
+                mb="8" color="tint.700">Recommended reads</Heading>
             <SimpleGrid columns={[1, 2]} spacing={[16, 8, 16]}>
                 <BlogPost post={posts[0]} />
                 <BlogPost post={posts[1]} />
             </SimpleGrid>
-      </Flex> 
+      </Flex>
+		</Container>
 </Box>
 
 RecommendedReads.defaultProps = {
