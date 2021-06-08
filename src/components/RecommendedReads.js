@@ -41,7 +41,7 @@ BlogPost.defaultProps = {
 }
 
 export const RecommendedReads = ({posts}) => <Box bg="tint.200"
-    px={[4, 4, "24"]} py={["12", null,  "24"]}>
+    py={["12", null,  "24"]}>
 		<Container maxW={["2xl", null, "5xl"]}>
       <Flex direction={["column", null, "row"]}  maxW={["2xl", null, "unset"]} m={["0 auto", null, "unset"]} >
             <Heading fontSize={["2xl", null,  "3xl"]} mr={8} fontWeight="semibold"

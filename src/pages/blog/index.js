@@ -28,7 +28,7 @@ export default function Index( {allPosts} ) {
 		
 		
 		<Box bg="tint.400" h={[6, null, 8]} d={["block", null, "none"]} />
-		<Box px={[4, null, 24]} pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="tint.200">
+		<Box pt={[4, null, 12]} pb={[8, null, 24]} mb={[8, null, 24]} bg="tint.200">
 			<Container maxW={["2xl", null, "5xl"]}>
 			<Heading fontSize={["2xl", "4xl", "6xl"]}>
 				Studymono <Box as="span" color="brand">Blog</Box>
