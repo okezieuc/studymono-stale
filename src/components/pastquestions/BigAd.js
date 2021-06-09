@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Spacer, } from '@chakra-ui/react'
+import { Box, Text, Flex, } from '@chakra-ui/react'
 
 export const BigAd = () => (
     <Box mb={[4, null, 20]} bg="white"

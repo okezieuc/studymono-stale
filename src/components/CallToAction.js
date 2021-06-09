@@ -1,13 +1,34 @@
-import { Box, Flex, Spacer, HStack,
-	SimpleGrid, Text, } from '@chakra-ui/react'
+import { Box, Flex, Spacer, Text, Container, } from '@chakra-ui/react'
 import Link from 'next/link'
 
 
+export const CallToAction = () => <Box bg="brand" py={[3, 8, 12]}>
+		<Container 
+			maxW={["2xl", null, "5xl"]}>
+		<Text
+			color="white"
+			fontSize={["lg", "3xl", "4xl"]}>
+			Preparing for WAEC and JAMB? Study with our Catalog of Past Questions.
+		</Text>
+		<Box 
+			bg="white" borderRadius="1em"
+			px="1em" py="0.5em" w="max-content" mt={2}>
+			<Link href="/pastquestions">
+				<a className="umami--click--footer-cta">
+					Get Started
+				</a>
+			</Link>
+		</Box>
+	</Container>
+</Box>
+
+/*
 export const CallToAction = () => <Flex bg="#4715be" px={[3, 8, 12]} 
 	py={[8, null, 12]} alignItems={["left", null, "center"]}
 	boxShadow="0px 0px 4px 0px" direction={["column", null, "row"]}>
-	<Text color="white" fontSize={["lg", "3xl", "4xl"]}
-		fontWeight={["500", "bold"]} maxW={["100%", null, "800px"]}>
+	<Container maxW={["2xl", null, "5xl"]}>
+	<Text color="white" fontSize={["lg", "3xl", "3xl"]}
+		 maxW={["100%", null, "00px"]}>
 		Preparing for WAEC and JAMB? Study with our Catalog of Past Questions.
 	</Text>
 	<Spacer />
@@ -25,5 +46,6 @@ export const CallToAction = () => <Flex bg="#4715be" px={[3, 8, 12]}
 		<Text textAlign={["left", null, "center"]} fontSize={["xs", "md", "lg"]}
 			mt={[null, 1, "1"]} color="white">It's free</Text>
 	</Box>
-	
+	</Container>
 </Flex>
+*/

@@ -6,6 +6,7 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", exam=null, ...
         <AspectRatio ratio={16 / 12}>
         <Box fontSize={["xl", null, "4xl"]} fontWeight="bold"
         border="1px none" transition="0.3s ease-in-out"
+				borderRadius="1em"
 				boxShadow={{
 						lg:"0px 5px 5px 0px #b1b1b1"
 				}}
@@ -22,6 +23,7 @@ export const SubjectCard = ({subject, slug, subtitle, code="bio", exam=null, ...
 						alt={`Cover for ${subject} questions on Studymono`}
 						layout="fill"
 						objectFit="cover"
+						className="round-corners"
 					/>
 				</Box>
     </AspectRatio>

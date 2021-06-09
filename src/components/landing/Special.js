@@ -1,5 +1,4 @@
-import { Box, Heading, Text, Stack, Flex } from '@chakra-ui/react'
-import Link from 'next/link'
+import { Box, Heading, Text, Stack, } from '@chakra-ui/react'
 
 export const Special = () => (<Box bg="tint.200" mt={[32, null, 48]} py={[20, null, 32]}>
 <Box maxW={["xl", null, "5xl"]} m="0 auto" textAlign="left" px={[4, null, 0]}>
