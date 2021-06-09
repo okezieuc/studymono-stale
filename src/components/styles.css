@@ -20,6 +20,14 @@
   }
 }
 
+.paragraph-space > div > p {
+	margin-top: 0.4em;
+}
+
+.paragraph-space > div > p:first-child {
+	margin-top: 0;
+}
+
 .katex {
 	font-size: 1.05em;
 }

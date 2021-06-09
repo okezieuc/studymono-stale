@@ -43,15 +43,29 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous"/>
 			
 			
-			<title>{`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}`.slice(0, 120) } </title>
-			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}`.slice(0, 120) } />
-			<meta name="description" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
-			<meta property="og:description" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />			
+			<title>{`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}—Studymono`.slice(0, 120) } </title>
+			<meta property="og:title" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}—Studymono`.slice(0, 120) } />
+			<meta name="description" content={questiondata.explanation  
+				? `${blockToText(questiondata.explanation).slice(0, 160)}`
+				: `${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
+			<meta property="og:description" content={questiondata.explanation  
+				? `${blockToText(questiondata.explanation).slice(0, 160)}`
+				: `${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />			
 			<meta name="og:image" content="https://res.cloudinary.com/okezieuc/image/upload/studymono/covers/past-questions-cover-image_z13zcz.png" />
 			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${questionid}`} />
-		
-			<meta name="twitter:title" content={`${dataschema.exams[questiondata.exam.toUpperCase()]} ${dataschema.subjects[questiondata.subject.toUpperCase()]} - ${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}`.slice(0, 120) } />
-			<meta name="twitter:description" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
+
+			{/*
+			<meta name="description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />
+			<meta property="og:title" content={`${dataschema.exams[questiondata.exam.iv.toUpperCase()]} ${dataschema.subjects[questiondata.subject.iv.toUpperCase()]} - ${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""}`.slice(0, 120) } />
+			<meta property="og:description" content={`${questiondata.question.iv}${!!questiondata.prompt ? ((questiondata.prompt.iv != null) ? (" - " + questiondata.prompt.iv) : "") : ""} a. ${questiondata.optiona.iv} b. ${questiondata.optionb.iv} c. ${questiondata.optionc.iv} d. ${questiondata.optiond.iv}`.slice(0,160)} />			
+			<link rel="canonical" href={`https://www.studymono.com/pastquestions/${questionid}`} />
+			*/}
+			
+			<meta name="twitter:title" content={`${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""}—Studymono`.slice(0, 120) } />
+			<meta name="twitter:description" content={questiondata.explanation  
+				? `${blockToText(questiondata.explanation).slice(0, 160)}`
+				: `${blockToText(questiondata.question)} ${!!questiondata.prompt ? (questiondata.prompt) : ""} a. ${blockToText(questiondata.optiona)} b. ${blockToText(questiondata.optionb)} c. ${blockToText(questiondata.optionc)} d. ${blockToText(questiondata.optiond)}`.slice(0,160)} />
+
 			<meta name="twitter:image" content="https://res.cloudinary.com/okezieuc/image/upload/studymono/covers/past-questions-cover-image_z13zcz.png" />
 			
 			<script type="application/ld+json" 
@@ -80,7 +94,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 		<Box bg="tint.200" pt={[12, null, 20]}>
 			<Container maxW={["2xl",null,"5xl"]} >
 				<Heading fontSize={["xs", "md", "xl"]} fontWeight="bold" as="p" mb={[4]}>
-					{ dataschema.exams[questiondata.exam.toUpperCase()] } { questiondata.year } { dataschema.subjects[questiondata.subject.toUpperCase()] }
+					{ dataschema.exams[questiondata.exam.toUpperCase()] } { dataschema.subjects[questiondata.subject.toUpperCase()] }
 				</Heading>
 				<Question data={questiondata} />
 				<Navigation otherdata={otherdata} />
@@ -116,7 +130,7 @@ const Question = ({data}) => {
 		<QuestionOption option="c" body={data.optionc} />
 		<QuestionOption option="d" body={data.optiond} />
 
-		<AnswerCard />
+		<AnswerCard answer={data.answer} explanation={data.explanation} />
 		
 		
 		
