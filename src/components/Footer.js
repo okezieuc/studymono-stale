@@ -1,11 +1,12 @@
-import { Box, Flex,	SimpleGrid, Text, } from '@chakra-ui/react'
+import { Box, Flex,	SimpleGrid, Text, Container, } from '@chakra-ui/react'
 import Link from 'next/link'
 
 
 export const Footer = ({hideTop = false}) => <Box>
-	
+	<Container 
+			maxW={["2xl", null, "5xl"]}>
 	<SimpleGrid columns={[2, 4, 4]} spacingX={[4, null,10]} spacingY={[6, null,10]}
-		px={[4, 8, 12]} py={[8, null, 20]} borderBottom="1px solid"
+		py={[8, null, 20]} borderBottom="1px solid"
 		borderTop={hideTop ? "none" : "1px solid"} color="tint.600" fontWeight="semibold"
 		fontSize={["sm", "sm", "lg"]} borderColor="tint.400" pb={[20, null, 20]}>
 		<Box gridColumn={["span 2", "span 4", "span 4"]}>
@@ -44,7 +45,11 @@ export const Footer = ({hideTop = false}) => <Box>
 			fontWeight="bold" maxW={["250px", "500px"]}>Subscribe to our newsletter  for updates</Text>
 		<Box w={["50%", null, "30%"]} h={["30px", null, "50px"]} bg="gray.100" m="0 auto" mt="8" mb="12"></Box>
 	</Box>
-	<Flex fontSize={["sm", "sm", "md"]} bg="tint.800" w="100%" p="2" pl={["2", null, "6"]} color="white">
-		<Text>Built with ❤ by Okezie and the team</Text>
+	
+	</Container>
+	<Flex fontSize={["sm", "sm", "md"]} w="100%" p="2" pl={["2", null, "6"]}>
+		<Container maxW={["2xl", null, "5xl"]}>
+			<Text>Built with ❤ by Okezie and the team</Text>
+		</Container>
 	</Flex>
 </Box>

@@ -12,7 +12,8 @@ const QuestionCardOption = ( {option, blocks} ) => (<Flex my={[2, null, 4]}>
 </Flex>)
 
 export const QuestionCard = ({ data, questionid }) => (<LinkBox><Box bg="white" p={[4, null, 8]} border="1px none"
-    mb={[8, null, 20]} boxShadow="0px 0px 4px 0px">
+    mb={[8, null, 20]} boxShadow="0px 0px 4px 0px"
+		borderRadius="1em">
     <Box mb={4}>
 			{
 				data.prompt ?

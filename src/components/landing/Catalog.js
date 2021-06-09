@@ -8,13 +8,15 @@ const ExamCard = ({data}) => (<LinkBox><Box w={["250px"]} border="1px solid" bor
 		transform: { 
 			lg: "scale(1.05,1.05)",
 		},	
-	}}>
+	}}
+	borderRadius="1em">
 	<Box w="100%" h="200px" position="relative">
 		<Image
 			src={`studymono/categories/${data.image}`}
 			alt={`${data.exam}'s logo`}
 			layout="fill"
 			objectFit="cover"
+			className="top-round-corners"
 		/>
 	</Box>
 	<Box p={[4]}>
