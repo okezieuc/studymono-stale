@@ -94,7 +94,7 @@ const Index = ({ questiondata, otherdata, questionid, dataschema, recommendedPos
 		<Box bg="tint.200" pt={[12, null, 20]}>
 			<Container maxW={["2xl",null,"5xl"]} >
 				<Heading fontSize={["xs", "md", "xl"]} fontWeight="bold" as="p" mb={[4]}>
-					{ dataschema.exams[questiondata.exam.toUpperCase()] } { questiondata.year } { dataschema.subjects[questiondata.subject.toUpperCase()] }
+					{ dataschema.exams[questiondata.exam.toUpperCase()] } { dataschema.subjects[questiondata.subject.toUpperCase()] }
 				</Heading>
 				<Question data={questiondata} />
 				<Navigation otherdata={otherdata} />
