@@ -10,6 +10,8 @@ export const AnswerCard = ({answer, explanation}) => (<Box borderRadius="1em">
 		fontSize={["sm", "lg", "xl"]}
 		color="white"
 		mt={[8, null, 20]}
+		borderTopRadius="1rem"
+		borderBottomRadius={explanation ? null : "1rem"}
 	>
 	{
 		answer ? `Correct answer: ${answer}` : "No Answer Submitted"
@@ -25,6 +27,7 @@ export const AnswerCard = ({answer, explanation}) => (<Box borderRadius="1em">
 				border="1px solid"
 				borderColor="brand"
 				className="paragraph-space"
+				borderBottomRadius="1rem"
 			>
 				<BlockContent
 					body={explanation}
