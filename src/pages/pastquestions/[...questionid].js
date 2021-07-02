@@ -24,6 +24,7 @@ const questionQuery = (id) => `*[_type == "pastquestion" && _id == "${id}"]{
   'prompt': prompt->prompt,
   question,
   optiona, optionb, optionc, optiond, optione,
+	answer, explanation,
 }`
 
 const questionIdQuery = () => `*[_type == "pastquestion" ]._id`
