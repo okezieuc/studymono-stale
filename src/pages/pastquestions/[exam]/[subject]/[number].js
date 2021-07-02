@@ -12,7 +12,7 @@ import { PaginationLink } from '../../../../components/pastquestions/PaginationL
 import blockToText from "../../../../lib/blockToText";
 import sanity from "../../../../lib/sanity";
 
-const examSubjectQuestionQuery = (subject, exam, page) => `*[_type == "pastquestion" && subject == "${subject.toUpperCase()}" && exam == "${exam.toUpperCase()}"]{
+const examSubjectQuestionQuery = (subject, exam, page) => `*[_type == "pastquestion" && subject == "${subject.toUpperCase()}" && exam == "${exam.toUpperCase()}" && !(_id in path('drafts.**'))]{
   _id,
   exam,
   subject,
@@ -22,7 +22,7 @@ const examSubjectQuestionQuery = (subject, exam, page) => `*[_type == "pastquest
   optiona, optionb, optionc, optiond, optione,
 } | order(_createdAt asc) [${4*(page-1)}...${4*(page)}]`
 
-const pageCountQuery = (subject, exam) => `count(*[_type == "pastquestion" && subject == "${subject.toUpperCase()}" && exam == "${exam.toUpperCase()}"])`
+const pageCountQuery = (subject, exam) => `count(*[_type == "pastquestion" && subject == "${subject.toUpperCase()}" && exam == "${exam.toUpperCase()}" && !(_id in path('drafts.**'))])`
 
 const Index = ({ dataschema, examsubjectdata, recommendedPosts, count, }) => {
 	const router = useRouter()

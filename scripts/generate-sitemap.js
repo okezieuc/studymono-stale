@@ -56,7 +56,7 @@ const dataschema = {"exams":{"WAEC":"WAEC","JAMB":"JAMB"},"subjects":{"PHY":"Phy
 	}
 	
 	//create /pastquestions/[...questionid] pages 
-	const questionQuery = () => `*[_type == "pastquestion" ]{
+	const questionQuery = () => `*[_type == "pastquestion" && !(_id in path('drafts.**'))]{
 		_id,
 		_updatedAt
 	}`

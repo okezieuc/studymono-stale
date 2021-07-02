@@ -14,7 +14,7 @@ import blockToText from "../../../../lib/blockToText";
 import sanity from "../../../../lib/sanity";
 
 
-const subjectQuestionQuery = (subject, page) => `*[_type == "pastquestion" && subject == "${subject.toUpperCase()}"]{
+const subjectQuestionQuery = (subject, page) => `*[_type == "pastquestion" && subject == "${subject.toUpperCase()}" && !(_id in path('drafts.**'))]{
   _id,
   exam,
   subject,
@@ -24,7 +24,7 @@ const subjectQuestionQuery = (subject, page) => `*[_type == "pastquestion" && su
   optiona, optionb, optionc, optiond, optione,
 } | order(_createdAt asc) [${4*(page-1)}...${4*(page)}]`
 
-const pageCountQuery = (subject) => `count(*[_type == "pastquestion" && subject == "${subject.toUpperCase()}"])`
+const pageCountQuery = (subject) => `count(*[_type == "pastquestion" && subject == "${subject.toUpperCase()}" && !(_id in path('drafts.**'))])`
 
 
 
