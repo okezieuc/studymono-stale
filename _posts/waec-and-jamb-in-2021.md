@@ -1,7 +1,7 @@
 ---
 title: "Preparing for WAEC and JAMB in 2021"
 excerpt: "2020 was a very different year. The pandemic brought various challenges to the academic system. Many students were not able to get access to education because they couldn't attend classes at school. Some luckier students had to attend online classes which many believe are not as effective as in-person classes."
-date: "2020-05-16T05:35:07.322Z"
+date: "2021-05-16T05:35:07.322Z"
 author: "Okezie Chiedozie"
 cover: "/waec-and-jamb-in-2021_c5zw7f.jpg"
 credits: '<a href="http://www.freepik.com">Designed by Freepik</a>'
