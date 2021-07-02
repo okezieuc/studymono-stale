@@ -16,7 +16,7 @@ import { Vision, } from '../components/landing/Vision'
 
 const FAQData = [
 	{
-		question: "Do you have answers to all questions?",
+		question: "Do you have answers to the questions?",
 		answer: "Yes, we do. We published answers and explanations to majority of the past questions on this website."
 	},
 	{
