@@ -17,7 +17,7 @@ import { Vision, } from '../components/landing/Vision'
 const FAQData = [
 	{
 		question: "Do you have answers to all questions?",
-		answer: "We do not yet have answers to all the questions. We are seriously working towards adding answers to the questions."
+		answer: "Yes, we do. We published answers and explanations to majority of the past questions on this website."
 	},
 	{
 		question: "Which subjects do you have past questions from?",
@@ -29,7 +29,7 @@ const FAQData = [
 	},
 	{
 		question: "I have a question that is not answered here",
-		answer: "Sorry to hear that. You can always reach us by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
+		answer: "You can always reach us by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
 	},
 ]
 
