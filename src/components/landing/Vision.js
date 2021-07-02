@@ -15,7 +15,7 @@ export const Vision = () => (<Box mx={[4]} >
 		</Box>
 		<Box flex="1">
 			<Text fontSize={["md", null, "2xl"]}>
-				Our goal at Studymono is to <Box as="span" fontWeight="bold">make learning accesible</Box>. We want to bring <Box as="span" fontWeight="bold">helpful educational resources</Box> to everyone's fingertips.
+				Our goal at Studymono is to <Box as="span" fontWeight="bold">make learning accesible</Box>. We bring <Box as="span" fontWeight="bold">helpful educational resources</Box> to everyone's fingertips.
 			</Text>
 		</Box>
 	</Flex>

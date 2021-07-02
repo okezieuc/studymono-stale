@@ -29,7 +29,7 @@ const FAQData = [
 	},
 	{
 		question: "I have a question that is not answered here",
-		answer: "You can always reach us by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
+		answer: "You can always reach out to us by sending us an email at info@studymono.com or contacting us at our twitter handle @studymono"
 	},
 ]
 
@@ -50,7 +50,6 @@ const Index = ({ posts, }) => (
 		<NavBar />
 		<Hero />
 		<Vision />
-		<Catalog />
 		<Stats />
 		<Special />
 		<BlogPosts posts={posts} />

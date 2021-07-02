@@ -13,7 +13,7 @@ export const Stats = () => (<Box maxW={["xl",null, "5xl"]} m="0 auto" textAlign=
 				<Logo src="/stats.svg" size="xs" m="0 auto" alt="Infographics showing the quality of resources available on Studymono" />
 			</Box>
 			<Text fontSize={["md", null, "2xl"]} mt={[null, 4, 0]}>
-			With our catalog over 500 WAEC and JAMB questions in Mathematics, Physics, Chemistry and other subjects, Studymono is ready to provide you with your practice needs.
+			Featuring a catalog of over 500 WAEC and JAMB questions in Mathematics, Physics, Chemistry and other subjects, Studymono is ready to provide you with your academic needs.
 			</Text>
 		</Box>
 		<Box w="300px" h="335px" d={["none", null, "block"]} >
