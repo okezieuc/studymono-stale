@@ -3,7 +3,7 @@ title: "Past Question Answers and Explanations are now Published on Studymono"
 excerpt: "This launch is a culmination of a month-long effort to add answers and explanations to the past questions on our website and we are really excited to have reached this very important milestone."
 date: "2020-07-02T20:00:00.322Z"
 author: "Okezie Chiedozie"
-cover: "/past-questions-answers-and-explanations-published_yzpuyw.png"
+cover: "/past-questions-answers-and-explanations-published_xny80s.png"
 credits: '<a href="https://www.freepik.com/vectors/background">Background vector created by starline - www.freepik.com</a>'
 ---
 
