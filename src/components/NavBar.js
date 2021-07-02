@@ -5,12 +5,12 @@ import Link from 'next/link'
 
 export const NavBar = () => {
 	const { isOpen, onClose, onToggle } = useDisclosure()
-	
+	//			Few thoughts on WAEC and JAMB in 2021
 	return(<Box>
 <Box fontSize={["sm", "sm", "sm"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">
 	<Container maxW={["2xl", null, "5xl"]} px={[0, "1rem"]}>	
-		<Link href="/blog/waec-and-jamb-in-2021">
-			Few thoughts on WAEC and JAMB in 2021
+		<Link href="/blog/past-questions-answers-and-explanations-published">
+			Learn about our recent release of answers →
 		</Link>
 	</Container>
 </Box> 

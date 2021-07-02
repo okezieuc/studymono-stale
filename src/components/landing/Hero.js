@@ -31,7 +31,9 @@ export const Hero = () => (<Box bg="tint.200" pt={["60px", null, "80px"]} pb={["
 			bg="white"
 			fontSize={["sm", "md"]}
 		>
-			<span className="blink">●</span> We just launched answers!
+			<Link href="/blog/past-questions-answers-and-explanations-published">
+				<a><span className="blink">●</span> We just launched answers!</a>
+			</Link>
 		</Box>
 		<Heading as="h1" fontSize={["4xl", "5xl", "7xl"]}>Prepare for Exams, One Past Question at a Time</Heading>
 		<Text as="h2" fontSize={["md", "lg", "2xl"]}>
