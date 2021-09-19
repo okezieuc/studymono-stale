@@ -10,9 +10,9 @@ const LinkButton = () => (<Box w="max-content" bg="brand" px={[4, null, 8]} py={
 		transition: "background 0.1s ease-in-out",
 		color: "brand"
 	}} >
-	<Link href="/pastquestions">
+	<Link href="#">
 		<a className="umami--click--landing-pastquestions-cta">
-			Get Started
+			Newsletter coming soon
 		</a>
 	</Link>
 </Box>)
@@ -31,13 +31,13 @@ export const Hero = () => (<Box bg="tint.200" pt={["60px", null, "80px"]} pb={["
 			bg="white"
 			fontSize={["sm", "md"]}
 		>
-			<Link href="/blog/past-questions-answers-and-explanations-published">
-				<a><span className="blink">●</span> We just launched answers!</a>
+			<Link href="blog/shutting-down-past-questions-pages-september-2021">
+				<a><span className="blink">●</span> We're shutting down past question pages</a>
 			</Link>
 		</Box>
-		<Heading as="h1" fontSize={["4xl", "5xl", "7xl"]}>Prepare for Exams, One Past Question at a Time</Heading>
+		<Heading as="h1" fontSize={["4xl", "5xl", "7xl"]}>We're building an Educational Platform for Nigerians</Heading>
 		<Text as="h2" fontSize={["md", "lg", "2xl"]}>
-			Studymono is an online collection of past questions and articles that will help you to be better prepared for any exam you face
+			Studymono is an online platform comprising of past questions and articles to help you to be better prepared for any exam you face
 		</Text>
 		<LinkButton />
 	

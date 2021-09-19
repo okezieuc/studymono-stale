@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const Footer = ({hideTop = false}) => <Box>
 	<Container 
 			maxW={["2xl", null, "5xl"]}>
-	<SimpleGrid columns={[2, 4, 4]} spacingX={[4, null,10]} spacingY={[6, null,10]}
+	<SimpleGrid columns={[2, 3, 3]} spacingX={[4, null,10]} spacingY={[6, null,10]}
 		py={[8, null, 20]} borderBottom="1px solid"
 		borderTop={hideTop ? "none" : "1px solid"} color="tint.600" fontWeight="semibold"
 		fontSize={["sm", "sm", "lg"]} borderColor="tint.400" pb={[20, null, 20]}>
@@ -16,7 +16,6 @@ export const Footer = ({hideTop = false}) => <Box>
 		</Box> 
 		<Box>
 			<Text fontSize={["sm", null, "lg"]} fontWeight="bold" mb={["1", null, "4"]} color="tint.500">Navigate</Text>
-			<Link href="/pastquestions">Past Questions</Link><br />
 			<Link href="/blog">Blog</Link>
 		</Box>
 		<Box>
@@ -28,16 +27,6 @@ export const Footer = ({hideTop = false}) => <Box>
 			<Link href="/blog/navigating-studymono">Navigating Studymono</Link><br />
 			<Link href="/blog/giving-us-feeedback">Giving us feedback</Link> <br /> 
 			<Link href="/blog/waec-and-jamb-in-2021">Preparing for WAEC and JAMB in 2021</Link> <br />
-		</Box>
-		<Box>
-			<Text fontSize={["sm", null, "lg"]} fontWeight="bold" mb={["1", null, "4"]} color="tint.500">Categories</Text>
-			<Link href="/pastquestions/waec">WAEC</Link><br />
-			<Link href="/pastquestions/jamb">JAMB</Link><br />
-			<Link href="/pastquestions/subject/math/1">Mathematics</Link><br />
-			<Link href="/pastquestions/subject/phy/1">Physics</Link><br />
-			<Link href="/pastquestions/subject/chem/1">Chemistry</Link><br />
-			<Link href="/pastquestions/subject/bio/1">Biology</Link><br />
-			<Link href="/pastquestions/subject/eng/1">English</Link><br />
 		</Box>
 	</SimpleGrid>
 	<Box d="none">
