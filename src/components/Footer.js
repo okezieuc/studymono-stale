@@ -16,7 +16,6 @@ export const Footer = ({hideTop = false}) => <Box>
 		</Box> 
 		<Box>
 			<Text fontSize={["sm", null, "lg"]} fontWeight="bold" mb={["1", null, "4"]} color="tint.500">Navigate</Text>
-			<Link href="/pastquestions">Past Questions</Link><br />
 			<Link href="/blog">Blog</Link>
 		</Box>
 		<Box>
