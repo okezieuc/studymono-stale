@@ -8,16 +8,14 @@ export const CallToAction = () => <Box bg="brand" py={[3, 8, 12]}>
 		<Text
 			color="white"
 			fontSize={["lg", "3xl", "4xl"]}>
-			Preparing for WAEC and JAMB? Study with our Catalog of Past Questions.
+			We're building the revolutionary educational platform for Nigerian students
 		</Text>
 		<Box 
 			bg="white" borderRadius="1em"
 			px="1em" py="0.5em" w="max-content" mt={2}>
-			<Link href="/pastquestions">
-				<a className="umami--click--footer-cta">
-					Get Started
+				<a>
+					Newsletter starting ending of September
 				</a>
-			</Link>
 		</Box>
 	</Container>
 </Box>
