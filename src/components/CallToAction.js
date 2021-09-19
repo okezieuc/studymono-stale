@@ -12,9 +12,10 @@ export const CallToAction = () => <Box bg="brand" py={[3, 8, 12]}>
 		</Text>
 		<Box 
 			bg="white" borderRadius="1em"
-			px="1em" py="0.5em" w="max-content" mt={2}>
+			px="1em" py="0.5em" w="max-content" mt={2}
+			maxW="100%">
 				<a>
-					Newsletter starting ending of September
+					Newsletter starts September ending
 				</a>
 		</Box>
 	</Container>

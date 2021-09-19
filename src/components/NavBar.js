@@ -10,7 +10,7 @@ export const NavBar = () => {
 <Box fontSize={["sm", "sm", "sm"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">
 	<Container maxW={["2xl", null, "5xl"]} px={[0, "1rem"]}>	
 		<Link href="/blog/past-questions-answers-and-explanations-published">
-			We're shutting down public past question pages →
+			We're shutting down public past question pages→
 		</Link>
 	</Container>
 </Box> 
@@ -45,7 +45,7 @@ export const NavBar = () => {
 			>
 				
 					<a>
-						Newsletter Coming Soon
+						Newsletter starting ending of September
 					</a>
 				
 			</Box>
