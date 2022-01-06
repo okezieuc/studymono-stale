@@ -10,7 +10,7 @@ export const NavBar = () => {
 <Box fontSize={["sm", "sm", "sm"]} bg="black" w="100%" p="2" pl={["2", null, "6"]} color="white">
 	<Container maxW={["2xl", null, "5xl"]} px={[0, "1rem"]}>	
 		<Link href="/blog/past-questions-answers-and-explanations-published">
-			We're shutting down public past question pages→
+			Learn about our recent release of answers →
 		</Link>
 	</Container>
 </Box> 
@@ -21,6 +21,13 @@ export const NavBar = () => {
 			<Box color="black" fontSize={["lg", null, "2xl"]} fontWeight="black" mr={["1", null, "4"]}>
 				<Link href="/">
 					studymono.
+				</Link>
+			</Box>
+			<Box d={["none", "block"]}>
+				<Link href="/pastquestions">
+					<a className="umami--click--nav-pastquestions-link">
+						Past Questions
+					</a>
 				</Link>
 			</Box>
 			<Box d={["none", "block"]}>
@@ -43,10 +50,11 @@ export const NavBar = () => {
 					color: "brand"
 				}}
 			>
-				
-					<a>
-						Newsletter starting ending of September
+				<Link href="/pastquestions">
+					<a className="umami--click--nav-get-started">
+						Get Started
 					</a>
+			</Link>
 				
 			</Box>
 			<Button size="sm" onClick={onToggle} d={["block", "none"]}>
@@ -62,6 +70,11 @@ export const NavBar = () => {
 				boxShadow="0px 2px 2px #aaa" zIndex="1"
 			>
 				<Link href="/">Home</Link>
+				<Link href="/pastquestions">
+					<a className="umami--click--nav-pastquestions-link">
+						Past Questions
+					</a>
+				</Link>
 				<Link href="/blog">
 					<a className="umami--click--nav-blog-link">
 						Blog
