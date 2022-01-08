@@ -28,7 +28,6 @@ export const PaginationLink = ({ prefix, current, total, ...props }) => (<HStack
     <WideLink text ="First" slug={`${prefix}1`} />
     <SlimLink valid={(current-1)>0} slug={`${prefix}${current-1}`} text="Previous" />
     <SlimLink valid={current<total} slug={`${prefix}${current+1}`} text="Next" />
-    <WideLink text="Last" slug={`${prefix}${total}`} />
 </HStack>)
 
 PaginationLink.defaultProps = {
